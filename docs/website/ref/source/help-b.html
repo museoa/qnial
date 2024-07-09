@@ -1,0 +1,292 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-b.html","19991003051741","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938927861");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-B</title>
+</head>
+
+<body background="/web/19991003051741im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-a.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="blend">
+<hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-b.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-b.html#break"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-b.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-b.html#byrows"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/pink_bullet.gif">Blend<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary axis rearrangement operation, a primitive<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A blend B      blend A B<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#split">split</a>,
+                     <a href="help-m.html#mix">mix</a>,
+                     <a href="help-p.html#partition">partition</a>,
+                     <a href="help-r.html#rows">rows</a>,
+                     <a href="help-c.html#cols">cols</a>,
+                     <a href="help-r.html#raise">raise</a><br>
+</dl>
+
+<p>The operation <i>blend</i> combines the top two levels of an array B into a single level blending the axes of the second level of B into the combined level according to the axis numbers given in A.  The items of B must be of the same shape.</p>
+
+<p>If the array B is equivalent to A <a href="help-s.html#split"><i>split</i></a> C for some array C, the result of A <i>blend</i> B is C.</p>
+
+<p>The <a href="help-t.html#tally"><i>tally</i></a> of A is the  <a href="help-v.html#valence"><i>valence</i></a> of an item of B.  The items of A indicate  where the axes of the items of B are placed in the <i>shape</i> of the result.</p>
+
+<pre>
+     C := (2 4 3 reshape count 24) ;
+     B := 2 0 split C
++----+----+----+-----+
+|1 13|4 16|7 19|10 22|
+|2 14|5 17|8 20|11 23|
+|3 15|6 18|9 21|12 24|
++----+----+----+-----+
+
+     C := 2 0 blend B
+ 1  2  3   13 14 15
+ 4  5  6   16 17 18
+ 7  8  9   19 20 21
+10 11 12   22 23 24
+</pre>
+
+<p>In the example, B is a list of four tables of shape 3 2 created by a 2 0 <a href="help-s.html#split"><i>split</i></a>.  The result of 2 0 <i>blend</i>  B is the array of valence 3 that is the second argument to <a href="help-s.html#split"><i>split</i></a>.</p>
+
+<b>Equations</b>
+
+<center><pre>
+SORT &lt;= list I = axes A and not empty A ==&gt; I blend (I split A) = A
+
+equal EACH shape A and not empty A ==&gt; (valence A+axes first A)blend A=mix A
+
+A blend B =f [Null,A] PARTITION first B
+</pre></center>
+
+<a name="break">
+<hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-b.html#blend"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-b.html#bycols"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-b.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-b.html#byrows"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/pink_bullet.gif">Break<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Break<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#resume">resume</a>,
+                     <a href="help-s.html#step">step</a>,
+                     <a href="help-c.html#callstack">callstack</a>,
+                     <a href="help-s.html#set">set</a> "trace,
+                     <a href="help-s.html#setdeftrace">setdeftrace</a><br>
+</dl>
+
+<p>The execution of <i>break</i> causes the interpreter to interrupt normal execution inan expression sequence and to prompt for input with the prompt &quot--;&gt;&quot.;  The visible environment is that of the expression in which the break occurs. Thus, it is possible to examine the values of local variables in break mode.</p>
+
+<p>The expression <a href="help-r.html#resume"><i>resume</i></a> is used to return from  break mode.  The expression <a href="help-s.html#step"><i>step</i></a> displays the next  expression to be evaluated in the expression sequence where <i>break</i> occurs, evaluates  it with trace on and then returns to break mode at the next item in the expression sequence.  If <a href="help-s.html#step"><i>step</i></a> is entered at the end of an expression sequence,  the computation resumes.</p>
+
+<p>Break mode can also be entered by typing <i>&ltCtrl; B&gt;</i> in response to the prompt for a <a href="help-r.html#read"><i>read</i></a> or <a href="help-r.html#readscreen"><i>readscreen</i></a> operation or <a href="help-r.html#readchar"><i>readchar</i></a> expression.  In this case, after  <a href="help-r.html#resume"><i>resume</i></a> or <a href="help-s.html#step"><i>step</i></a> is entered, Q'Nial returns to the <a href="help-r.html#read"><i>read</i></a> or <a href="help-r.html#readscreen"><i>readscreen</i></a> operation and awaits the user input.  Break mode cannot be entered by typing <i>&ltCtrl; B&gt;</i> in <a href="help-e.html#editwindow"><i>editwindow</i></a> or when <a href="help-s.html#setinterrupts"><i>setinterrupts</i></a> has been used to inhibit interrupts.</p>
+
+<pre>
+     Break
+--&gtbreak; debug mode, type RESUME to exit
+--&gtResume;
+--&gtreturning; from break debug mode
+</pre>
+
+<a name="bycols">
+<hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-b.html#break"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-b.html#bye"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-b.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-b.html#byrows"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/pink_bullet.gif">Bycols<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      application transformer<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      BYCOLS f A<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#bycols">Bycols</a>,
+                     <a href="help-p.html#partition">partition</a><br>
+</dl>
+
+<p>The transformer <i>bycols</i> applies an operation f to the columns of an array A, where f is an operation that maps lists to lists.</p>
+
+<pre>
+     setformat '%5.3f';
+     BYCOLS (SORT &lt;=)
+        (5 6 reshape random 30)
+0.726 0.009 0.210 0.385 0.123 0.119
+0.851 0.448 0.384 0.476 0.193 0.384
+0.880 0.449 0.536 0.603 0.455 0.498
+0.882 0.729 0.631 0.819 0.639 0.521
+0.911 0.893 0.810 0.961 0.940 0.672
+</pre>
+
+<p>The example generates a random table and then sorts each column.</p>
+
+<b>Definition</b>
+
+<pre>
+BYCOLS IS TRANSFORMER f OPERATION A {
+   [valence A - 2 max 0] PARTITION f A }
+</pre>
+
+<br>
+<b>Equation</b>
+
+<center><pre>
+shape f A = shape A ==&gt; shape BYCOLS f A = shape A
+</pre></center>
+
+<a name="bye">
+<hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-b.html#bycols"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-b.html#byrows"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-b.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-b.html#byrows"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/pink_bullet.gif">Bye<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Bye<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#continue">Continue</a>,
+                     <a href="help-s.html#save">Save</a>,
+                     <a href="help-r.html#restart">Restart</a><br>
+</dl>
+
+<p>The expression <i>bye</i> is used to terminate a session of Q'Nial and to return to the host environment.  The current workspace is not saved.</p>
+
+<a name="byrows">
+<hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-b.html#bye"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-b.html#TOP"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-b.html#byrows"><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003051741im_/http://www.nial.com/images/pink_bullet.gif">Byrows<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      application transformer<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      BYROWS f A<br>
+<dd><img border="0" src="/web/19991003051741im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#bycols">Bycols</a>,
+                     <a href="help-p.html#partition">Partition</a><br>
+</dl>
+
+<p>The transformer <i>byrows</i> applies an operation f to the rows of an array A, where f is an operation that maps lists to lists.</p>
+
+<pre>
+     BYROWS reverse (5 6 reshape count 30)
+ 6  5  4  3  2  1
+12 11 10  9  8  7
+18 17 16 15 14 13
+24 23 22 21 20 19
+30 29 28 27 26 25
+</pre>
+
+<p>The example reverses the rows of the generated table.</p>
+
+<b>Definition</b>
+
+<pre>
+BYROWS IS TRANSFORMER f OPERATION A {
+   [valence A - 1 max 0] PARTITION f A }
+</pre>
+
+<br>
+<b>Equation</b>
+
+<center><pre>
+shape f A = shape A ==&gt; shape BYROWS f A = shape A
+</pre></center>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991003051741/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991003051741/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991003051741/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991003051741/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991003051741/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991003051741/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991003051741/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991003051741/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991003051741/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991003051741/http://www.nial.com/">
+</map>
+
+<a href="/web/19991003051741/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991003051741im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 05:17:41 Oct 03, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:16 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 2.602
+  exclusion.robots: 0.495
+  exclusion.robots.policy: 0.45
+  esindex: 0.023
+  cdx.remote: 67.12
+  LoadShardBlock: 118.907 (3)
+  PetaboxLoader3.datanode: 79.621 (4)
+  PetaboxLoader3.resolve: 100.797 (2)
+  load_resource: 111.225
+-->

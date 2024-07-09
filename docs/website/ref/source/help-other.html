@@ -1,0 +1,286 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-other.html","19991004000847","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938995727");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-other</title>
+</head>
+
+<body background="/web/19991004000847im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<h1 align="center">
+<hr size="4">
+NialHelp etc<br>
+<hr size="4">
+</h1>
+
+<a name="unaryper">
+<h3><hr size="5">
+<img border="0" src="/web/19991004000847im_/http://www.nial.com/images/pink_bullet.gif">Unary pervasive<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive arithmetic operation, a primitive<br>
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      f A
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-other.html#multi">multi</a>
+</dl>
+
+<p>Each operation f in this class maps an atom to an atom.</p>
+
+<p>A unary pervasive operation maps an array to another array with identical
+structure, mapping each atom by the function's behaviour on atoms.  All of the
+scientific operations and the unary operations of arithmetic and logic are
+unary pervasive.</p>
+
+<p>The scientific operations are implemented using the library routines 
+provided with the C compiler used to construct Q'Nial.  The accuracy of the 
+result is determined by the precision of the floating point number system of 
+the computer and the accuracy of the library routine approximation.</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Operation</b></th><th><b>Function</b></th>
+</tr>
+<tr><td>abs</td><td>absolute value</td></tr>
+<tr><td>arccos</td><td>inverse cosine function</td></tr>
+<tr><td>arcsin</td><td>inverse sine function</td></tr>
+<tr><td>arctan</td><td>inverse tangent function</td></tr>
+<tr><td>ceiling</td><td>lowest integer above a real number</td></tr>
+<tr><td>char</td><td>integer to character conversion</td></tr>
+<tr><td>charrep</td><td>character to integer conversion</td></tr>
+<tr><td>cos</td><td>cosine function</td></tr>
+<tr><td>cosh</td><td>hyperbolic cosine function</td></tr>
+<tr><td>exp</td><td>exponential function</td></tr>
+<tr><td>floor</td><td>next higher integer above a real number</td></tr>
+<tr><td>ln</td><td>natural logarithm</td></tr>
+<tr><td>log</td><td>logarithm base 10</td></tr>
+<tr><td>not</td><td>opposite of a boolean value</td></tr>
+<tr><td>opposite</td><td>opposite of a number</td></tr>
+<tr><td>pass</td><td>identity function</td></tr>
+<tr><td>reciprocal</td><td>reciprocal of a number</td></tr>
+<tr><td>sin</td><td>sine function</td></tr>
+<tr><td>sinh</td><td>hyperbolic sine function</td></tr>
+<tr><td>sqrt</td><td>square root of a number</td></tr>
+<tr><td>tan</td><td>tangent function</td></tr>
+<tr><td>tanh</td><td>hyperbolic tangent function</td></tr>
+<tr><td>type</td><td>representative atom of same type</td></tr>
+</table>
+</p>
+
+<b>Equations</b>
+
+<pre>
+                                f A = EACH f A
+                             shape f A = shape A
+</pre>
+
+<a name="binary">
+<h3><hr size="5">
+<img border="0" src="/web/19991004000847im_/http://www.nial.com/images/pink_bullet.gif">Binary Pervasive<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+     Class:    operation class
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+     Usage:    A f B     f A B
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-other.html#multi">multi pervasive</a>
+</dl>
+
+<p>Each operation f in this class maps a pair of atoms to an atom.  
+The behaviour of each operation on pairs of atoms is described under its 
+entry in section 3.3 .  Here we describe the general properties.</p>
+
+<p>A binary pervasive operation maps two arrays having identical structure 
+to one with the same structure, mapping each pair of corresponding atom by the
+function's behaviour on pairs of atoms.</p>
+
+<p>All of the binary operations of arithmetic and logic are binary 
+pervasive.</p>
+
+<p>If a binary pervasive operation is applied to a pair of arrays that do not
+have the same shape, then the effect is to build a conformable pair by
+replicating an atom or solitary item of the pair to the shape of the other
+item.  If both items have tally different from one and are of unequal shape
+then the fault <i>?conform</i> is returned.  The replication of an item of 
+<a href="help-t.html#tally"><i>tally</i></a> one
+provides binary pervasive operations with a scalar extension capability.  For
+example, 3 4 5 6 - 5 is equivalent to 3 4 5 6 - 5 5 5 5 .</p>
+
+<p>If a binary pervasive operation is applied to an array that is not a pair,
+then a fault is returned.</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Operation</b></th><th><b>Function</b></th>
+</tr>
+<tr><td>gt</td><td>greater than comparison</td></tr>
+<tr><td>gte</td><td>greater than or equal comparison</td></tr>
+<tr><td>lt</td><td>less than comparison</td></tr>
+<tr><td>lte</td><td>less than or equal comparison</td></tr>
+<tr><td>match</td><td>equality of atoms without type coercion</td></tr>
+<tr><td>mate</td><td>equality of atoms with type conversion</td></tr>
+<tr><td>minus</td><td>subtraction of numbers</td></tr>
+<tr><td>mod</td><td>remainder on division of integers</td></tr>
+<tr><td>plus</td><td>addition of numbers</td></tr>
+<tr><td>quotient</td><td>quotient on division of integers</td></tr>
+<tr><td>times</td><td>multiplication of numbers</td></tr>
+<tr><td>divide</td><td>division of numbers</td></tr>
+</table>
+</p>
+
+<b>Equations</b>
+
+<pre>
+                            A f B = A EACHBOTH f B
+
+                          A f B = EACH f (A pack B)
+
+                        shape (A f B) = shape pack A B
+</pre>
+
+<a name="multi">
+<h3><hr size="5">
+<img border="0" src="/web/19991004000847im_/http://www.nial.com/images/pink_bullet.gif">Multi Pervasive<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+     Class:    operation class
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+     Usage:    f A
+<dd><img border="0" src="/web/19991004000847im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-other.html#binary">binary pervasive</a>
+</dl>
+
+Some of the operations of Nial that operate on simple arrays are extended to
+arbitrarily nested arrays by being applied to the atoms at the deepest level.
+These are called pervasive operations.  There are three classes of pervasive
+operations:  unary pervasive, binary pervasive and multi pervasive.
+
+When a multi pervasive operation, such as sum, is applied to an array A with
+items all of identical structure, it returns an array of that same structure.
+The atoms of the result are computed by applying sum to the simple arrays
+formed by taking the atoms from positions in the corresponding items of the
+argument.
+
+For example, if T is a table, sum rows T returns the column totals for T.
+
+     T
+1 2 3 4
+5 6 7 8
+     rows T
++-------+-------+
+|1 2 3 4|5 6 7 8|
++-------+-------+
+     sum rows T
+6 8 10 12
+
+A multi pervasive operation used on a pair behaves in precisely the same
+manner as a binary pervasive operation.
+
+A multi pervasive operation f satisfies the equations
+
+f A = EACHALL f A
+f A = REDUCE f A
+
+In binary pervasive and multi pervasive operations, the items of the argument
+must all be of the same shape and structure.  If they are not, items that have
+only one item, eg.  atoms, are reshaped to the common shape.  If all items
+with more than one item are not the same shape, the fault ?conform is
+returned.  On a pair, a multi pervasive operation behaves the same way as a
+binary pervasive operation does.
+
+Modification of the argument using these binary and multi pervasive operations
+is the same as that done by the operation pack, except that it is done
+implicitly.
+
+Each operation in this class reduces a simple array (an array of atoms) to an
+atom.  A multi pervasive operation maps an array with items having identical
+structure to one with the same structure, mapping each array of atoms in
+corresponding positions in the items by the function's behaviour on simple
+arrays.
+
+There are six operations in this class.  They are the reductive operations of
+arithmetic and logic.
+
+Operation Function
+
+and       logical and of a boolean array
+max       highest item in the array
+min       lowest item in the array
+or        logical or of a boolean array
+product   arithmetic product of an array of numbers
+sum       arithmetic sum of an array of numbers
+
+Equations
+
+          f A = EACHALL f A
+          f A = EACH f pack A
+          shape f A = shape pack A
+          f A = REDUCE f A
+
+<h4 align="center">
+<hr size="4"><br>
+</h4>
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991004000847/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991004000847/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991004000847/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991004000847/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991004000847/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991004000847/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991004000847/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991004000847/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991004000847/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991004000847/http://www.nial.com/">
+</map>
+
+<a href="/web/19991004000847/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991004000847im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 00:08:47 Oct 04, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:31 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.218
+  exclusion.robots: 0.118
+  exclusion.robots.policy: 0.098
+  esindex: 0.02
+  cdx.remote: 22.873
+  LoadShardBlock: 110.041 (3)
+  PetaboxLoader3.datanode: 109.984 (4)
+  load_resource: 88.378
+  PetaboxLoader3.resolve: 46.694
+-->

@@ -1,0 +1,429 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-g.html","19991003124105","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938954465");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-G</title>
+</head>
+
+<body background="/web/19991003124105im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-f.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-h.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="getdef">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-g.html#getfile"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Getdef<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      evaluation operation<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      getdef Nm<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#parse">parse</a>,
+                     <a href="help-e.html#eval">eval</a>,
+                     <a href="help-s.html#see">see</a>,
+                     <a href="help-d.html#defedit">defedit</a><br>
+</dl>
+
+<p>The operation <i>getdef</i> retrieves the parse tree associated with the global definition named Nm.  Nm may be a phrase or a string.  Only the parse trees associated with global user definitions can be retrieved.</p>
+
+<pre>
+     foo IS first ; getdef &quotfoo;
++---+-----------------------------+
+|100|+--+---------------+------+-+|
+|   ||11|+--+----------+|3 47 3|1||
+|   ||  ||22|2 160 7459||      | ||
+|   ||  |+--+----------+|      | ||
+|   |+--+---------------+------+-+|
++---+-----------------------------+
+</pre>
+
+<p>The example shows a parse tree for a simple definition.  For definitions of any reasonable size the diagram of the parse tree becomes too large to examine easily.</p>
+
+<p>The primary use of <i>getdef</i> is to provide an interface between internal representations and the editing facilities.  It is used in <a href="help-s.html#see"><i>see</i></a> and  <a href="help-d.html#defedit"><i>defedit</i></a>. The detailed form of the parse tree is implementation specific and may change in future releases.</p>
+
+<a name="getfile">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#getdef"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-g.html#getscreendata"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Getfile<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      getfile Filename<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#putfile">putfile</a>,
+                     <a href="help-a.html#appendfile">appendfile</a>,
+                     <a href="help-o.html#open">open</a>,
+                     <a href="help-r.html#readfile">readfile</a><br>
+</dl>
+
+<p>The operation <i>getfile</i> returns the records of the text file named by the string or phrase <i>Filename</i> as a list of strings.  The file must not be open.</p>
+
+<pre>
+     Recs := getfile &quotMyfile;
+</pre>
+
+<b>Definition</b>
+
+<pre>
+getfile IS OPERATION Filename {
+   Fnum := open Filename `r;
+   IF isfault Fnum THEN
+      Fnum
+   ELSE
+      Lines := '';
+      Line := readfile Fnum;
+      WHILE Line ~= ??eof DO
+         Lines := Lines append Line;
+         Line := readfile Fnum;
+      ENDWHILE;
+      Lines
+   ENDIF }
+</pre>
+
+<a name="getscreendata">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#getfile"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-g.html#grade"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Getscreendata<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">&lt;
+      Class   :      window operation<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      getscreendata Position Size<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-p.html#putscreendata">putscreendata</a><br>
+</dl>
+
+<p>The <i>getscreendata</i> operation returns information about the data stored on a rectangular screen area in window mode.</p>
+
+<p><b>Position</b> is the pair of screen coordinates of the upper left corner of the area to be selected.  <b>Size</b> is the size of the area in rows and columns.  The result is a triple holding a table of shape <b>Size</b> holding the character attributes, the <b>Position</b> on the screen, and a character table of shape <b>Size</b> holding the text.</p>
+
+<p>The display is left unchanged.</p>
+
+<p>The result of <i>getscreendata</i> can be used as an argument to a subsequent <a href="help-p.html#putscreendata"><i>putscreendata</i></a> operation to restore the textual information to the window.</p>
+
+<center><pre>
+Attributes Position Table := getscreendata (10 10) ( 5 30);
+</pre></center>
+
+<a name="grade">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#getscreendata"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-g.html#grid"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Grade<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      comparative transformer, a primitive<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      GRADE f A<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#sort">sort</a>,
+                     <a href="help-l.html#lte">lte</a>,
+                     <a href="help-g.html#gte">gte</a><br>
+</dl>
+
+<p>The transformer <i>grade</i> modifies a comparator f to produce an operation that, when applied to A, returns an array of addresses of the same shape as A.  The addresses can be used to select the items of A (using <a href="help-c.html#choose"><i>choose</i></a>) so that the items are in order according to f.</p>
+
+<p>A comparator is an operation that compares two arrays and returns <a href="help-t.html#true"><i>true</i></a> if they are in the desired ordering or <a href="help-f.html#false"><i>false</i></a> otherwise.  Operations <a href="help-l.html#lte"><i>lte</i></a> (&lt;=) and <a href="help-g.html#gte"><i>gte</i></a> (&gt;=) are the most commonly used comparators.</p>
+
+<pre>
+     A gets 3 2 reshape 65 77 4 19 22 11
+65 77
+ 4 19
+22 11
+
+     Addrs := GRADE &gt;= A
++---+---+
+|0 1|0 0|
++---+---+
+|2 0|1 1|
++---+---+
+|2 1|1 0|
++---+---+
+
+     Addrs choose A
+77 65
+22 19
+11  4
+     GRADE &lt;= (&quotsome; &quotnot; &quotin; &quotorder;)
+3 1 0 2
+     GRADE &lt;= ['xyz','abc','mno','cat']
+?invalid comparison in GRADE
+</pre>
+
+<p>The first three expressions illustrate that <i>grade</i> returns the addresses that re-order the items of table A in descending order.  The next expression shows that the <i>grade</i> transform of &lt;= can be applied to a list of phrases.  The last expression shows that <i>grade</i>  cannot be applied to a list of strings.  This is because &lt;= is used itemwise on the characters of the strings and hence the comparator yields a bitstring rather than an atomic boolean result.</p>
+
+<b>Equations</b>
+
+<center><pre>
+SORT f A = GRADE f A choose A
+
+f a comparator ==&gt; shape GRADE f A = shape A
+</pre></center>
+
+<a name="grid">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#grade"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-g.html#gt"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Grid<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      address related operation<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      grid A<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#tell">tell</a>,
+                     <a href="help-s.html#shape">shape</a><br>
+</dl>
+
+<p>The operation <i>grid</i> returns the array of addresses of the array A. The result has the same shape as A.  Each item of the result is the  address of the corresponding item in A.  The <i>grid</i> of a list is a list of solitary integers. The <i>grid</i> of a table is a table of pairs of integers.</p>
+
+<pre>
+     grid 3 6 4 7 4
++-+-+-+-+-+
+|0|1|2|3|4|
++-+-+-+-+-+
+
+     A :=  2 3 reshape count 6; A (grid A)
+
++-----+-------------+
+|1 2 3|+---+---+---+|
+|4 5 6||0 0|0 1|0 2||
+|     |+---+---+---+|
+|     ||1 0|1 1|1 2||
+|     |+---+---+---+|
++-----+-------------+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+grid IS OPERATION A {tell shape A}
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+grid A choose A = A
+
+shape grid A = shape A
+
+grid tally A choose list A = list A
+</pre></center>
+
+<a name="gt">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#grid"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Gt<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive comparative operation<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A gt B      A &gt; B      gt A B<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-g.html#gte">gte</a>,
+                     <a href="help-l.html#lt">lt</a>,
+                     <a href="help-l.html#lte">lte</a>,
+                     <a href="help-m.html#match">match</a>,
+                     <a href="help-m.html#mate">mate</a>,
+                     <a href="help-m.html#max">max</a>,
+                     <a href="help-s.html#sort">sort</a><br>
+</dl>
+
+<p>The <i>gt</i> operation compares two atoms A and B with the &quotgreater; than&quot; relation, returning <a href="help-t.html#true"><i>true</i></a> if A is greater than B and false otherwise.  The symbol &gt; is a synonym for gt.</p>
+
+<p>The atoms in Nial are organized as a lattice using &lt;= for the ordering.  The numeric atoms are comparable across types but numeric and literal atoms are incomparable.  The literal types are not comparable across types.  A comparison between incom- parable objects results in <a href="help-f.html#false"><i>false</i></a>.</p>
+
+<pre>
+     R := l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER &gt; R
+oooooo
+looooo
+lloooo
+oooooo
+oooooo
+oooooo
+
+     'apple' &gt; 'above'
+olloo
+
+     &quotapple; &gt; &quotabove;
+l
+</pre>
+
+<p>The use of <i>OUTER</i> &gt; shows the comparisons between various atom types.  The last two examples show the difference between com- paring two strings, where the operation is distributed by its pervasive property; and comparing the corresponding phrases.</p>
+
+<b>Definition</b>
+
+<pre>
+gt IS OPERATION A B {
+   (A gte B) and not (A mate B) }
+</pre>
+
+<a name="gte">
+<hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-g.html#gt"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-h.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-g.html#TOP"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-g.html#gte"><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003124105im_/http://www.nial.com/images/pink_bullet.gif">Gte<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive comparative operation<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A gt B      A &gt; B      gt A B<br>
+<dd><img border="0" src="/web/19991003124105im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-g.html#gt">gt</a>,
+                     <a href="help-l.html#lt">lt</a>,
+                     <a href="help-l.html#lte">lte</a>,
+                     <a href="help-m.html#match">match</a>,
+                     <a href="help-m.html#mate">mate</a>,
+                     <a href="help-m.html#max">max</a>,
+                     <a href="help-s.html#sort">sort</a><br>
+</dl>
+
+<p>The <i>gte</i> operation compares two atoms A and B with the &quotgreater; than or equal&quot; relation, returning <a href="help-t.html#true"><i>true</i></a> if A is greater than or equal to B and <a href="help-f.html#false"><i>false</i></a> otherwise.  The symbol &gt;= is a synonym for <i>gte</i>.</p>
+
+<p>The atoms in Nial are organized as a lattice using &lt;= for the ordering.  The numeric atoms are comparable across types but numeric and literal atoms are incomparable.  The literal types are not comparable across types.  A comparison between incomparable objects results in <a href="help-f.html#false"><i>false</i></a>.</p>
+
+<pre>
+     R := l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER &gt;= R
+looooo
+lloooo
+lllooo
+oooloo
+oooolo
+oooool
+
+     'apple' &gt;= 'above'
+lllol
+
+     &quotapple; &gt;= &quotabove;
+l
+</pre>
+
+<p>The use of <i>OUTER</i> &gt;= shows the comparisons between various atom types.  The last two examples show the difference between com- paring two strings, where the operation is distributed by its pervasive property; and comparing the corresponding phrases.</p>
+
+<b>Definition</b>
+
+<pre>
+gte IS OPERATION A B { B lte A }
+</pre>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991003124105/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991003124105/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991003124105/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991003124105/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991003124105/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991003124105/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991003124105/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991003124105/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991003124105/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991003124105/http://www.nial.com/">
+</map>
+
+<a href="/web/19991003124105/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991003124105im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 12:41:05 Oct 03, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:37 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 2.25
+  exclusion.robots: 0.205
+  exclusion.robots.policy: 0.176
+  esindex: 0.041
+  cdx.remote: 34.139
+  LoadShardBlock: 123.64 (3)
+  PetaboxLoader3.datanode: 222.486 (4)
+  load_resource: 279.468
+  PetaboxLoader3.resolve: 138.223
+-->

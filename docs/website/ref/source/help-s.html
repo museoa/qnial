@@ -1,0 +1,1867 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-s.html","19980204162418","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "886609458");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-S</title>
+</head>
+
+<body background="/web/19980204162418im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-t.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="save">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#scan"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Save<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      save Wsname
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#load">load</a>,
+                     <a href="help-c.html#checkpoint">checkpoint</a>,
+                     <a href="help-r.html#recover">recover</a>,
+                     <a href="help-l.html#latent">latent</a>,
+                     <a href="help-r.html#restart">restart</a>
+</dl>
+
+<p>The operation <i>save</i> is used to save a workspace with the name given by the phrase or string <i>Wsname</i>.  The convention in Q'Nial is to name workspaces with the extension <i>.nws</i> so that they are easy to find in the directory.  When saving or loading a workspace, the extension may be omitted.</p>
+
+<p>The effect of saving a workspace is to place the contents of the current workspace in the named file in an internal format.  The contents of the current workspace are unchanged by doing a <i>save</i>.</p>
+
+<center><pre>
+save &quotmywork;
+</pre></center>
+
+<p>A <i>save</i> operation may be executed within an operation or expression.  The effect is to interrupt the execution and do the <i>save</i> at the top level.  If the saved workspace contains a user-defined expression with the name <a href="help-c.html#checkpoint"><i>checkpoint</i></a>, at the termination of the <i>save</i>, <a href="help-c.html#checkpoint"><i>checkpoint</i></a> is executed.  <a href="help-c.html#checkpoint"><i>Checkpoint</i></a> can be used to restart the computation.</p>
+
+<p>If the saved workspace contains an expression with the name <i>Latent</i>, whenever the workspace is loaded, the <i>load</i> operation will execute the <i>Latent</i> expression.  This can be used to have a workspace automatically begin an application, or to set up desired default values for various switch settings.</p>
+
+<p>On the PCDOS version of Q'Nial, the operation save does not always recover gracefully if there is not enough space on the disk to hold the workspace.</p>
+
+<a name="scan">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#save"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#screensize"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Scan<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      evaluation operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      scan S
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#parse">parse</a>,
+                     <a href="help-e.html#eval">eval</a>,
+                     <a href="help-d.html#descan">descan</a>,
+                     <a href="help-d.html#deparse">deparse</a>,
+                     <a href="help-e.html#execute">execute</a>
+</dl>
+
+<p>The operation <i>scan</i> translates Nial program text to internal form.  This process is called tokenizing as it results in a list containing tokens.  The argument S is a string.  The result is a list beginning with 99 and followed by an alternating sequence of integer codes and phrases.  The <i>scan</i> token codes are given in Chapter 8 of the Nial Language manual.</p>
+
+<pre>
+     scan 'A := 3 * 5.2'
+99 2 A 1 := 16 3 2 * 18 5.2
+
+     scan 'sum 2 (35 + 42.7)'
+99 2 SUM 16 2 1 ( 16 35 2 + 18 42.7 1 )
+
+     scan 'foo IS first rest'
+99 2 FOO 1 IS 2 FIRST 2 REST
+</pre>
+
+<p>The first example has 5 tokens, the second has 7 and the third has 4.  In a token stream, the token for an identifier is in upper case.</p>
+
+<b>Equations</b>
+
+<center><pre>
+S a string ==&gt; execute S = eval parse scan S
+
+S a string ==&gt; scan descan scan A = scan A
+</pre></center>
+
+<a name="screensize">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#scan"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#second"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Screensize<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Screensize
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#clearscreen"></a>,
+                     <a href="help-s.html#setcursor">setcursor</a>,
+                     <a href="help-r.html#readcursor">readcursor</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-w.html#window">window</a>
+</dl>
+
+<p>The expression <i>screensize</i> returns the effective size of the screen in use by Q'Nial.  The result is a pair of integers giving the number of rows and columns.  For the PCDOS version it is always 25 80.</p>
+
+<pre>
+     Screensize
+25 80
+</pre>
+
+<p><i>Screensize</i> is useful in writing portable applications that use the window package.  The size of windows can be tailored to the available size.</p>
+
+<a name="second">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#screensize"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#see"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Second<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      selection operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      second A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-f.html#first">first</a>,
+                     <a href="help-t.html#third">third</a>,
+                     <a href="help-p.html#pick">pick</a>,
+                     <a href="help-t.html#take">take</a>
+</dl>
+
+<p>The operation <i>second</i> returns the second of the items of A.  If A has only one item or it is empty, it returns the fault <i>?address</i>.</p>
+
+<pre>
+     second 4 5 6
+5
+
+     second tell 3 4
+0 1
+
+     second Null
+?address
+</pre>
+
+<b>Definition</b>
+
+<pre>
+second IS OPERATION A (1 pick list A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+second list B = second B
+
+second B = first rest B
+</pre></center>
+
+<a name="see">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#second"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#seed"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">See<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      see Defname
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-d.html#descan">descan</a>,
+                     <a href="help-d.html#deparse">deparse</a>,
+                     <a href="help-g.html#getdef">getdef</a>,
+                     <a href="help-d.html#defedit">defedit</a>
+</dl>
+
+<p>The operation <i>see</i> displays the definition of the user defined object named by the phrase or string <i>Defname</i>.  The canonical form of the definition appears directly on the screen.  The operation cannot be used on predefined names. The display is in sketch-nodecor mode regardless of the current settings.</p>
+
+<pre>
+     foo IS first rest;
+     see &quotfoo;
+foo IS first rest
+</pre>
+
+<p>It is possible to capture the display given by <i>see</i> using the composition of operations <a href="help-d.html#descan"><i>descan</i></a> <a href="help-d.html#deparse"><i>deparse</i></a> <a href="help-g.html#getdef"><i>getdef</i></a> <i>Defname</i>, which returns the list of lines of the display.  This technique is used in the operation <a href="help-d.html#defedit"><i>defedit</i></a>.</p>
+
+<b>Definition</b>
+
+<pre>
+see IS OPERATION A {
+   M1 M2 gets EACH set &quotsketch; &quotdecor;
+   ITERATE writescreen descan deparse getdef A;
+   EACH set M1 M2; }
+</pre>
+
+<a name="seed">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#see"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#seek"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Seed<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      generation operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      seed Num
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#random">random</a>,
+                     <a href="help-f.html#floor">floor</a>
+</dl>
+
+<p>The operation <i>seed</i> sets the initial number for the random number generator used by <a href="help-r.html#random"><i>random</i></a>.  The new seed used by <a href="help-r.html#random"><i>random</i></a> is computed by <a href="help-f.html#floor"><i>floor</i></a> (<i>Num * 214783647.</i>). The argument <i>Num</i> is a positive decimal fraction less than 1.  <i>Seed</i> is used to get predictable results from a program that uses <a href="help-r.html#random"><i>random</i></a>.  <i>Seed</i> returns the previous argument to <i>seed</i>.</p>
+
+<pre>
+     seed .25374;
+     floor (100. * random 3)
+60 73 83
+</pre>
+
+<a name="seek">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#seed"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#separator"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Seek<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary selection operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A seek B            seek A B
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#in">in</a>,
+                     <a href="help-f.html#find">find</a>
+</dl>
+
+<p>The operation <i>seek</i> returns a pair of values.  The first is a boolean indicating whether or not A is an item of B.  The second is the address of the first occurrence of A as an item of B, searching B in row major order.  If A does not occur in B, the second item of the result is the shape of B.  <i>Seek</i> is the combination of <a href="help-i.html#in"><i>in</i></a> and <a href="help-f.html#find"><i>find</i></a> in one operation.</p>
+
+<pre>
+     3 seek 56 34 3 23 57 3
+l 2
+
+     `a seek 'hello world'
+o 11
+</pre>
+
+<p><i>Seek</i> is useful when determining whether or not A is in B and, if it is, obtaining its position in B.  Both results are obtained in one internal computation rather than two separate ones.</p>
+
+<b>Definition</b>
+
+<pre>
+seek IS OPERATION A B { A [in,find] B }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+first (A seek B) = A in B
+
+second (A seek B) = A find B
+</pre></center>
+
+<a name="separator">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#seek"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#set"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Separator<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      constant expression
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Separator
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-n.html#nialroot">nialroot</a>,
+                     <a href="help-l.html#library">library</a>,
+                     <a href="help-h.html#host">host</a>,
+                     <a href="help-l.html#link">link</a>
+</dl>
+
+<p>The expression <i>Separator</i> returns the character used to separate names in the directory structure for the operating system.  For PCDOS and OS2 systems, it is the backslash symbol &quot;\&quot.;  For Unix, it is the slash symbol &quot;/&quot.;</p>
+
+<a name="set">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#separator"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setcursor"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Set<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      set Sw
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#setdeftrace">setdeftrace</a>,
+                     <a href="help-s.html#setformat">setformat</a>,
+                     <a href="help-s.html#setinterrupts">setinterrupts</a>,
+                     <a href="help-s.html#setlogname">setlogname</a>,
+                     <a href="help-s.html#setprompt">setprompt</a>,
+                     <a href="help-s.html#setwidth">setwidth</a>
+</dl>
+
+<p>The operation <i>set</i> changes internal switches in the Q'Nial interpreter.  The switches are used to control the behaviour of a variety of optional features of Q'Nial.  The argument is a string or phrase in either case.  The result of set is a phrase giving the setting of the switch as it was prior to the execution of the set operation.  The result can be used subsequently to restore the switch to its original value.  The valid phrases and their purposes are tabulated below:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Setting</b></th><th><b>Description of Result</b></th>
+</tr>
+<tr><td>diagram</td><td>set default display mode to diagram</td></tr>
+<tr><td>sketch</td><td>set default display mode to sketch</td></tr>
+<tr><td>decor</td><td>turn on decoration of atoms and empty arrays</td></tr>
+<tr><td>nodecor</td><td>turn off decoration of atoms and empty arrays</td></tr>
+<tr><td>trace</td><td>turn on tracing of expressions at the top level</td></tr>
+<tr><td>notrace</td><td>turn off tracing of expressions at the top level</td></tr>
+<tr><td>log</td><td>turn on the automatic logging of the session</td></tr>
+<tr><td>nolog</td><td>turn off the automatic logging of the session</td></tr>
+<tr><td>wlog</td><td>turn on the automatic logging of windows</td></tr>
+<tr><td>nowlog</td><td>turn off the automatic logging of windows</td></tr>
+</table>
+</p>
+
+<pre>
+     set &quotdiagram; ;
+
+displayinsketchmode IS OPERATION Result {
+   A := set &quotsketch;
+   write picture Result;
+   set A ; }
+</pre>
+
+<p>In the above definition, sketch mode is set at the beginning, saving the previous setting in the variable A.  When the definition is ended, the mode is reset to the value in A.</p>
+
+<p>The default settings settings are <a href="help-s.html#sketch"><i>sketch</i></a>, <i>nodecor</i>, <i>notrace</i>, <i>nolog</i> and <i>nowlog</i>.</p>
+
+<a name="setcursor">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#set"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setdeftrace"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setcursor<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setcursor R C
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#readcursor">readcursor</a>,
+                     <a href="help-c.html#clearline">clearline</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-s.html#screensize">screensize</a>
+</dl>
+
+<p>The operation <i>setcursor</i> is used in window mode to place the cursor at row R and column C in the active window where (0 0) corresponds to the top left corner of the window.  If R and C indicate a position outside the window they are adjusted modulo the size of the window.  The absolute position of the cursor on the terminal screen is given by adding the adjusted R C to the position of the upper left corner of the window.  This is expressed by:</p>
+
+<pre>
+   (R C mod second Window)+first Window
+
+     setwindow [5 5,20 35];
+     Clearwindow;
+     setcursor 5 17;
+     Readcursor
+5 17
+     setcursor 50 50;
+     Readcursor
+10 15
+</pre>
+
+<p>The examples show that the cursor is placed at the given coordinates in the first case and at adjusted ones in the second case.</p>
+
+<p>The above example is displayed as it is recorded in the <i>auto.nlg</i> file.  On the screen, the position of the result would be different due to the effect of the cursor movement.</p>
+
+<a name="setdeftrace">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setcursor"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#seteditkey"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setdeftrace<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setdeftrace Defname Mode
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#set">set</a>,
+                     <a href="help-s.html#step">step</a>,
+                     <a href="help-b.html#break">break</a>,
+                     <a href="help-d.html#defedit">defedit</a>
+</dl>
+
+<p>The operation <i>setdeftrace</i> changes the trace mode for the userdefined expression, operation or transformer definition named by the string or phrase <i>Defname</i>.  <i>Mode</i> is an optional argument.  If it is omitted, the trace mode is toggled.  If <i>Mode</i> is present and has the value 1, it turns trace on. Otherwise it turns trace off.  The effect when the trace mode is on is to trace the execution of the body of the operation whenever the operation is executed.</p>
+
+<p>The trace mechanism shows intermediate values in the evaluation of expressions.</p>
+
+<p>The operation returns the previous setting.  If the result of <i>setdeftrace</i> is assigned to a variable, the previous setting can be restored later.</p>
+
+<pre>
+     library &quotaverage;
+
+     setdeftrace &quotaverage;
+0
+
+     average 3 4 5
+...trace call to operation
+...average
+...the arguments for the opform are
+...A
+...A
+3 4 5
+...A
+3 4 5
+...sum A
+12
+...sum A / tally A
+4.
+...end of operation call
+4.
+</pre>
+
+<p>The tracing facility for expressions does not trace all intermediate computations.  Parentheses around an expression will force its result to be shown during a trace.</p>
+
+<a name="seteditkey">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setdeftrace"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setformat"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Seteditkey<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      seteditkey Keyname Editcmd
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-e.html#editwindow">editwindow</a>,
+                     <a href="help-r.html#readchar">readchar</a>
+</dl>
+
+<p>The operation <i>seteditkey</i> makes an entry in an internal table indicating the edit command to be associated with a specific keystroke.  The <i>Keyname</i> is a phrase, such as &quot;<i>F5</i>&quot;, which specifies a key.  The <i>Editcmd</i> is the edit command to be performed within <a href="help-e.html#editwindow"><i>editwindow</i></a> through the usage of the specified key. The operation returns the <i>Keyname</i> and the previous setting of the edit command for that key so that the returned value can subsequently be used with <i>seteditkey</i> to restore the editor to the previous state.</p>
+
+<pre>
+     Oldvalues := seteditkey &quotF5; &quotquit;
+F5 replace_all
+</pre>
+
+<a name="setformat">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#seteditkey"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setinterrupts"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setformat<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      picture operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setformat String
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-.html#"></a>,
+                     <a href="help-.html#"></a>,
+                     <a href="help-.html#"></a>,
+                     <a href="help-.html#"></a>,
+                     <a href="help-.html#"></a>
+</dl>
+
+<p>The operation <i>setformat</i> controls the format used for picturing real numbers. <a href="help-s.html#string"><i>String</i></a> is a format specification for real numbers using the conventions for the C library routine <i>printf</i>.  There are three styles of format:</p>
+
+<blockquote>
+<b>%f</b> displays a fixed number of places after the decimal point in a 
+          fixed size space with no scaling of the number;<br>
+
+<b>%e</b> displays the number in scientific notation with an exponent scaling 
+          the number to have one digit before the decimal point;&gt;<br>
+
+<b>%g</b> displays the number in f format if possible but defaults to e 
+          format if the number is not within a suitable range.<br>
+</blockquote>
+
+<p>A code can be inserted between the percent sign and the letter.  Format '%15.5f' uses a field of width 15 to display a number in f format with 5 decimal places.  The first digit is the width of the field.  For f format, the second digit gives the number of places after the decimal while for e and g it indicates the number of significant digits to be dis- played.  Either digit can be omitted.</p>
+
+<p>Q'Nial requires that the display of a real number includes a decimal point and that the display of an integer does not include a decimal point.  In a %g format, <a href="help-p.html#printf"><i>printf</i></a> does not include a decimal point if the real number matches an integer to the specified precision.  In this case, Q'Nial makes the the field one space wider than that specified in order to accommo- date the decimal point.  If an f format is not wide enough to accommodate the number, it is widened so that the number is displayed.</p>
+
+<p>If the result of an f format requires more than 40 digits to the left of the decimal point, it is converted to <i>e</i> format.</p>
+
+<p>The format '<i>%.17g</i>' is used by operation display in depicting real numbers as this format is accurate enough to reproduce the same number when executed. The default format is '%g'.  It works as in C except that a period may be added to distinguish the result from an integer constant.</p>
+
+<pre>
+     setformat '%.5f' ;
+     post exp 10. 80. 90. 100.
+                                  22026.46579
+    55406223843935098300000000000000000.00000
+    1220403294317840830000000000000000000000.
+2.688117141816135610000000000000000000000e+43
+
+     X := 2 2 reshape  9777.985 4464784.692 4070333.511 0.079;
+
+     setformat '%15.7f' ; [pass,sqrt] X
++-------------------------------+-------------------------------+
+|   9777.9850000 4464784.6920000|     98.8836943    2113.0037132|
+|4070333.5110000       0.0790000|   2017.5067561       0.2810694|
++-------------------------------+-------------------------------+
+     setformat  '%15.7g' ; [pass,sqrt] X
++---------------------------------+-------------------------------+
+|        9777.985         4464785.|       98.88369        2113.004|
+|        4070334.            0.079|       2017.507       0.2810694|
++---------------------------------+-------------------------------+
+     setformat '%15.7e' ; [pass,sqrt] X
++-------------------------------+-------------------------------+
+|  9.7779850e+03   4.4647847e+06|  9.8883694e+01   2.1130037e+03|
+|  4.0703335e+06   7.9000000e-02|  2.0175068e+03   2.8106939e-01|
++-------------------------------+-------------------------------+
+</pre>
+
+<a name="setinterrupts">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setformat"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setlogname"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setinterrupts<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setinterrupts Boolean
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#recover">recover</a>,
+                     <a href="help-t.html#toplevel">toplevel</a>
+</dl>
+
+<p>The operation <i>setinterrupts</i> permits or prevents the interruption of computation by the use of <i>&ltCtrl; C&gt;</i>.  If the argument is <a href="help-t.html#true"><i>true</i></a>, interrupts are permitted.  If it is <a href="help-f.html#false"><i>false</i></a>, they are blocked.  The default value is <a href="help-t.html#true"><i>true</i></a>.</p>
+
+<p><i>Setinterrupts</i> is used in a closed application to prevent the user from interfering with a computation in process.  This may be critical if a file is being updated in a sequence of steps, which must all be completed for the data base to remain consistent.</p>
+
+<a name="setlogname">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setinterrupts"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setprompt"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setlogname<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setlogname Filename
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-s.html#set">set</a>
+</dl>
+
+<p>The operation <i>setlogname</i> is used to set the name of the host file in which a log of the session is recorded.  The current log file is closed and a new one opened.  The argument <i>Filename</i> must be a phrase or a string.</p>
+
+<center><pre>
+setlogname &quotdec17pm;
+</pre></center>
+
+<p>The main purpose of this operation is to capture the history of part of a session in a particular file for later use.  The log file can produce documentation, for example.</p>
+
+<a name="setprompt">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setlogname"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setscroll"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setprompt<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setprompt S
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-s.html#set">set</a>
+</dl>
+
+<p>The operation <i>setprompt</i> sets the Q'Nial prompt to be the string or phrase S. The default prompt is the string with 5 blank spaces.  The maximum size of a prompt is forty characters.  <i>Setprompt</i> provides the facility to set a visible prompt which can be distinguished from prompts issued by other software.</p>
+
+<pre>
+       setprompt 'qnial&gt;'
+
+qnial&gt;
+</pre>
+
+<a name="setscroll">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setprompt"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#settrigger"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setscroll<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setscroll Mode
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-c.html#clearwindow">clearwindow</a>
+</dl>
+
+<p>The operation <i>setscroll</i> sets the mode of scrolling within a window to line, page, half-page or fast.  The mode characters are <i>L, P, G and F</i> respectively and can be specified as a string, character or phrase in upper or lower case. The default mode is line mode.</p>
+
+<p>In <b>line</b> mode, whenever a new line is required at the bottom of the window, all the lines in the window are moved up one and the new line is inserted at the bottom.  In <b>page</b> mode, when a new line is required at the bottom of the window, the window is cleared and lines are displayed starting at the top of the window.  In <b>half-page</b> mode, the bottom half of the window is moved to the top of the window and new lines are inserted half way down the window.  In <b>fast</b> mode, only the last window of a multi-window display is shown.</p>
+
+<pre>
+     setscroll `P
+L
+</pre>
+
+<a name="settrigger">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setscroll"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setwidth"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Settrigger<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      settrigger Switch
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-q.html#quiet_fault">quiet_fault</a>,
+                     <a href="help-f.html#fault">fault</a>
+</dl>
+
+<p>The operation <i>settrigger</i> sets the action taken when a fault is generated in an operation.  If <i>Switch</i> is <a href="help-t.html#true"><i>true</i></a>, whenever a fault is generated, computation is interrupted, control is sent to the top level loop and the expression <a href="help-c.html#callstack"><i>callstack</i></a> is executed.  If <i>Switch</i> is <a href="help-f.html#false"><i>false</i></a>, faults that are generated are transmitted through the computation as described in &quotThe; Role of Faults&quot; on page 1 of this manual.</p>
+
+<p>The default setting on the start of a session is <a href="help-t.html#true"><i>true</i></a>.  The triggering of an interrupt by fault generation can be turned off for the session by using the -s command line option.</p>
+
+<pre>
+     settrigger o
+l
+</pre>
+
+<a name="setwidth">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#settrigger"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#setwindow"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setwidth<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setwidth N
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#set">set</a>,
+                     <a href="help-w.html#writescreen">writescreen</a>
+</dl>
+
+<p>The operation <i>setwidth</i> sets the width of the display and log lines.  The argument is an integer N.  The result is the pre- vious setting.  The default setting is 80.</p>
+
+<p>This operation is useful in controlling the format of display on output saved for documentation purposes.  For example, a setting of 130 allows wide Nial diagrams to be printed on a line printer even though they may not display properly on the screen.  Narrower settings are convenient for use in reports.</p>
+
+<pre>
+     setwidth 50
+80
+</pre>
+
+<a name="setwindow">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setwidth"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#shape"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Setwindow<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      setwindow Null, setwindow Position Size Textcolor Cursorcolor, Bordercolor Title
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#clearwindow">clearwindow</a>,
+                     <a href="help-e.html#editwindow">editwindow</a>,
+                     <a href="help-w.html#window">window</a>,
+                     <a href="help-s.html#setscroll">setscroll</a>,
+                     <a href="help-r.html#refresh">refresh</a>
+</dl>
+
+<p>The operation <i>setwindow</i> creates a new window and, if Q'Nial is not in window mode already, puts it into that mode.  If window mode is active, <i>setwindow</i> returns a descriptor for the previously active window.  Otherwise it returns <a href="help-n.html#null"><i>Null</i></a>.  If the argument to <i>setwindow</i> is <a href="help-n.html#null"><i>Null</i></a>, the screen is cleared and window mode is terminated.  Thus, in either case, the result returned by <i>setwindow</i> can be used subsequently to restore the previous state.</p>
+
+<p>If the argument is not <a href="help-n.html#null"><i>Null</i></a>, the first two components must be present.  The remainder are optional.</p>
+
+<dl>
+<dt><b>Position</b> 
+    <dd>a pair of integers giving the row and column of the upper left 
+        corner of the window in screen coordinates,
+<dt><b>Size</b>
+    <dd>a pair of integers giving the height and width of the window 
+        in units of character positions,
+<dt><b>Textcolor</b>
+    <dd>the control tuple specifying the attributes of text 
+        displayed in the window,
+<dt><b>Cursorcolor</b>
+    <dd>the control tuple specifying the attributes of 
+        characters in the current cursor line,
+<dt><b>Bordercolor</b>
+    <dd>the control tuple specifying the attributes of the 
+    border characters,
+<dt><b>Title</b>
+    <dd>a string centered in the top of the window border.
+</dl>
+
+<p>For the PCDOS version on a color monitor, the default values for the color tuples are 12 1 0 (white, blue, no-blinking).</p>
+
+<center><pre>
+setwindow [ 0 0 , 10 20 ]
+</pre></center>
+
+<p>This example creates a window located in the upper left corner of the screen, ten rows high and twenty columns wide.  If this operation is typed in the top level loop in non-window mode, the screen is cleared, the cursor is moved to the top left of the window, a null line is written (the result of the <i>setwindow</i> operation) and the Nial prompt appears, signalling that the system is ready for input.</p>
+
+<p>Q'Nial now behaves as though the terminal has a small screen.  Any text typed is displayed.  When column twenty is reached, the text wraps around to the beginning of the next line.  If this is the last line, the screen will scroll.</p>
+
+<p>Once a window has been created, new windows may be defined by further calls to <i>setwindow</i>.  The creation of new windows does not cause the screen or even the new window area to be cleared.  This happens only when <i>setwindow</i> is called from non-window mode.  By redefining windows and by using other window related operations, applications programs can be written to accept input and display results in different areas of the screen.  In effect, the programmer is provided with complete control of the layout of the screen.  Depending on the type of terminal being used, different portions of a window may be displayed with different attributes.</p>
+
+<p>A window is divided into three separate areas:</p>
+
+<dl>
+<dt>the <b>border</b>
+    <dd>a rectangle one character wide which surrounds the window,
+<dt>the <b>cursor line</b>
+    <dd>the line on which the cursor is currently placed, and
+<dt>the <b>text area</b>
+    <dd>the window area except for the line the cursor is on.
+</dl>
+
+<p>Window attributes are specified by three optional arguments to <i>setwindow</i>. Each of these arguments is a control tuple.  The first control tuple describes the attributes of the text area, the second those of the cursor line and the third those of the border.</p>
+
+<p>Control tuples are lists of up to three integers specifying attribute information such as color and blinking.  The description of control tuples is given under the topic &quotcontrol; tuples&quot; above.  A window can be given a title by adding a sixth parameter to the <i>setwindow</i> operation.  The following operation centres the string 'Nial Window' immediately above the window:</p>
+
+<pre>
+setwindow[1 1,10 50,12 1,12 1,12 1, 'Nial Window' ]
+</pre>
+
+<a name="shape">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#setwindow"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#simple"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Shape<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      measurement operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      shape A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#tally">tally</a>,
+                     <a href="help-v.html#valence">valence</a>,
+                     <a href="help-r.html#reshape">reshape</a>
+</dl>
+
+<p>The operation <i>shape</i> returns an array that describes the rectangular structure of array A.  Every array has a shape.  For a single, including atoms, the shape is the empty list <a href="help-n.html#null"><i>Null</i></a>.  For a list, it is a solitary holding the integer giving the length of the list.  For a table or higher valence array, it is a list of integers giving the extent (number of items) along each axis.</p>
+
+<pre>
+     shape 5 6 7
+3
+     A := 2 3 reshape 4 5 6 7 8 9;
+     shape A
+2 3
+     B := 2 3 4 5 0 2 reshape 2 ;
+     shape B
+2 3 4 5 0 2
+</pre>
+
+<p>The operation <i>shape</i> always returns a list whereas <a href="help-t.html#tally"><i>tally</i></a> returns an integer. An empty array such as B is one with a zero in its shape.</p>
+
+<b>Equations</b>
+
+<center><pre>
+product shape A = tally A
+
+tally shape A = valence A
+
+list shape A = shape A
+
+shape A reshape list A = A
+</pre></center>
+
+<p>Version 6.0 of Q'Nial changes the formal definition of shapes and addresses to be lists for all valences.  In earlier versions, shapes and addresses of lists were integers.  This change has simplified a number of identities and made the processing of shapes more consistent.  The operations <a href="help-f.html#find"><i>find</i></a>, <a href="help-f.html#findall"><i>findall</i> and <a href="help-g.html#grid"><i>grid</i></a> are affected by this change since they  return addresses.</p>
+
+<a name="simple">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#shape"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sin"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Simple<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      simple A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-a.html#atomic">atomin</a>,
+                     <a href="help-t.html#twig">twig</a>
+</dl>
+
+<p>The operation <i>simple</i> tests whether or not an array has all atomic items or is an empty array.  The result is <a href="help-t.html#true"><i>true</i></a> if the array is simple and <a href="help-f.html#false"><i>false</i></a> if it is not.</p>
+
+<pre>
+     (simple 2 3 4) (simple &quotabc;)
+ll
+
+     simple Null
+l
+
+     simple (2 3) (4 5 6)
+o
+
+     (simple tell 2 3)
+o
+</pre>
+
+<p>The first two examples show that a list of integers, an atom and the empty list <a href="help-n.html#null"><i>Null</i></a> are all simple arrays.  The next two examples show that a pair of lists and the result of a <a href="help-t.html#tell"><i>tell</i></a> are not simple.</p>
+
+<b>Definition</b>
+
+<pre>
+simple IS OPERATION A (EACH single A = A)
+</pre>
+
+<br>
+<b>Equation</b>
+
+<center><pre>
+simple A = and EACH atomic A
+</pre></center>
+
+<a name="sin">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#simple"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#single"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sin<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      sin A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-s.htmls#sinh" sinh></a>,
+                     <a href="help-c.html#cos">cos</a>,
+                     <a href="help-p.html#pi">pi</a>
+</dl>
+
+<p>The operation <i>sin</i> implements the sine function of mathematics.  It produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>sine of the corresponding real</td></tr>
+<tr><td>integer</td><td>sine of the corresponding real</td></tr>
+<tr><td>real</td><td>sine of angle A given in radians</td></tr>
+<tr><td>character</td><td>fault <i>?sin</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?sin</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<pre>
+     sin  l  -1  0.5  `a  &quotabc;  ??error
+0.841 -0.841 0.479 ?sin ?sin ?error
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+sin opposite A = opposite sin A
+
+(sin A power 2) + (cos A power 2) = 1.0 (within roundoff error)
+</pre></center>
+
+<a name="single">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sin"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sinh"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Single<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      construction operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      single A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#solitary">solitary</a>,
+                     <a href="help-n.html#null">null</a>,
+                     <a href="help-a.html#atomic">atomic</a>,
+                     <a href="help-r.html#reshape">reshape</a>
+</dl>
+
+<p>The operation <i>single</i> returns an array with no axes holding A as its only item. The result is an array with shape <a href="help-n.html#null"><i>Null</i></a> and is said to be a single.</p>
+
+<pre>
+     single 2 3
+o---+
+|2 3|
++---+
+     3 = single 3
+l
+</pre>
+
+<p>The first example illustrates that a <i>single</i> of a pair contains the pair as its item.  In both diagram and sketch modes, the display of a nonatomic single is decorated with an &quoto;&quot; in the upper left corner.  The second example illustrates that the <i>single</i> of an atom is the atom itself.</p>
+
+<b>Definition</b>
+
+<pre>
+single IS OPERATION A {
+   Null reshape solitary A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+first single A = A
+
+shape single A = Null
+
+atomic A = single A equal A
+
+EACH f single A =  single f A
+
+A EACHLEFT f B = A EACHBOTH f single B
+
+A EACHRIGHT f B = single A EACHBOTH f B
+</pre></center>
+
+<a name="sinh">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#single"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sketch"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sinh<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      sinh A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-c.html#cosh">cosh</a>,
+                     <a href="help-t.html#tanh">tanh</a>,
+                     <a href="help-s.html#sin">sin</a>
+</dl>
+
+<p>The operation <i>sinh</i> implements the hyperbolic sine function of mathematics. It produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>hyperbolic sine of the corresponding real</td></tr>
+<tr><td>integer</td><td>hyperbolic sine of the corresponding real</td></tr>
+<tr><td>real</td><td>hyperbolic sine of angle A given in radians</td></tr>
+<tr><td>character</td><td>fault <i>?sinh</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?sinh</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<pre>
+     sinh  l  -1  0.5  `a  &quotabc;  ??error
+1.1752 -1.1752 0.521095 ?sinh ?sinh ?error
+</pre>
+
+<b>Equation</b>
+
+<center><pre>
+sinh opposite A = opposite sinh A
+</pre></center>
+
+<a name="sketch">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sinh"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#solitary"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sketch<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      picture operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      sketch A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#picture">picture</a>,
+                     <a href="help-d.html#diagram">diagram</a>,
+                     <a href="help-p.html#paste">paste</a>,
+                     <a href="help-p.html#positions">positions</a>,
+                     <a href="help-d.html#display">display</a>,
+                     <a href="help-s.html#set">set</a>
+</dl>
+
+<p>The operation <i>sketch</i> computes a character table that gives the <a href="help-p.html#picture"><i>picture</i></a> of the array A as it is displayed in sketch mode.  The details of the display of atoms and empty arrays is affected by the setting of the decor/nodecor switch.</p>
+
+<center><pre>
+sketch tell 1 3
+</pre></center>
+
+<p>The <i>sketch</i> of an array provides an abbreviated display that often serves as an adequate output format for data.  The entry for <a href="help-p.html#picture"><i>picture</i></a> has a more complete description of the picturing mechanism.</p>
+
+<b>Definition</b>
+
+<pre>
+sketch IS OPERATION A {
+   Old_setting := set &quotsketch;
+   Result := picture A;
+   set Old_setting;
+   Result }
+</pre>
+
+<br>
+<b>Equation</b>
+
+<center><pre>
+sketch sketch A = sketch A
+</pre></center>
+
+<a name="solitary">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sketch"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#solve"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Solitary<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      construction operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      solitary A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#single">single</a>,
+                     <a href="help-l.html#list">list</a>,
+                     <a href="help-s.html#shape">shape</a>,
+                     <a href="help-h.html#hitch">hitch</a>,
+                     <a href="help-l.html#link">link</a>
+</dl>
+
+<p>The operation <i>solitary</i> returns a list of length one holding A as its only item. The result is said to be a solitary.</p>
+
+<pre>
+     solitary 2 3
++---+
+|2 3|
++---+
+
+     set &quotdiagram; solitary 3
++-+
+|3|
++-+
+
+     set &quotsketch; solitary 3
+3
+</pre>
+
+<p>The first example illustrates that a <i>solitary</i> of a pair contains the pair as its item.  The second example illustrates that the <i>solitary</i> of an atom is different from the atom itself.  However, as the third example shows, in sketch mode, the display of the <i>solitary</i> of an atom is not framed and hence may have the same display as the atom.</p>
+
+<b>Definition</b>
+
+<pre>
+solitary IS OPERATION A { A hitch Null }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+first solitary A = A
+
+solitary A = A hitch Null
+
+solitary A = Null append A
+
+solitary A = list solitary A
+</pre></center>
+
+<a name="solve">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#solitary"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sort"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Solve<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      linear algebra operation, defined by the linalg CallC package
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A solve B            solve A B
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#inverse">inverse</a>,
+                     <a href="help-i.html#innerproduct">innerproduct</a>,
+                     <a href="help-i.html#inner">inner</a>,
+                     <a href="help-o.html#outer">outer</a>
+</dl>
+
+<p>The operation <i>solve</i> is incorporated in Q'Nial as a <i>CallC</i> capability.  It solves the set of linear equations described by the equation</p>
+
+<center><pre>
+A x = B
+</pre></center>
+
+<p>in matrix notation, where A is an N by N matrix and B is a vector of length N. Provided that the matrix A is not sin- gular, the result is the vector of length N satisfying the equation (within roundoff error).</p>
+
+<p>In the computation, a numerical estimate is made of the singularity of A.  If A cannot be shown to be non-singular with a safe margin, the result of the operation is the fault <i>?singular</i>.</p>
+
+<p>The operation is extended to solve more than one right hand side.  If B is an N by M matrix, columns of N are viewed as right hand sides and the result is an N by M matrix with each column being the solution of the corresponding column.</p>
+
+<p>There is a cover function for <i>solve</i> in <a href="help/initial/defs.ndf"><i>defs.ndf</i></a> in directory initial.</p>
+
+<pre>
+     seed .314159;
+     A := ceiling (100. * (3 3 reshape random 9))
+ 8 75 24
+63 31 99
+20 95 48
+
+     B := ceiling (10. *  random 3)
+4 9 5
+
+     X := solve A B
+0.787745 0.111836 -0.445402
+
+     A innerproduct X
+4. 9. 5.
+
+     I := 0 1 2 OUTER = 0 1 2 * 1.0
+1. 0. 0.
+0. 1. 0.
+0. 0. 1.
+
+     A solve I
+ 0.614865   0.102516 -0.518872
+0.0810811 0.00745573 -0.055918
+-0.416667 -0.0574713  0.347701
+
+     inverse A
+ 0.614865   0.102516 -0.518872
+0.0810811 0.00745573 -0.055918
+-0.416667 -0.0574713  0.347701
+
+     A solve I = inverse A
+l
+</pre>
+
+<p>The final example shows that if the right hand side is set to the unit matrix of size N, solving it with A is equivalent to computing the inverse.</p>
+
+<p>For large examples, it is always faster and more accurate to solve a system of equations directly using</p>
+
+<center><pre>
+A solve B
+</pre></center>
+
+<p>than to compute the inverse and do the inner product operation:</p>
+
+<center><pre>
+inverse A innerproduct B.
+</pre></center>
+
+<p>The first form does about half as many arithmetic steps.</p>
+
+<a name="sort">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#solve"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#split"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sort<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      comparative transformer
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      SORT f A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-g.html#grade">grade</a>
+</dl>
+
+<p>The transformer <i>sort</i> returns the list of items of array A ordered according to the comparator f.  The comparator f is the operation to be used in comparisons.  The operations &lt;= and &gt;= are the usual comparators.  If &gt;= is the comparator in sort, the items are returned in decreasing order.  If &lt;= is the comparator in <i>sort</i>, the items are returned in increasing order.</p>
+
+<pre>
+     SORT &gt;= (count 10)
+10 9 8 7 6 5 4 3 2 1
+
+     SORT &lt;=(&quotsome; &quotwords; &quotnot; &quotin; &quotorder;)
+in not order some words
+</pre>
+
+<b>Definition</b>
+
+<pre>
+     SORT IS TRANSFORMER f OPERATION A { GRADE f A choose A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape SORT f A = shape A
+
+N an integer ==&gt; SORT &lt;= tell N = tell N
+
+SORT f (SORT f A) = SORT f A
+</pre></center>
+
+<p>The sort is done internally using a list merge sort algorithm from Knuth's Vol 3 Searching and Sorting, Algorithm 5.2.5-L, improved according to exercise 12.</p>
+
+<a name="split">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sort"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sqrt"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Split<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary restructuring operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      I split A            split I A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#blend">blend</a>,
+                     <a href="help-p.html#partition">partition</a>,
+                     <a href="help-r.html#raise">raise</a>,
+                     <a href="help-r.html#rows">rows</a>,
+                     <a href="help-c.html#cols">cols</a>
+</dl>
+
+<p>The operation <i>split</i> restructures array A by partitioning the items of A into arrays using the given axis numbers in I to determine the partition.  The axis numbers in I indicate the axes that are to become axes of the items.  The remaining axes are axes of the result.  The argument I must be a diverse array of integers in <a href="help-t.html#tell"><i>tell</i></a> <a href="help-v.html#valence"><i>valence</i></a> A.</p>
+
+<pre>
+     A := 2 3 reshape count 6
+1 2 3
+4 5 6
+
+     1 split A
++-----+-----+
+|1 2 3|4 5 6|
++-----+-----+
+     B := 2 3 4 reshape count 24
+1  2  3  4   13 14 15 16
+5  6  7  8   17 18 19 20
+9 10 11 12   21 22 23 24
+     2 split B
++-----------+-----------+-----------+
+|1 2 3 4    |5 6 7 8    |9 10 11 12 |
++-----------+-----------+-----------+
+|13 14 15 16|17 18 19 20|21 22 23 24|
++-----------+-----------+-----------+
+     1 split B
++--------+--------+--------+--------+
+|1 5 9   |2 6 10  |3 7 11  |4 8 12  |
++--------+--------+--------+--------+
+|13 17 21|14 18 22|15 19 23|16 20 24|
++--------+--------+--------+--------+
+     1 2 split B
++----------+-----------+
+|1  2  3  4|13 14 15 16|
+|5  6  7  8|17 18 19 20|
+|9 10 11 12|21 22 23 24|
++----------+-----------+
+     1 0 split B
++----+-----+-----+-----+
+|1 13| 2 14| 3 15| 4 16|
+|5 17| 6 18| 7 19| 8 20|
+|9 21|10 22|11 23|12 24|
++----+-----+-----+-----+
+</pre>
+
+<p>The first example shows that splitting along the last axis of an array is equivalent to taking its rows.  The second example shows that the <i>split</i> of the middle axis of a trivalent array is a table, with its shape given by the first and third axes.  The last two examples illustrate two axes being &quotpushed; down&quot.;  The result is a list with tables as items.  The order of the axes in the item is determined by the order of the items in I.</p>
+
+<p>The operation <a href="help-b.html#blend"><i>blend</i></a> uses the same control argument to undo the effect of a <i>split</i>.  A common requirement is to partition an array along its axes, apply some operation f to the resulting items and to rebuild the result into its original form.  <a href="help-p.html#partition"><i>Partition</i></a> is used to do this without computing all the intermediate structures.</p>
+
+<b>Equations</b>
+
+<center><pre>
+valence A ~= 0 ==&gt; valence A - 1 split A = rows A
+
+diverse I and (I allin tell valence A) ==&gt;
+shape first (I split A) = list (I choose shape A)
+
+diverse I and (I allin tell valence A) ==&gt;
+shape (I split A) = shape A except (I choose shape A)
+</pre></center>
+
+<a name="sqrt">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#split"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#status"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sqrt<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      sqrt A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-e.html#exp">exp</a>,
+                     <a href="help-l.html#ln">ln</a>,
+                     <a href="help-l.html#log">log</a>,
+                     <a href="help-a.html#abs">abs</a>,
+                     <a href="help-p.html#power">power</a>
+</dl>
+
+<p>The operation <i>sqrt</i> implements the square root function of mathematics.  It produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>square root of the corresponding real</td></tr>
+<tr><td>integer</td><td>square root of the corresponding real</td></tr>
+<tr><td>real</td><td>square root of A</td></tr>
+<tr><td>character</td><td>fault <i>?sqrt</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?sqrt</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<pre>
+     sqrt  o  1  0.5  `a  &quotabc;  ??error
+0. 1. 0.707107 ?sqrt ?sqrt ?error
+
+     sqrt  4.0
+2.
+</pre>
+
+<b>Definition</b>
+
+<pre>
+sqrt IS OPERATION A (A power .5)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+sqrt A power 2 = A (within roundoff error)
+</pre></center>
+
+<a name="status">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sqrt"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#step"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Status<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Status
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-f.html#filestatus">filestatus</a>
+</dl>
+
+<p>The expression <i>status</i> provides six numbers indicating the use of memory by Q'Nial.  For the PCDOS version, the list contains real numbers.  For the other versions, the list contains integers.  In order of display, the numbers are as follows:</p>
+
+<ol>
+<li>Number of free words in the workspace.  This is an indication of how full the workspace is.  On the PCDOS version, one word is two bytes long, on other versions it is 4 bytes.
+
+<li>Number of words in the largest free block.  This indicates an upper limit to the number of integers that can be in a largest size array.
+
+<li>Number of free blocks.  This is a measure of the fragmentation of memory. The number of free words divided by the number of free blocks gives the average block size.
+
+<li>Total number of words in workspace.  This indicates the current size of the workspace.  It can grow provided the system has space available.
+
+<li>Stack size in words.  This indicates the number of words in use in the internal Q'Nial stack.  It can grow if needed provided the system has space available.
+
+<li>Atom table size in words.  This indicates the number of words in the table used to keep track of phrases and faults, which are stored uniquely.  It can grow if needed provided the system has space available.
+</ol>
+
+<p>The starting workspace size can be specified as a parameter to the <i>nial</i> command that starts a session.</p>
+
+<pre>
+     status
+6076.  5496.  8.  32768.  1000.  2000.
+</pre>
+
+<a name="step">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#status"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#string"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Step<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Step
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#break">break</a>,
+                     <a href="help-r.html#resume">resume</a>,
+                     <a href="help-c.html#callstack">callstack</a>
+</dl>
+
+<p>The expression <i>Step</i> is used in debugging a definition that has been suspended using <a href="help-b.html#break"><i>Break</i></a> or <i>&ltCtrl; B&gt;</i>.  The effect of <i>step</i> is to trace the execution of the next expression in an expression sequence and suspend execution again.  If the current expression is the last one in the expression sequence, the effect is the same as using <a href="help-r.html#resume"><i>Resume</i></a>.</p>
+
+<a name="string">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#step"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sublist"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">String<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      conversion operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      string A
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#phrase">phrase</a>,
+                     <a href="help-f.html#fault">fault</a>,
+                     <a href="help-i.html#isstring">isstring</a>,
+                     <a href="help-c.html#char">char</a>,
+                     <a href="help-c.html#charrep">charrep</a>,
+                     <a href="help-t.html#tolower">tolower</a>,
+                     <a href="help-t.html#toupper">toupper</a>
+</dl>
+
+<p>The operation <i>string</i> is used to convert an atom to a string that corresponds to the display of the atom.  The form of the string is not sensitive to the setting of the decor/nodecor display mode, returning the sketch of the undecorated atom.  The <i>string</i> of a string is the string itself.</p>
+
+<pre>
+     set &quotdiagram; ; string &quotabc;
++-+-+-+
+|a|b|c|
++-+-+-+
+     string 'abc'
++-+-+-+
+|a|b|c|
++-+-+-+
+
+     string 2.35
++-+-+-+-+
+|2|.|3|5|
++-+-+-+-+
+</pre>
+
+<p>The <i>string</i> of a phrase is the <i>string</i> of the message in the phrase.  Thus, <i>string</i> is the left inverse of <a href="help-p.html#phrase"><i>phrase</i></a>.</p>
+
+<b>Equations</b>
+
+<center><pre>
+isstring S ==&gt; string S = S
+
+isstring S ==&gt; string phrase S = S
+
+list string S = string S
+</pre></center>
+
+<a name="sublist">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#string"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#sum"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sublist<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary selection operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A sublist B
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cull">cull</a>,
+                     <a href="help-e.html#except">except</a>,
+                     <a href="help-f.html#front">front</a>,
+                     <a href="help-r.html#rest">rest</a>
+</dl>
+
+<p>The operation <i>sublist</i> returns a list of items of B chosen according to the list of booleans given in A, selecting those items of B where the corresponding item of A is <a href="help-t.html#true"><i>true</i></a>.  If the <a href="help-t.html#tally"><i>tally</i></a> of A is not the same as the <a href="help-t.html#tally"><i>tally</i></a> of B, it is coerced to have the same <a href="help-t.html#tally"><i>tally</i></a> as B using <a href="help-r.html#reshape"><i>reshape</i></a>.  If B is not a list, the result is the same as applying <a href="help-s.html#sublist"><i>sublist</i></a> to the <a href="help-l.html#list"><i>list</i></a> of B.  The <a href="help-t.html#tally"><i>tally</i></a> of the result is the <a href="help-s.html#sum"><i>sum</i></a> of A after it has been extended, if necessary.</p>
+
+<pre>
+     lolloll sublist 2 3 4 8 5 10 6
+2 4 8 10 6
+
+     lo sublist 'hello world'
+hlowrd
+</pre>
+
+<p>The first example shows the use of <a href="help-s.html#sublist"><i>sublist</i></a> to select the items of the list that are even numbers.  The second example uses the left argument cyclicly.</p>
+
+<b>Equations</b>
+
+<center><pre>
+shape (A sublist B) = sum (tally B reshape A)
+
+list (A sublist B) = A sublist B
+
+A sublist list B = A sublist B
+
+l sublist A = list A
+
+o sublist A = Null
+</pre></center>
+
+<a name="sum">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sublist"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#system"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Sum<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      multi pervasive arithmetic operation, a primitive
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     sum A         + A
+                     A + B         A plus B
+</pre>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#plus">plus</a>,
+                     <a href="help-m.html#minus">minus</a>,
+                     <a href="help-t.html#times">times</a>,
+                     <a href="help-d.html#divide">divide</a>,
+                     <a href="help-o.html#opposite">opposite</a>
+</dl>
+
+<p>The operation <i>sum</i> adds the items of a simple array of numbers, reducing them to a single number that is their sum.  The <a href="help-t.html#type"><i>type</i></a> of the result is the highest type of the items.  The operation is extended to non-simple arrays by the multi pervasive mechanism.  For an empty simple array, the result is a &quotzero;&quot; of the type of the archetype.  The symbol + is a synonym for <a href="help-s.html#sum"><i>sum</i></a>.  The operation <a href="help-p.html#plus"><i>plus</i></a> is <a href="help-s.html#sum"><i>sum</i></a> restricted to use on pairs.</p>
+
+<pre>
+     R gets l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER + R
+     2       3     3.5  ?A  ?A  ?error
+     3       4     4.5  ?A  ?A  ?error
+   3.5     4.5      5.  ?A  ?A  ?error
+?A      ?A      ?A      ?A  ?A  ?A
+?A      ?A      ?A      ?A  ?A  ?A
+?error  ?error  ?error  ?A  ?A  ?error
+
+     sum 3. 45. 23. 18. 3.5
+92.5
+
+     sum (3 4 5) (2 3 2) (0 2 4) (1 1 1)
+6 10 12
+
+     sum Null
+0
+</pre>
+
+<p>The first example shows the result of <a href="help-s.html#sum"><i>sum</i></a> on all combinations of types of atoms.  The second last example shows that pervasive extension of <a href="help-s.html#sum"><i>sum</i></a> adds a list of triples in an item by item fashion.  The last example shows that the <a href="help-s.html#sum"><i>sum</i></a> of an empty array is 0.</p>
+
+<b>Equations</b>
+
+<center><pre>
+A sum B = B sum A
+
+sum single A = EACH (sum single) A
+
+sum EACH sum A =f sum link A
+
+tally link A = sum EACH tally A
+</pre></center>
+
+<a name="system">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#sum"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">System<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      System
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#copyright">copyright</a>,
+                     <a href="help-v.html#version">version</a>,
+                     <a href="help-n.html#nialroot">nialroot</a>
+</dl>
+
+<p>The expression <i>system</i> returns a phrase indicating the operating system in use.  Possible values are PCDOS, OS2 or UNIX.</p>
+
+<pre>
+     System
+PCDOS
+</pre>
+
+<a name="symbols">
+<hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-s.html#system"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-t.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-s.html#symbols"><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162418im_/http://www.nial.com/images/pink_bullet.gif">Symbols<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      symbols Sw
+<dd><img border="0" src="/web/19980204162418im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#status">status</a>,
+                     <a href="help-d.html#defedit">defedit</a>,
+                     <a href="help-h.html#host">host</a>,
+                     <a href="help-f.html#filestatus">filestatus</a>,
+                     <a href="help-s.html#see">see</a>
+</dl>
+
+<p>The operation <i>symbols</i> is used to get information on the use of names in the workspace.  If <i>Sw</i> is 0, the result is a list of pairs giving the names and roles of all the user defined names.  If <i>Sw</i> is 1, the result is the similar list for both system and user names.  The roles and their meaning are as follows:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Role</b></th><th><b>Meaning</b></th>
+</tr>
+<tr><td>ident</td><td>identifier</td></tr>
+<tr><td>var</td><td>variable</td></tr>
+<tr><td>expr</td><td>expression</td></tr>
+<tr><td>op</td><td>operation</td></tr>
+<tr><td>tr</td><td>transformer</td></tr>
+<tr><td>res</td><td>reserved word</td></tr>
+</table>
+</p>
+
+<pre>
+     A := count 5;
+
+     foo IS first rest
+
+     symbols 0
++-----+------+-----------+
+|A var|FOO op|LATENT expr|
++-----+------+-----------+
+</pre>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19980204162418/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19980204162418/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19980204162418/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19980204162418/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19980204162418/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19980204162418/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19980204162418/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19980204162418/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19980204162418/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19980204162418/http://www.nial.com/">
+</map>
+
+<a href="/web/19980204162418/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19980204162418im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 16:24:18 Feb 04, 1998 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:21 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.313
+  exclusion.robots: 0.137
+  exclusion.robots.policy: 0.118
+  esindex: 0.018
+  cdx.remote: 24.208
+  LoadShardBlock: 286.566 (3)
+  PetaboxLoader3.datanode: 210.603 (4)
+  PetaboxLoader3.resolve: 258.144 (2)
+  load_resource: 210.423
+-->

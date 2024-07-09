@@ -1,0 +1,1244 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-p.html","19980204162330","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "886609410");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-P</title>
+</head>
+
+<body background="/web/19980204162330im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-o.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-q.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="pack">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#pair"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Pack<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      pack A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#eachall">eachall</a>,
+                     <a href="help-e.html#eachboth">eachboth</a>
+</dl>
+
+<p>The operation <i>pack</i> interchanges the top two levels of an array with equally shaped items.  If A is an array with items all of the same shape, the result is an array of that shape, with items having the shape that A has.  If A does not have items of the same shape but all the items with more than one item are of the same shape, it is modified by replicating the items with one item to that shape before interchanging levels.  Otherwise it returns the fault <i>?conform</i>.</p>
+
+<p>The items of the result are the arrays of items of A from corresponding positions.  <i>Pack</i> is used implicitly in all multi pervasive operations.</p>
+
+<pre>
+     pack (2 3 4) (4 5 6)
++---+---+---+
+|2 4|3 5|4 6|
++---+---+---+
+     pack 'ab' 'cd' 'ef' 'gh'
++----+----+
+|aceg|bdfh|
++----+----+
+     pack (tell 2 3) (count 2 3)
++---------+---------+---------+
+|+---+---+|+---+---+|+---+---+|
+||0 0|1 1|||0 1|1 2|||0 2|1 3||
+|+---+---+|+---+---+|+---+---+|
++---------+---------+---------+
+|+---+---+|+---+---+|+---+---+|
+||1 0|2 1|||1 1|2 2|||1 2|2 3||
+|+---+---+|+---+---+|+---+---+|
++---------+---------+---------+
+
+     pack (2 3 4) 5 [2 3] 'abc'
++-----------+-----------+-----------+
+|+-+-+---+-+|+-+-+---+-+|+-+-+---+-+|
+||2|5|2 3|a|||3|5|2 3|b|||4|5|2 3|c||
+|+-+-+---+-+|+-+-+---+-+|+-+-+---+-+|
++-----------+-----------+-----------+
+</pre>
+
+<p>The first example shows that a <i>pack</i> of a pair of triples is a triple of pairs. The second shows that a <i>pack</i> of a quadruple of pairs is a pair of quadruples. The third shows that the <i>pack</i> of a pair of 2 by 3 tables is a 2 by 3 table of pairs.  The final example shows a case where replication occurs.  The first and last items have shape [3].  The second and third items are an atom and a solitary and hence can be replicated.</p>
+
+<b>Equations</b>
+
+<center><pre>
+equal EACH shape A and not empty pack A ==&gt; pack pack A = A
+
+pack pack pack A = pack A
+
+pack single A = EACH single A
+
+pack solitary A = EACH solitary A
+
+empty A ==&gt; pack A = single A
+
+simple A ==&gt; pack A = single A
+</pre></center>
+
+<a name="pair">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#pack"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#parse"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Pair<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary construction operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A pair B         pair A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#linke">link</a>,
+                     <a href="help-h.html#hitch">hitch</a>,
+                     <a href="help-a.html#append">append</a>,
+                     <a href="help-r.html#reshape">reshape</a>
+</dl>
+
+<p>The operation <i>pair</i> has no effect on a pair but converts all other arrays to a pair by reshaping the array with shape 2.  Used in infix notation, it has the effect of forming a pair from the two arguments.  An explicit pair can also be achieved with list or strand notation.  The operation is useful in functional expressions where it is an argument to a transformer.</p>
+
+<pre>
+     3 pair 4 5
++-+---+
+|3|4 5|
++-+---+
+     pair 3 4 5
+3 4
+
+     pair single 3 4 5
++-----+-----+
+|3 4 5|3 4 5|
++-----+-----+
+</pre>
+
+<p>The major use of <i>pair</i> is as an operation applied using a transformer.</p>
+
+<b>Definition</b>
+
+<pre>
+pair IS OPERATION A (2 reshape A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+pair pair A = pair A
+
+A OUTER pair B = A cart B
+</pre></center>
+
+<p>The automatic pairing of the arguments of many predefined operations is removed in Version 6.0.  If an operation requires two arguments and two are not provided, a fault message is returned.  In the earlier versions of Q'Nial, the operation <i>pair</i> would be used to coerce the arguments.  The earlier design made many simple programming errors difficult to find.</p>
+
+<a name="parse">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#pair"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#partition"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Parse<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      evaluation operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      parse Tokenstream
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#scan">scan</a>,
+                     <a href="help-d.html#deparse">deparse</a>,
+                     <a href="help-d.html#descan">descan</a>,
+                     <a href="help-d.html#defedit">defedit</a>,
+                     <a href="help-e.html#eval">eval</a>,
+                     <a href="help-e.html#execute">execute</a>
+</dl>
+
+<p>The operation <i>parse</i> carries out the internal parsing capability of the interpreter.  Its argument is a token stream produced by <a href="help-s.html#scan"><i>scan</i></a> or <a href="help-d.html#deparse"><i>deparse</i></a>.  The result is the parse tree recording the semantic intent of the input.  The parse tree is a highly encoded form of nested array designed for efficient processing.</p>
+
+<pre>
+     parse scan 'sum 23 45'
++---+-----------------------------+
+|100|+-+-----+-------------------+|
+|   ||4|3 4 3|+-+-------+-------+||
+|   || |     ||8|1 23 23|1 45 45|||
+|   || |     |+-+-------+-------+||
+|   |+-+-----+-------------------+|
++---+-----------------------------+
+
+     parse scan 'foo IS first'
++---+-----------------------------+
+|100|+--+---------------+------+-+|
+|   ||11|+--+----------+|3 47 3|1||
+|   ||  ||22|2 160 7459||      | ||
+|   ||  |+--+----------+|      | ||
+|   |+--+---------------+------+-+|
++---+-----------------------------+
+</pre>
+
+<p>The first example gives the parse tree corresponding to an application of an operation to a strand of constants.  The second example gives the parse tree for the definition of &quot;<i>foo</i>&quot; as the predefined operation <i>first</i>.  The small integers that appear as the first items of the arrays serve as tags to indicate the kind of node that is represented in the parse tree.  They are used by the <a href="help-e.html#eval"><i>eval</i></a> and <a href="help-d.html#deparse"><i>deparse</i></a> operations.  The representation of parse trees is implementation dependent and is not intended for program manipulation.</p>
+
+<b>Equations</b>
+
+<center><pre>
+Ts a token stream ==&gt; parse deparse parse Ts = parse Ts
+
+S a string ==&gt; eval parse scan S = execute S
+</pre></center>
+
+<a name="partition">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#parse"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#pass"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Partition<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     [I,J] PARTITION f A
+                     [I] PARTITION f A
+</pre>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#split">split</a>,
+                     <a href="help-b.html#blend">blend</a>,
+                     <a href="help-r.html#raise">raise</a>,
+                     <a href="help-r.html#rows">rows</a>,
+                     <a href="help-c.html#cols">cols</a>,
+                     <a href="help-m.html#mix">mix</a>
+</dl>
+
+<p>The transformer <i>partition</i> is used to apply operation f to partitions of the array A, placing the results of the applications as partitions of the result array.</p>
+
+<p>The partitions of A are determined by the axis numbers in I, using <i>(I <a href="help-s.html#split">split</a> A)</i> to form them implicitly.  The results of applying f, viewed as an intermediate array R, are combined into the final result, using <i>(J <a href="help-b.html#blend">blend</a> R)</i>, to place the axes of the items of R into the final result.  If the left argument is a solitary, it is assumed to be used as the argument to both split and <a href="help-b.html#blend"><i>blend</i></a> implicitly.</p>
+
+<p>For a table A, I = 1, f being <a href="help-r.html#reverse"><i>reverse</i></a>, the effect is to reverse the rows of A. In general, if I = J and is a single axis number and f maps a list to one of the same length, the effect is to apply f to the lists formed by pushing axis I down, resulting in an array of the same shape as A.  Two dimensional partitions of a three dimensional array can be mapped using an I with <a href="help-t.html#tally"><i>tally</i></a> 2.</p>
+
+<pre>
+     [1] PARTITION reverse (3 5 reshape count 15)
+ 5  4  3  2  1
+10  9  8  7  6
+15 14 13 12 11
+
+     [0] PARTITION (2 rotate) (6 6 reshape tell 36)
+12 13 14 15 16 17
+18 19 20 21 22 23
+24 25 26 27 28 29
+30 31 32 33 34 35
+ 0  1  2  3  4  5
+ 6  7  8  9 10 11
+
+     setformat '%4.2f';
+     seed .5 ; A:=2 3 3 reshape random 18
+0.50 0.43 0.12   0.03 0.81 0.24
+0.77 0.73 0.89   0.58 0.98 0.47
+0.98 0.66 0.16   0.24 0.16 0.50
+     B gets 1 2 split A
++--------------+--------------+
+|0.50 0.43 0.12|0.03 0.81 0.24|
+|0.77 0.73 0.89|0.58 0.98 0.47|
+|0.98 0.66 0.16|0.24 0.16 0.50|
++--------------+--------------+
+     C gets EACH inverse B
++-----------------+-----------------+
+|-7.43  0.18  4.69|-2.51  2.21 -0.90|
+|11.78 -0.62 -5.55| 1.09  0.25 -0.76|
+|-3.27  1.48  0.51| 0.83 -1.13  2.69|
++-----------------+-----------------+
+     1 2 blend C
+-7.43  0.18  4.69   -2.51  2.21 -0.90
+11.78 -0.62 -5.55    1.09  0.25 -0.76
+-3.27  1.48  0.51    0.83 -1.13  2.69
+     [1 2] PARTITION inverse A
+-7.43  0.18  4.69   -2.51  2.21 -0.90
+11.78 -0.62 -5.55    1.09  0.25 -0.76
+-3.27  1.48  0.51    0.83 -1.13  2.69
+</pre>
+
+<b>Definition</b>
+
+<pre>
+PARTITION IS TRANSFORMER f OPERATION IJ A{
+   IF tally IJ = 2 THEN
+      I J := IJ;
+   ELSE
+      I J := 2 reshape single first IJ;
+   ENDIF;
+   J blend (EACH f (I split A)) }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+I split A = [I,Null] PARTITION single A
+
+I blend A = [Null,I] PARTITION first A
+
+EACH f A = [Null,Null] PARTITION (single f first) A
+</pre></center>
+
+<a name="pass">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#partition"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#paste"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Pass<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      pass A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#list">list</a>,
+                     <a href="help-r.html#reshape">reshape</a>
+</dl>
+
+<p>The operation <i>pass</i> is the identity operation for arrays.  It returns the argument A.  Pass is used when expressing computations in a functional style using an atlas (a list of operations).</p>
+
+<pre>
+     pass 2 3 4
+2 3 4
+     pass 'hello world'
+hello world
+</pre>
+
+<b>Definition</b>
+
+<pre>
+pass IS OPERATION A { A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+pass A = first single A
+
+pass A = first solitary A
+</pre></center>
+
+<a name="paste">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#pase"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#phrase"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Paste<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      picture operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Sw paste A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#picture">picture</a>,
+                     <a href="help-s.html#sketch">sketch</a>,
+                     <a href="help-d.html#diagram">diagram</a>,
+                     <a href="help-p.html#position">positions</a>
+</dl>
+
+<p>The operation <i>paste</i> combines character tables in a two dimensional layout.  It is used internally by <a href="help-p.html#picture"><i>picture</i></a> and can be used to create modifications of the standard picture output to improve the display of results.  The left argument <i>Sw</i> has six parameters that control the layout and  the right argument A is the array of tables to be combined.  The components of argument <i>Sw</i> are the following:</p>
+
+<p><b>Vertical edge</b> spacing, an integer indicating the number of blank lines to be put between the rows of items.</p>
+
+<p><b>Horizontal edge</b> spacing, an integer indicating the number of blank spaces to be put between the columns of items.</p>
+
+<p><b>Vertical line</b> indicator.  If the value is 1, vertical lines are drawn between columns.  If it is 0, they are not.</p>
+
+<p><b>Horizontal line</b> indicator.  If the value is 1, horizontal lines are drawn between rows.  If it is 0, they are not.</p>
+
+<p><b>Vertical justification</b> indicator.  This is either a single integer indicating the same justification for all fields or an array of integers of the same shape as A indicating the justification for each item of A.  The codes are: 0 for top justification, 1 for centered and 2 for bottom justification.</p>
+
+<p><b>Horizontal justification</b> indicator.  This is either a single integer indicating the same justification for all fields, or an array of integers of the same shape as A indicating the justification for each item of A.  The codes are:  0 for left justification, 1 for centered and 2 for right justification.</p>
+
+<p>If either line indicator is 1, the entire result is boxed.</p>
+
+<pre>
+     1 2 1 3 1 1 paste EACH sketch (2 4 reshape 'some' 'words' 'of' 'wisdom')
++--------+---------+------+----------+
+|        |         |      |          |
+|  some  |  words  |  of  |  wisdom  |
+|        |         |      |          |
++--------+---------+------+----------+
+|        |         |      |          |
+|  some  |  words  |  of  |  wisdom  |
+|        |         |      |          |
++--------+---------+------+----------+
+</pre>
+
+<a name="phrase">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#paste"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#pi"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Phrase<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      conversion operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      phrase S
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#string">string</a>,
+                     <a href="help-f.html#fault">fault</a>,
+                     <a href="help-t.html#tonumber">tonumber</a>,
+                     <a href="help-i.html#isphrase">isphrase</a>
+</dl>
+
+<p>The operation <i>phrase</i> converts a string into a phrase with the same content. It returns phrases and faults unchanged and converts other atoms after coercing them to their string equivalents.  The resulting phrase may contain blanks.  There is a one-to-one correspondence between phrases and strings.</p>
+
+<pre>
+     phrase '(613) 549-2222'
+(613) 549-2222
+
+     set &quotdecor; ; EACH phrase o 613 3.5 `A 'Now' &quotWow; ?error
+&quoto; &quot613; &quot3.5; &quotA; &quotNow; &quotWow; &quoterror;
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+isphrase P ==&gt; phrase string P = P
+
+isstring S ==&gt; string phrase S = S
+</pre></center>
+
+<a name="pi">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#phrase"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#pick"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Pi<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      constant expression
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Pi
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#real">real</a>,
+                     <a href="help-r.html#random">random</a>,
+                     <a href="help-l.html#ln">ln</a>
+</dl>
+
+<p>The expression <i>pi</i> returns the real number which is the ratio of the circumference of a circle to its diameter:  3.159265358979317.  Pi is useful for those doing scientific computing.</p>
+
+<pre>
+     setformat '%15.12f' ; Pi
+ 3.141592653590
+</pre>
+
+<b>Equation</b>
+
+<center><pre>
+Pi = arccos -1 (within roundoff error)
+</pre></center>
+
+<a name="pick">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#pi"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#picture"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Pick<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      selection operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      I pick A            pick I A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#choose">choose</a>,
+                     <a href="help-t.html#take">take</a>,
+                     <a href="help-d.html#drop">drop</a>,
+                     <a href="help-f.html#first">first</a>,
+                     <a href="help-f.html#find">find</a>
+</dl>
+
+<p><i>Pick</i> is the fundamental selection operation for arrays.  The normal use is that I is an address for A.  The result is the item that is located at address I in 0-origin addressing.  If I is an integer and A is a list, I is converted to a solitary integer to make it an address for a list.  If I is not a valid address for A, the result is the fault <i>?address</i>.</p>
+
+<pre>
+     [3] pick 3 6 23 46 57 25
+46
+
+     3 pick 3 6 23 46 57 25
+46
+
+     A := 2 3 reshape &quota; &quotlist; &quotof; &quotwords; &quotas; &quotphrases;
+a     list of
+words as   phrases
+
+     0 2 pick A
+of
+
+     5 5 pick A
+?address
+</pre>
+
+<p>In the first example, <i>pick</i> selects the fourth item because of 0-origin indexing.  In the second example, 3 is not an address of the list (its addresses are solitary integers) but is converted to solitary 3.  Thus, an integer can be used as an address of a list for pick.  The third example shows that an address for a table is a pair of integers.  The last example shows that picking out of range returns a fault.</p>
+
+<p>The concept of picking closely corresponds to subscript notation in mathematics.  Q'Nial supports a direct notation for subscripting a variable: <i>Var@I</i>.  This notation, called the at notation, can be used on both the left and right of an assignment expression.  Its use on the right is equivalent to pick.</p>
+
+<b>Equations</b>
+
+<center><pre>
+I pick A = (list I) pick A
+
+I in grid A ==&gt; I pick grid A = I
+
+I in grid A ==&gt; I pick (EACH f A) = f (I pick A)
+
+A choose B = A EACHLEFT pick B
+
+I pick A = [I] reach A
+</pre></center>
+
+<a name="picture">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#pick"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#place"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Picture<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      picture operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      picture A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#sketch">sketch</a>,
+                     <a href="help-d.html#diagram">diagram</a>,
+                     <a href="help-d.html#display">display</a>,
+                     <a href="help-p.html#paste">paste</a>,
+                     <a href="help-p.html#positions">positions</a>,
+                     <a href="help-s.html#set">set</a>
+</dl>
+
+<p>The operation <i>picture</i> computes a character table that describes the array A.</p>
+
+<p>An atom is displayed directly.  A nonatomic array is displayed as a tableau of rows and columns arranged to allow sufficient space for the largest items.  In most cases, the items of the array are displayed within a frame diagram.</p>
+
+<p>The operation is affected by the setting of two internal switches: <i>diagram/sketch</i> and <i>decor/nodecor</i>.  The first controls the use of frames in the pictures.  The second controls the decoration of atoms, solitaries, strings and empty arrays.</p>
+
+<p>In diagram mode, a nonatomic array is displayed with a frame and the upper left corner has an &quoto;&quot; if it is a single.  In sketch mode, a simple array, one having atomic items, is displayed without a frame.  A non-simple array has a frame and a nonatomic single has an &quoto;&quot; in the upper left corner of the frame.</p>
+
+<p>The decor/nodecor switch pictures atoms in an undecorated manner if nodecor is set.  If sketch mode is also set, strings and phrases appear the same.  The decor mode pictures atoms so that they can be distinguished:  characters are preceded by a grave symbol `, phrases by a double quote &quot; and faults by a question mark ?.  In sketch mode with decor set, a string is enclosed in quotes and a simple solitary is placed in brackets.</p>
+
+<p>In sketch mode an empty array has an empty picture, whereas in diagram mode, the picture of an empty array is one side of a frame diagram, with no items.</p>
+
+<p>An array of dimensionality higher than two is laid out as an arrangement of tables.  If the array has valence 3, the tables are arranged horizontally.  If it has valence 4, the first axis is placed down the page and the second axis across the page.  Thus, an array of shape 3 4 5 6 is pictured as 3 rows of 4 tables each of which is a 5 by 6 tableau.  A space is left between each of the tables.  For higher dimensions, the axes continue to alternate across and down the page with greater spacing between arrangements.</p>
+
+<p>The <i>picture</i> operation result coincides with the output displayed by Q'Nial in the top level loop.</p>
+
+<p>In the top level loop, the picture is wrapped around as a whole if it is too wide to fit on the screen.</p>
+
+<pre>
+     set &quotsketch; set &quotnodecor;
+     P := picture l 1 7 7.0 `a &quota; 'a' (3 4 5) Null
++-+-+-+--+-+-+-+-----++
+|l|1|7|7.|a|a|a|3 4 5||
++-+-+-+--+-+-+-+-----++
+
+     set &quotdiagram; set &quotnodecor; P
++-+-+-+--+-+-+---+-------+-+
+|l|1|7|7.|a|a|+-+|+-+-+-+|+|
+| | | |  | | ||a|||3|4|5||||
+| | | |  | | |+-+|+-+-+-+|+|
++-+-+-+--+-+-+---+-------+-+
+
+     set &quotsketch; set &quotdecor; P
++-+-+-+--+--+--+---+-----++
+|l|1|7|7.|`a|"a|'a'|3 4 5||
++-+-+-+--+--+--+---+-----++
+
+     set &quotdiagram; set &quotdecor; P
++-+-+-+--+--+--+----+-------+-+
+|l|1|7|7.|`a|"a|+--+|+-+-+-+|+|
+| | | |  |  |  ||`a|||3|4|5||||
+| | | |  |  |  |+--+|+-+-+-+|+|
++-+-+-+--+--+--+----+-------+-+
+
+     set &quotdiagram; set &quotdecor;
+     picture 3 4 5
++--+--+--+--+--+--+--+
+|`+|`-|`+|`-|`+|`-|`+|
++--+--+--+--+--+--+--+
+|`||`3|`||`4|`||`5|`||
++--+--+--+--+--+--+--+
+|`+|`-|`+|`-|`+|`-|`+|
++--+--+--+--+--+--+--+
+</pre>
+
+<p>The first four examples illustrate the same array pictured with the four combinations of the mode settings.  The final example illustrates that if the result of <i>picture</i> is displayed at top level in diagram - decor mode, the implicit use of <i>picture</i> on the resulting character table causes it to be decorated.</p>
+
+<b>Equations</b>
+
+<center><pre>
+write A = writescreen picture A
+
+valence picture A = 2
+</pre></center>
+
+<a name="place">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#picture"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#placeall"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Place<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary insertion operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      B I place A      place (B I) A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#placeall">placeall</a>,
+                     <a href="help-d.html#deepplace">deepplace</a>,
+                     <a href="help-u.html#update">update</a>,
+                     <a href="help-u.html#updateall">updateall</a>,
+                     <a href="help-d.html#deepupdate">deepupdate</a>
+</dl>
+
+<p>The operation <i>place</i> is the fundamental insertion operation for arrays.  The normal use is that I is the address where B is to be placed in a modified version of A.  The result is the modified array.  If I is an integer and A is a list, I is converted to a solitary integer before being used.  If I is not a valid address for A, the result is the fault <i>?address</i>.</p>
+
+<pre>
+     &quotabc; 2 place 2 3 4 5 6
+2 3 abc 5 6
+     place (`_ 2) 'my work'
+my_work
+     A := 4 5 6 7
+4 5 6 7
+     A := 27 2 place A; A
+4 5 27 7
+     50 100 place A
+?address
+</pre>
+
+<p>The fourth example shows the use of <i>place</i> in updating the value of a variable A.  The last example illustrates an out of range use of <i>place</i>.</p>
+
+<p>Nial provides a simpler notation for updating a variable.  <i>A@I</i> (pronounced A at I) can be used on the left of assignment to update the item at location I. If the address is out of range a fault occurs.</p>
+
+<pre>
+     A@1 := 25
+4 25 27 7
+     A@5 := 7
+?address
+     A
+4 25 27 7
+</pre>
+
+<p>The semantics of using the at notation on the left in assignment can be achieved using the operation <a href="help-u.html#update"><i>update</i></a>.  The at notation and the <a href="help-u.html#update"><i>update</i></a> operation are usually more efficient than <i>place</i> because they avoid doing a copy of the entire array.</p>
+
+<b>Equations</b>
+
+<center><pre>
+I in grid A ==&gt; (I pick A) I place A = A
+
+B [I] deepplace A = B I place A
+
+I in grid A ==&quotshape;(B I place A)=shape A
+</pre></center>
+
+<a name="placeall">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#place"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#plus"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Placeall<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary insertion operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      B I placeall A      placeall (B I) A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#place">place</a>,
+                     <a href="help-d.html#deepplace">deepplace</a>,
+                     <a href="help-u.html#updateall">updateall</a>,
+                     <a href="help-u.html#update">update</a>,
+                     <a href="help-d.html#deepupdate">deepupdate</a>
+</dl>
+
+<p>The operation <i>placeall</i> generalizes the operation place to modify a collection of items of A.  It returns a modified version of array A with the items at the addresses I replaced by the items of B.  It corresponds to the sequential use of <a href="help-p.html#place"><i>place</i></a> with corresponding items from B and I.  If an item of I is repeated, its last occurrence will determine the effect on A.   If B has fewer items than I, its items are used cyclicly (the first item is used after the last and the list repeated).</p>
+
+<pre>
+     (&quotabc; &quotdef;) (2 3) placeall 2 3 4 5 6
+2 3 abc def 6
+
+     Text := 'my work is fun';
+     placeall ('_' (`  findall Text)) Text
+my_work_is_fun
+
+     A := 4 5 6 7 ;
+     A := (27 28) (3 2) placeall A; A
+4 5 28 27
+</pre>
+
+<p>The last example shows the use of placeall to update the value of a variable A.</p>
+
+<p>Q'Nial provides a simpler notation for updating a variable at several locations.  The notation <i>A#I</i> (pronounced A at all I) can be used on the left of assignment to indicate the update of the items at the addresses given by I. If an item of I is out of range, the result is a fault but the variable is modified by the assignments done to locations that precede the invalid one.</p>
+
+<pre>
+     A#(0 1) := 25 26
+25 26 27 7
+     A#(2 100) := 50 51
+?addresses
+     A
+25 26 50 7
+</pre>
+
+<p>The semantics of using the <i>at all</i> notation on the left in assignment can be achieved using the operation <a href="help-u.html#updateall"><i>updateall</i></a>.</p>
+
+<p>The <i>at all</i> notation and the <a href="help-u.html#updateall"><i>updateall</i></a> operation are usually more efficient than <i>placeall</i> as they avoid doing a copy of the entire array.</p>
+
+<p><i>Placeall</i> is not the same as <i>(<a href="help-p.html#pack">pack</a> B I) <a href="help-e.html#eachboth">EACHBOTH</a> <a href="help-p.html#place">place</a> A</i>.  The latter results in an array of modifications of A, one for each item to be replaced.</p>
+
+<b>Equations</b>
+
+<center><pre>
+I allin grid A ==&gt; (I choose A) I placeall A = A
+
+I allin grid A ==&gt; shape (B I placeall A) = shape A
+</pre></center>
+
+<a name="plus">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#placeall"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#positions"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Plus<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive arithmetic operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A plus B            plus A B
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-s.html#sum">sum</a>,
+                     <a href="help-m.html#minus">minus</a>,
+                     <a href="help-m.html#mod" mod></a>,
+                     <a href="help-o.html#opposite">opposite</a>,
+                     <a href="help-t.html#times">times</a>
+</dl>
+
+<p>The operation <i>plus</i> and its synonym + are the same as <a href="help-s.html#sum"><i>sum</i></a> except that <i>plus</i> enforces the rule that it must be applied to a pair.</p>
+
+<p><i>Sum</i> is multi pervasive and can add up any number of items.</p>
+
+<pre>
+     7 plus 9
+16
+
+     (2 3 4) plus (12 22 33)
+14 25 37
+
+     plus 2 3 4
+?plus expects a pair
+</pre>
+
+<a name="positions">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#plus"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#post"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Positions<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      picture operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      positions A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#sketch">sketch</a>,
+                     <a href="help-d.html#diagram">diagram</a>,
+                     <a href="help-p.html#picture">picture</a>,
+                     <a href="help-d.html#display">display</a>,
+                     <a href="help-p.html#paste">paste</a>,
+                     <a href="help-s.html#setcursor">setcursor</a>
+</dl>
+
+<p>The operation <i>positions</i> is used in conjunction with <a href="help-p.html#picture"><i>picture</i></a> on singles, lists or tables.  For such arrays, it returns an array of the same shape with the items being the addresses at which the <a href="help-p.html#picture"><i>pictures</i></a> of the corresponding items of A appear in the picture of A.</p>
+
+<pre>
+     A gets 2 3 reshape &quotcat; 'fish' 34.5 &quotdog; 'meat' 26.5
++---+----+----+
+|cat|fish|34.5|
++---+----+----+
+|dog|meat|26.5|
++---+----+----+
+
+     positions A
++---+---+----+
+|1 1|1 5|1 10|
++---+---+----+
+|3 1|3 5|3 10|
++---+---+----+
+</pre>
+
+<p>The operation <i>positions</i> is useful in applications that do interactive editing of data from its display on the screen.</p>
+
+<a name="post">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#positions"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#power"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Post<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation, defined in defs.ndf
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      post A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#reshape">reshape</a>,
+                     <a href="help-l.html#list">list</a>,
+                     <a href="help-p.html#pass">pass</a>,
+                     <a href="help-c.html#cols">cols</a>
+</dl>
+
+<p>The operation <i>post</i> restructures an array A to be a table with one column holding the items of A in row major order.</p>
+
+<pre>
+     post 3 4 5
+3
+4
+5
+
+     post 'Now is the time'
+          'for all good men'
+          'to come to the aid'
+          'of the party'
++------------------+
+|Now is the time   |
++------------------+
+|for all good men  |
++------------------+
+|to come to the aid|
++------------------+
+|of the party      |
++------------------+
+</pre>
+
+<p>The major purpose of <i>post</i> is to restructure data for display.</p>
+
+<b>Definition</b>
+
+<pre>
+post IS OPERATION A {
+   (tally A) 1 reshape A}
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape post A = (tally A) 1
+
+post post A = post A
+</pre></center>
+
+<a name="power">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#post"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#product"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Power<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive arithmetic operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     A power B
+                     power A B
+</pre>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-s.html#sqrt">sqrt</a>,
+                     <a href="help-d.html#divide">divide</a>,
+                     <a href="help-l.html#ln">ln</a>,
+                     <a href="help-e.html#exp">exp</a>
+</dl>
+
+<p>The <i>power</i> operation returns the result of raising the number A to the power B. The result is an integer if both A and B are boolean or integer and B is non-negative.  If B is an integer, the power is done by multiplication. Otherwise it uses <i>exp (B * ln A)</i>.</p>
+
+<pre>
+     R gets l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER power R
+     1        1        1.  ?A  ?A  ?error
+     2        4   5.65685  ?A  ?A  ?error
+   2.5     6.25   9.88212  ?A  ?A  ?error
+?A      ?A       ?A        ?A  ?A  ?A
+?A      ?A       ?A        ?A  ?A  ?A
+?error  ?error   ?error    ?A  ?A  ?error
+
+     2 power 3
+8
+
+     2 power -3
+0.125
+
+     16 power .5
+4.
+</pre>
+
+<p>The examples show that the operation <i>power</i> has different meanings depending on the right argument B.  If B is a positive integer, the result is A multiplied by itself B times.  If B is a negative integer, the result is the reciprocal of the result when B is positive.  The last case illustrates that if B is 0.5, the result is a real number that is a square root of A.</p>
+
+<b>Equations</b>
+
+<center><pre>
+isreal B ==&gt; A power B = exp (B * ln A)
+
+sqrt A = A power 0.5 (within roundoff error)
+</pre></center>
+
+<a name="product">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#power"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#putfile"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Product<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      multi pervasive arithmetic operation, a primitive
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     product A            * A
+                     A product B         A times B
+</pre>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#times">times</a>,
+                     <a href="help-d.html#divide">divide</a>,
+                     <a href="help-s.html#sum">sum</a>,
+                     <a href="help-p.html#plus">plus</a>,
+                     <a href="help-m.html#minus">minus</a>
+</dl>
+
+<p>The operation <i>product</i> multiplies the items of a simple array of numbers, reducing them to a single number that is their product.  The <a href="help-t.html#type"><i>type</i></a> of the result is the highest <a href="help-t.html#type"><i>type</i></a> of the items.  The operation is extended to non-simple arrays by the multi pervasive mechanism.  The symbol * and prod are synonyms for <a href="help-p.html#product"><i>product</i></a>.  The operation <a href="help-t.html#times"><i>times</i></a> is <a href="help-p.html#product"><i>product</i></a> restricted to use on pairs.</p>
+
+<p>For an empty simple array, the result is a &quotone;&quot; of the type of the archetype.</p>
+
+<pre>
+     R gets l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER product R
+     1       2      2.5  ?A  ?A  ?error
+     2       4       5.  ?A  ?A  ?error
+   2.5      5.     6.25  ?A  ?A  ?error
+?A      ?A      ?A       ?A  ?A  ?A
+?A      ?A      ?A       ?A  ?A  ?A
+?error  ?error  ?error   ?A  ?A  ?error
+
+     product 3. 45. 23. 18. 3.5
+195615.
+
+     product (3 4 5)(2 3 2)(0 2 4)(1 1 1)
+0 24 40
+</pre>
+
+<p>The first example shows the result of <a href="help-p.html#product"><i>product</i></a> on all combinations of types of atoms.  The last example shows that pervasive extension of <a href="help-p.html#product"><i>product</i></a> multiples a list of triples in an item by item fashion.</p>
+
+<b>Equations</b>
+
+<center><pre>
+A product B = B product B
+
+product single A = EACH(product single) A
+
+product EACH product A =f product link A
+
+shape cart A = product EACH tally A
+
+product shape A = tally A
+</pre></center>
+
+<a name="putfile">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#product"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#putscreendata"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Putfile<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      putfile Filename A
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-g.html#getfile">getfile</a>,
+                     <a href="help-a.html#appendfile">appendfile</a>
+</dl>
+
+<p>The <i>putfile</i> operation writes the rows of items of A as text records to the file with name <i>Filename</i>.  It is used in conjunction with <a href="help-g.html#getfile"><i>getfile</i></a>.  The file must not be open.  Items of A are arrays of characters of any valence.</p>
+
+<p>In the following example, three strings would be written to the file <i>Maillist</i>.</p>
+
+<pre>
+     putfile &quotMaillist; ['Now is the time' 'for all good
+men','to come to the aid']
+</pre>
+
+<b>Definition</b>
+
+<pre>
+putfile IS OPERATION File A {
+   IF not isfault
+      (Filenum := open File &quotw;) THEN
+      ITERATE (Filenum writefile) (link EACH rows A) ;
+      close Filenum ;
+   ELSE Filenum
+   ENDIF }
+</pre>
+
+<a name="putscreendata">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#putfile"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#putstrings"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Putscreendata<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      putscreendata Attributes Position Text
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-g.html#getscreendata">getscreendata</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>
+</dl>
+
+<p>The operation <i>putscreendata</i> is used to restore to the screen the display information that was saved earlier using <a href="help-g.html#getscreendata"><i>getscreendata</i></a>.  The three arguments, <i>Attributes</i>, <i>Position</i> and <i>Text</i>, are the result of a <a href="help-g.html#getscreendata"><i>getscreendata</i></a> operation.</p>
+
+<p>The result is the fault <i>?noexpr</i>.  The effect is that the <i>Text</i>  is placed at <i>Position</i> on the screen using the <i>Attributes</i>.</p>
+
+<a name="putstrings">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#putscreendata"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Putstrings<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      putstrings Strings Position Textcolor [Offset]
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#putscreendata">putscreendata</a>,
+                     <a href="help-p.html#puttext">puttext</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>
+</dl>
+
+<p>The operation <i>putstrings</i> displays a list of strings in the active window on the screen.  The arguments are:</p>
+
+<p><b>Strings</b>: the list of strings to be displayed,</p>
+
+<p><b>Position</b>: a pair of integers giving the row and column where the upper left corner of the text is to appear in the window,</p>
+
+<p><b>Textcolor</b>: a control tuple specifying the attributes of the text being displayed,</p>
+
+<p><b>Offset</b>: an optional argument indicating the address in the list of strings that specifies the origin of the text to be displayed.</p>
+
+<p>Any string that would be displayed beyond the right-most column of the window is cut off at the border.  The meaning of the control tuple and the Color Tables are given under the description of &quotcontrol; tuple&quot.;</p>
+
+<pre>
+putstrings ['Now is','the time for',
+   'all good men'] (4 5) Normal (2 7)
+</pre>
+
+<p>In the above usage, the strings would be displayed starting in window position (4 5).  The control tuple is the variable <i>Normal</i>.  The text character with an offset of (2 7) (the letter &quotd;&quot; in &quotgood;&quot;) is placed at the starting position and the rest of the text is below and to the right.</p>
+
+<p>The operation <i>putstrings</i> is used to display output fields in an interactive window-oriented application.  It is an efficient method for placing textual information on the display screen.  For placing a string of text, it combines the effect of <a href="help-s.html#setcursor"><i>setcursor</i></a> and <a href="help-w.html#writechars"><i>writechars</i></a>.  In addition, it gives control over highlighting and color.  For a list, it avoids the repeated use of <a href="help-s.html#setcursor"><i>setcursor</i></a> to align each row of the text.</p>
+
+<p>The operation <i>putstrings</i> does not expand the tab character when it is present in the text being displayed.  It substitutes a blank for a tab or other control characters.</p>
+
+<a name="puttext">
+<hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#putstrings"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-q.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-p.html#puttext"><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162330im_/http://www.nial.com/images/pink_bullet.gif">Puttext<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window operation, defined in defs.ndf
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      puttext Ct Addr Text
+<dd><img border="0" src="/web/19980204162330im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#putstrings">putstrings</a>,
+                     <a href="help-p.html#putscreendata">putscreendata</a>,
+                     <a href="help-s.html#screensize">screensize</a>,
+                     <a href="help-w.html#writechars">writechars</a>
+</dl>
+
+<p>The operation <i>puttext</i> places the character array <i>Text</i> on the display screen in the active window.  <i>Text</i> can be a character, a string or a character table. The upper left corner of <i>Text</i> is placed at the screen position given by <i>Addr</i>. The character display is specified by the control tuple Ct.</p>
+
+<pre>
+puttext (1 2 3) (10 10) 'hello'
+</pre>
+
+<b>Definition</b>
+
+<pre>
+puttext IS OP Ct Posn Text {
+   Shp:=2 takeright (1 1 link shape Text);
+   putstrings [rows (Shp reshape Text), Posn,Ct];
+   setcursor (Posn + Shp - 1 0); }
+</pre>
+
+<p>The operation <i>puttext</i> was part of an alphanumeric display capability of an earlier version that has been replaced by the window package.  It has been superseded by <a href="help-p.html#putstrings"><i>putstrings</i></a> but is retained for compatibility with older versions.</p>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19980204162330/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19980204162330/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19980204162330/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19980204162330/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19980204162330/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19980204162330/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19980204162330/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19980204162330/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19980204162330/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19980204162330/http://www.nial.com/">
+</map>
+
+<a href="/web/19980204162330/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19980204162330im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 16:23:30 Feb 04, 1998 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:35 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.004
+  exclusion.robots: 0.097
+  exclusion.robots.policy: 0.08
+  esindex: 0.02
+  cdx.remote: 766.509
+  LoadShardBlock: 277.24 (3)
+  PetaboxLoader3.datanode: 380.709 (4)
+  load_resource: 299.022
+  PetaboxLoader3.resolve: 94.297
+-->

@@ -1,0 +1,673 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-i.html","19991003161241","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938967161");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-I</title>
+</head>
+
+<body background="/web/19991003161241im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-h.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="if">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#in"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">If<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      keyword<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>                IF C1 THEN
+                        ES1
+                     ELSEIF C2 THEN
+                        ES2
+                        . . .
+                     ELSEIF Cn THEN
+                        ESn
+                     ELSE
+                        ESx
+                     ENDIF
+</pre>
+<blockquote>
+               where C1, C2, ...  are conditional expressions and 
+               ES1, ES2, ...  ESx are expression sequences.
+</blockquote>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#case">case</a>,
+                     <a href="help-f.html#fork">fork</a><br>
+</dl>
+
+<p>The <i>if</i> construct is a notation for executing one of a number of possible expression sequences.  The sequence selected depends on the result of condition expressions.  In the general case, whichever condition is first found to return <i>l (<a href="help-t.html#true">true</a>)</i> specifies the expression sequence to be performed. If all condition expressions return <i>o (<a href="help-f.html#false">false</a>)</i>, expression  sequence ESx is selected.  The <a href="help-e.html#elseif"><i>elseif</i></a> and <a href="help-e.html#else"><i>else</i></a> clauses are optional.</p>
+
+<p>In the following example, the result is one of Army, Minor or Juvenile, depending on the value of Age.</p>
+
+<pre>
+     Age := 17;
+     IF Age &gt; 18 THEN
+        &quotArmy;
+     ELSEIF Age &lt; 16 THEN
+        &quotMinor;
+     ELSE
+        &quotJuvenile;
+     ENDIF
+Juvenile
+</pre>
+
+<a name="in">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#if"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#inner"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">In<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A in B            in A B<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-a.html#allin">allin</a>,
+                     <a href="help-l.html#like">like</a>,
+                     <a href="help-n.html#notin">notin</a>,
+                     <a href="help-s.html#seek">seek</a>,
+                     <a href="help-e.html#equal">equal</a><br>
+</dl>
+
+<p>The operation <i>in</i> returns <a href="help-t.html#true"><i>true</i></a> if A is an item of B and returns <a href="help-f.html#false"><i>false</i></a> if it is not.</p>
+
+<pre>
+     3 in 56 34 23 3 57 3
+l
+     1 1 in tell 3 4
+l
+     `a in 'hello world'
+o
+     `a in &quotapple;
+o
+     `a in string &quotapple;
+l
+</pre>
+
+<p>The fourth and fifth examples show that a letter is not an item of a phrase but is an item of the corresponding string.</p>
+
+<b>Definition</b>
+
+<pre>
+in IS OPERATION A B {
+   or (A EACHRIGHT equal B }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+A in B = A in (list B)
+
+A in Null = False
+
+A in solitary A = True
+
+A in (A hitch B) = True
+
+A in (B append A) = True
+
+A in (A pair B) = True
+</pre></center>
+
+<a name="inner">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#in"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#innerproduct"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Inner<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer, defined in defs.ndf<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>                A INNER [f,g] B
+                     INNER [f,g] A B
+</pre>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-o.html#outer">outer</a>,
+                     <a href="help-i.html#innerproduct">innerproduct</a>,
+                     <a href="help-s.html#solve">solve</a>,
+                     <a href="help-i.html#inverse">inverse</a><br>
+</dl>
+
+<p>The transformer <i>inner</i> generalizes the inner product operation of linear algebra.  For a pair of lists A and B, the result is the application of the reductive operation f to the result of applying the binary pervasive operation g to A and B.  It is assumed that f is one of the seven reductive operations of Nial:  <a href="help-s.html#sum"><i>sum</i></a>, <a href="help-p.html#product"><i>product</i></a>, <a href="help-o.html#or"><i>or</i></a>, <a href="help-a.html#and"><i>and</i></a>, <a href="help-m.html#max"><i>max</i></a>, <a href="help-m.html#min"><i>min</i></a>, <a href="help-l.html#link"><i>link</i></a> and that g distributes pairwise.  For tables, <i><a href="help-o.html#outer">OUTER</a> g</i> is applied to the rows of A and the columns of B and f is applied to each item of the outer product.</p>
+
+<p>Thus, <i>INNER [+,*]</i> is equivalent to matrix multiplication in linear algebra and <i>INNER [or,and]</i> is boolean matrix product.  For higher dimensional arrays, the lists are formed by &quotpushing; down&quot; the last axis of A and the first axis of B.</p>
+
+<pre>
+     2 3 4 INNER[+,*] 4 5 6
+47
+     loll INNER[or,and] olol
+l
+     A := 2 4 reshape count 8;
+     B := 4 3 reshape tell 8;
+     A B
++-------+-----+
+|1 2 3 4|0 1 2|
+|5 6 7 8|3 4 5|
+|       |6 7 0|
+|       |1 2 3|
++-------+-----+
+     A INNER[sum,times] B
+28 38 24
+68 94 64
+</pre>
+
+<b>Definition</b>
+
+<pre>
+INNER IS TRANSFORMER f g (OPERATION A B)
+   { rows A OUTER (f g) (0 split B) }
+</pre>
+
+<br>
+<b>Equation</b>
+
+<center><pre>
+shape (A INNER [f,g] B) = (front shape A) link (rest shape B)
+</pre></center>
+
+<a name="innerproduct">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#inner"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#inverse"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Innerproduct<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      matrix algebra cover operation from the linalg CallC 
+                     package, defined in defs.ndf.
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :
+<pre>                A innerproduct B
+                     innerproduct A B
+</pre>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#inner">inner</a>,
+                     <a href="help-o.html#outer">outer</a>,
+                     <a href="help-s.html#solve">solve</a>,
+                     <a href="help-i.html#inverse">inverse</a><br>
+</dl>
+
+<p>The <i>innerproduct</i> operation computes the mathematical inner product of real vectors and matrices using the linear algebra package <i>linalg</i>, which is a part of Q'Nial.  For real matrices, it produces the same result as <i>A <a href="help-i.html#inner">inner</a> [+,*] B</i> but computes the result more rapidly for large arguments.  It coerces boolean and integer arrays to reals.</p>
+
+<pre>
+     A := 2 4 reshape count 8;
+     B := 4 3 reshape tell 8;
+     A B
++-------+-----+
+|1 2 3 4|0 1 2|
+|5 6 7 8|3 4 5|
+|       |6 7 0|
+|       |1 2 3|
++-------+-----+
+
+     A innerproduct B
+28. 38. 24.
+68. 94. 64.
+</pre>
+
+<a name="inverse">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#innerproduct"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#isboolean"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Inverse<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      matrix algebra cover operation from the linalg package 
+                     defined in defs.ndf.
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      inverse A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#solve">solve</a>,
+                     <a href="help-i.html#inner">inner</a>,
+                     <a href="help-i.html#innerproduct">innerproduct</a>,
+                     <a href="help-o.html#outer">outer</a><br>
+</dl>
+
+<p>The <i>inverse</i> operation computes the mathematical inverse of a square matrix A returning a square matrix of the same shape.  If A is singular within numerical limits, the result is the fault <i>?singular</i>.</p>
+
+<pre>
+     seed 0.5;
+     A := ceiling . 100. *
+        (3 3 reshape random 9)
+50 44 13
+78 74 90
+98 67 17
+
+     inverse A
+-0.0736442  0.00189821  0.0462669
+  0.115652 -0.00654341  -0.053798
+-0.0312664   0.0148461 0.00413593
+
+     A innerproduct inverse A
+         1. -6.93889e-18 -7.11237e-17
+ 9.4369e-16           1. -1.97758e-16
+3.60822e-16 -6.93889e-18           1.
+</pre>
+
+<p>The final computation shows that the result is not exactly an inverse due to limitations of using floating point arithmetic.</p>
+
+<b>Equations</b>
+
+<center><pre>
+A a square matrix ==&gt; A innerproduct (inverse A) innerproduct A = A
+(within roundoff error)
+
+inverse A innerproduct B = A solve B (within roundoff error)
+</pre></center>
+
+<a name="isboolean">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#inverse"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#ischar"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Isboolean<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      isboolean A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#isinteger">isinteger</a>,
+                     <a href="help-i.html#isreal">isreal</a><br>
+</dl>
+
+<p>The operation <i>isboolean</i> tests whether or not A is a boolean atom.  It returns <a href="help-t.html#true"><i>true</i></a> if A is a boolean, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     isboolean false
+l
+     isboolean llollool
+o
+     isboolean 7
+o
+</pre>
+
+<b>Definition</b>
+
+<pre>
+isboolean IS OPERATION A { type A = o }
+</pre>
+
+<a name="ischar">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#isboolean"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#isfault"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Ischar<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      ischar A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#isfault">Isfault</a>,
+                     <a href="help-i.html#isphrase">isphrase</a>,
+                     <a href="help-i.html#isstring">Isstring</a><br>
+</dl>
+
+<p>The operation <i>ischar</i> tests whether or not atom A is a character atom.  It returns <a href="help-t.html#true"><i>true</i></a> if A is a character, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     EACH ischar (`a) ('a') 7
+loo
+</pre>
+
+In the example ('a') is not an atom.</p>
+
+<br>
+<b>Definition</b>
+
+<pre>
+ischar IS OPERATION A { type A = `  }
+</pre>
+
+<a name="isfault">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#ischar"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#isinteger"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Isfault<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      isfault A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#isphrase">isphrase</a>,
+                     <a href="help-i.html#ischar">ischar</a>,
+                     <a href="help-i.html#isstring">isstring</a><br>
+</dl>
+
+<p>The operation <i>isfault</i> tests whether or not A is a fault.  It returns <a href="help-t.html#true"><i>true</i></a> if A is a fault, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     EACH isfault (??error) (&quot;?error)
+lo
+</pre>
+
+<b>Definition</b>
+
+<pre>
+isfault IS OPERATION A { type A = ?? }
+</pre>
+
+<a name="isinteger">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#isfault"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#isphrase"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Isinteger<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      isinteger A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#isboolean">isboolean</a>,
+                     <a href="help-i.html#isreal">isreal</a><br>
+</dl>
+
+<p>The operation <i>isinteger</i> tests whether or not A is an integer.  It returns <a href="help-t.html#true"><i>true</i></a> if A is an integer, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     EACH isinteger (7)(2 3 4)(`3)(3.0)
+looo
+
+     isinteger (find `a 'whale')
+o
+</pre>
+
+<p>The last example returns <a href="help-f.html#false"><i>false</i></a> because the result of <a href="help-f.html#find"><i>find</i></a> is a solitary, a list of one integer, not an integer.</p>
+
+<b>Definition</b>
+
+<pre>
+isinteger IS OPERATION A { type A = 0 }
+</pre>
+
+<a name="isphrase">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#isinteger"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#isreal"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Isphrase<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      isphrase A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#isstring">isstring</a>,
+                     <a href="help-i.html#isfault">isfault</a>,
+                     <a href="help-i.html#ischar">ischar</a><br>
+</dl>
+
+<p>The operation <i>isphrase</i> tests whether or not A is a phrase.  It returns <a href="help-t.html#true"><i>true</i></a> if A is a phrase, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     isphrase &quotMike;
+l
+     isphrase 'abc'
+o
+     isphrase  `a
+o
+</pre>
+
+<b>Definition</b>
+
+<pre>
+isphrase IS OPERATION A { type A = &quot;&quot; }
+</pre>
+
+<a name="isreal">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#isphrase"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#isstring"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Isreal<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      isreal A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#isboolean">isboolean</a>,
+                     <a href="help-i.html#isinteger">isinteger</a><br>
+</dl>
+
+<p>The operation <i>isreal</i> tests whether or not A is a real number.  It returns <a href="help-t.html#true"><i>true</i></a> if A is a real number, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     isreal 3.5
+l
+
+     isreal 'abc'
+o
+</pre>
+
+<b>Definition</b>
+
+<pre>
+isreal IS OPERATION A { type A = 0. }
+</pre>
+
+<a name="isstring">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#isreal"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Isstring<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation, a primitive<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      isstring A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-s.html#string">string</a><br>
+</dl>
+
+<p>The operation <i>isstring</i> tests whether or not the array A is a string.  It returns <a href="help-t.html#true"><i>true</i></a> if A is a string, <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<pre>
+     isstring 'A string'
+l
+     isstring `A
+o
+     isstring `2 `A `?
+l
+     isstring ''
+l
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+atomic A ==&gt; isstring string A = True
+
+isstring A = (valence A = 1) and ( and EACH ischar A)
+</pre></center>
+
+<a name="iterate">
+<hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#isstring"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-i.html#iterate"><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003161241im_/http://www.nial.com/images/pink_bullet.gif">Iterate<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      ITERATE f A<br>
+<dd><img border="0" src="/web/19991003161241im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#each">each</a>,
+                     <a href="help-w.html#writefile">writefile</a>,
+                     <a href="help-f.html#fold">fold</a><br>
+</dl>
+
+<p>The transformer <i>iterate</i> is used to apply the operation f sequentially to the items of A in row major order.  (Row major order means across the rows moving left to right, starting at the top row and then going down the rows.  An example is given under <a href="help-l.html#list"><i>list</i></a>.) The result is the result of applying f to the final item.  If A has no items, the result is the fault <i>?noexpr</i>.</p>
+
+<pre>
+     ITERATE write &quotHello; &quotout; &quotthere.;
+Hello
+out
+there.
+
+     A IS EXTERNAL VARIABLE;
+     accum IS OPERATION B {
+        NONLOCAL A; A := A + B };
+     A := 20;
+     ITERATE accum 3 4 5 ; A
+32
+</pre>
+
+<p>In the second example, the operation <i>accum</i> increments variable A by the argument value.  The example shows <i>iterate</i> being used to apply <i>accum</i> to the list 3 4 5, which results in A having the values 23, 27 and 32.</p>
+
+<p>With <i>iterate</i>, an operation that has a side effect can be applied to an array of arguments sequentially in a specific sequence.  On the other hand, the order of application is undefined for <a href="help-e.html#each"><i>each</i></a>.</p>
+
+<p>A second major difference between <a href="help-e.html#each"><i>each</i></a> and <i>iterate</i> is that <i>iterate</i> returns only the result of the last application whereas <a href="help-e.html#each"><i>each</i></a> returns the array of all the results.</p>
+
+<b>Definition</b>
+
+<pre>
+ITERATE IS TR f OPERATION A {
+   FOR X WITH A DO f A ENDFOR }
+</pre>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991003161241/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991003161241/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991003161241/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991003161241/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991003161241/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991003161241/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991003161241/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991003161241/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991003161241/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991003161241/http://www.nial.com/">
+</map>
+
+<a href="/web/19991003161241/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991003161241im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 16:12:41 Oct 03, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:23 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.254
+  exclusion.robots: 0.124
+  exclusion.robots.policy: 0.1
+  esindex: 0.016
+  cdx.remote: 19.263
+  LoadShardBlock: 424.263 (3)
+  PetaboxLoader3.datanode: 332.257 (4)
+  PetaboxLoader3.resolve: 312.973 (3)
+  load_resource: 267.3
+-->

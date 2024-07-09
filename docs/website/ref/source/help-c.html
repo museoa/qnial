@@ -1,0 +1,1356 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-c.html","19980204162103","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "886609263");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-C</title>
+</head>
+
+<body background="/web/19980204162103im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-b.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-d.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="cart">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#callc"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cart<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      construction operation, a primitive<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      cart A               A cart B<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-o.html#outer">outer</a>,
+                     <a href="help-t.html#tell">tell</a><br>
+</dl>
+
+<p>The operation <i>cart</i> corresponds to the cartesian product operation of set theory.  Its purpose is to form all possible combinations of the items of its argument and return them in a structured result having as many axes as the sum of the number of axes of the items of argument.</p>
+
+<pre>
+     2 3 4 cart 5 6
++---+---+
+|2 5|2 6|
++---+---+
+|3 5|3 6|
++---+---+
+|4 5|4 6|
++---+---+
+</pre>
+
+<p>In the example above, the <i>cart</i> of a triple with a pair yields a table of <a href="help-s.html#shape"><i>shape</i></a> 3 2 of pairs.</p>
+
+<pre>
+     cart ['abc', 4 2 reshape count 8]
++---+---+  +---+---+  +---+---+
+|a 1|a 2|  |b 1|b 2|  |c 1|c 2|
++---+---+  +---+---+  +---+---+
+|a 3|a 4|  |b 3|b 4|  |c 3|c 4|
++---+---+  +---+---+  +---+---+
+|a 5|a 6|  |b 5|b 6|  |c 5|c 6|
++---+---+  +---+---+  +---+---+
+|a 7|a 8|  |b 7|b 8|  |c 7|c 8|
++---+---+  +---+---+  +---+---+
+</pre>
+
+<p>In the above example, the <a href="help-s.html#shape"><i>shape</i></a> of the result is 3 4 2, getting an axis of length 3 from the first item and axes of length 4 and 2 from the second.</p>
+
+<b>Equations</b>
+
+<center><pre>
+shape cart A = link EACH shape A
+
+valence cart A = sum EACH valence A
+
+tally cart A = product EACH tally A
+
+equal EACH shape cart A = True
+
+A OUTER pair B = A cart B
+
+cart link A = EACH link cart EACH cart A
+
+cart EACH EACH f A = EACH EACH f cart A
+
+cart single A = EACH single A
+
+simple A ==&gt; cart A = single A
+
+cart Null = single Null
+
+empty A ==&gt; cart A = single A
+
+or EACH empty A ==&gt; empty cart A
+
+not empty A and not empty cart A ==&gt; shape first cart A = shape A
+
+not empty A and not empty cart A ==&gt; first cart A = EACH first A
+
+isshape A ==&gt; tell A = cart EACH tell A
+</pre></center>
+
+<a name="callc">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cart"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#callstack"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Callc<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      P Op callc A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#solve">solve</a>,
+                     <a href="help-i.html#inverse">inverse</a>,
+                     <a href="help-i.html#innerproduct">innerproduct</a><br>
+</dl>
+
+<p>The operation <i>callc</i> provides an interface to a C-coded operation Op and executes it with arguments A.  The operation is one of several in a package called P.</p>
+
+<p>Q'Nial Version 6.0 provides one built-in <i>callc</i> package:  <a href="help/bldcallc/linalg.ndf"><i>linalg</i></a>.  It supports three linear algebra capabilities:  the solution of linear equations Ax=b, finding the inverse of a matrix A and the computation of the inner product of vectors or matrices.  <a href="help-s.html#solve"><i>Solve</i></a>, <a href="help-i.html#inverse"><i>inverse</i></a> and <a href="help-i.html#innerproduct"><i>innerproduct</i></a> are corresponding cover operations defined using <i>callc</i> in defs.ndf.</p>
+
+<p>Some versions of Q'Nial can be extended by adding packages and operations.</p>
+
+<a name="callstack">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#callc"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#case"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Callstack<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Callstack<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#break">break</a>,
+                     <a href="help-s.html#step">step</a>,
+                     <a href="help-r.html#resume">resume</a><br>
+</dl>
+
+<p>The expression <i>callstack</i> displays the sequence of active definition calls at the point it is invoked.  It is usually used in conjunction with <a href="help-b.html#break"><i>Break</i></a>.  <i>Callstack</i> can be used to see the execution path by which the computation reached the current state while computation is suspended during a break.</p>
+
+<a name="case">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#callstack"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#catenate"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Case<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      keyword<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :
+
+<pre>
+               CASE expression FROM
+                  C1: ES1 END
+                  C2: ES2 END
+                  . . .
+                  Cn: ESn END
+               ELSE   ESx
+               ENDCASE
+</pre>
+
+where C1, C2, ...  Cn are constants and Es1, ES2, ...  ESn and ESx are
+expression sequences.<br>
+
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-i.html#if">if</a>,
+                     <a href="help-f.html#fork">fork</a><br>
+</dl>
+
+<p>The expression following <i>case</i> is evaluated.  If the result matches one of the constants, C1 ...  Cn, the corresponding expression sequence is executed.  If the result does not match any constant, the expression sequence following <i>else</i> is executed.</p>
+
+<pre>
+   Month := 3 ;
+   CASE Month FROM
+      1:   Mname := 'January'; END
+      2:   Mname := 'February'; END
+      3:   Mname := 'March'; END
+   ELSE   Mname := 'Year End';
+   ENDCASE ;
+   Mname
+March
+</pre>
+
+<a name="catenate">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#case"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#ceiling"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Catenate<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      construction operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      I catenate A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#link">link</a>,
+                     <a href="help-l.html#laminate">laminate</a><br>
+</dl>
+
+<p>The operation <i>catenate</i> joins the items of A along axis I.  The items of A must conform in all other axes.</p>
+
+<pre>
+     1 catenate (tell 2 3) (count 2 5)
++---+---+---+---+---+---+---+---+
+|0 0|0 1|0 2|1 1|1 2|1 3|1 4|1 5|
++---+---+---+---+---+---+---+---+
+|1 0|1 1|1 2|2 1|2 2|2 3|2 4|2 5|
++---+---+---+---+---+---+---+---+
+</pre>
+
+<p>The example joins two tables along the rows.  Each table has two rows.</p>
+
+<b>Definition</b>
+
+<pre>
+catenate IS OPERATION I A {
+   % &quotpush; down&quot; I axis of items of A;
+   B := EACH ( I split ) A ;
+   IF equal EACH shape B THEN
+      I blend EACH link pack B
+   ELSE
+      fault '?conform error in catenate'
+   ENDIF }
+</pre>
+
+<a name="ceiling">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#catenate"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#char"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Ceiling<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive arithmetic operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      ceiling A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-f.html#floor">floor</a>,
+                     <a href="help-m.html#mod">mod</a>,
+                     <a href="help-q.html#quotient">quotient</a><br>
+</dl>
+
+<p>The operation <i>ceiling</i> produces the following results when applied to atoms of the six types:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>corresponding integer</td></tr>
+<tr><td>integer</td><td>argument</td></tr>
+<tr><td>real</td><td>next higher integer or the fault <i>?A</i>, <br>
+                     if the result is outside the range of integers</td></tr>
+<tr><td>character</td><td>fault <i>?A</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?A</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</h6>
+
+<pre>
+     ceiling  l  -2  3.5
+1 -2 4
+     ceiling  `a  &quotabc;  ??error
+ ?A ?A ?error
+     ceiling  3.5  -4.6  7.0  25.3e20
+4 -4 7 ?A
+</pre>
+
+<b>Definition</b>
+
+<pre>
+ceiling IS OPERATION A {
+   opposite floor opposite A }
+</pre>
+
+<a name="char">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#ceiling"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#charrep"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Char<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive conversion operation, a primitive<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      char N<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-c.html#charrep">charrep</a>,
+                     <a href="help-i.html#ischar">ischar</a>,
+                     <a href="help-i.html#isinteger">isinteger</a>,
+                     <a href="help-i.html#isstring">isstring</a><br>
+</dl>
+
+<p>The operation <i>char</i> is used to convert an integer in the range 0 to 255 to the character that has the integer as its internal representation.  The result is system dependent.</p>
+
+<pre>
+     char 66
+B
+     char 66 67 68 69
+BCDE
+</pre>
+
+<p>The major purpose of the <i>char</i> operation is to create special characters for a specific system.  For example, the characters that control cursor motion differ from one terminal to another.  Programs using <i>char</i> may not be portable.</p>
+
+<b>Equations</b>
+
+<center><pre>
+N in tell 256 ==&gt; charrep char N = N
+
+ischar C ==&gt; char charrep C = C
+</pre></center>
+
+<a name="charrep">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#char"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#choose"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Charrep<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive conversion operation, a primitive<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      charrep C<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#char">char</a>,
+                     <a href="help-i.html#ischar">ischar</a>,
+                     <a href="help-i.html#isinteger">isinteger</a>,
+                     <a href="help-i.html#isstring">isstring</a><br>
+</dl>
+
+<p>The operation <i>charrep</i> is used to convert a character to its internal representation as an integer.  This operation is system dependent.</p>
+
+<pre>
+     charrep `A
+65
+     charrep 'hello'
+104 101 108 108 111
+</pre>
+
+<p>The major purpose of <i>charrep</i> is to permit determination of special characters for a specific system.  For example, the characters that control cursor motion differ from one terminal to another.</p>
+
+<p>Programs using <i>charrep</i> may not be portable.</p>
+
+<b>Equations</b>
+
+<center><pre>
+N in tell 256 ==&gt; charrep char N = N
+
+ischar C ==&gt; char charrep C = C
+</pre></center>
+
+<a name="choose">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#charrep"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#clearline"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Choose<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary selection operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      I choose A         choose I A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#pick">pick</a>,
+                     <a href="help-t.html#take">take</a>,
+                     <a href="help-t.html#takeright">takeright</a>,
+                     <a href="help-r.html#reach">reach</a><br>
+</dl>
+
+<p>The operation <i>choose</i> is used to select a subarray from array A specified by the array of addresses I.  The result is an array of the same shape as I with items chosen from A.  If an item of I is not an address of A, the corresponding position in the result is the fault <i>?address</i>.</p>
+
+<p>The operation <i>choose</i> is related to the at <i>all</i> notation V#I, which selects items from the array associated with the variable V.  The differences are that <i>choose</i> may select from an array that has not been assigned to a variable and that it handles out-of-range in a different manner.</p>
+
+<pre>
+     3 1 0 1 3 4 choose 'range'
+garage
+</pre>
+
+<p>The following example shows that the <a href="help-v.html#valence"><i>valence</i></a> of the array of addresses can be higher than that of the array from which the selection is made.</p>
+
+<pre>
+     I gets (2 4 reshape tell 8)
+0 1 2 3
+4 5 6 7
+     I choose 'some words as a string'
+some
+ wor
+</pre>
+
+<b>Definition</b>
+
+<pre>
+choose IS OPERATION I A {
+   I EACHLEFT pick A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape (I choose A) = shape I
+
+J choose (I choose A) = (J choose I) choose A
+
+tell shape A choose A = A
+
+(list I) choose A = list (I choose A)
+
+(EACH list I) choose A = I choose A
+
+I allin grid A ==&gt; EACH f (I choose A) = I choose EACH f A
+</pre></center>
+
+<a name="clearline">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#choose"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#clearscreen"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Clearline<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Clearline<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cleartoend">cleartoend</a>,
+                     <a href="help-c.html#clearwindow">clearwindow</a>,
+                     <a href="help-c.html#clearscreen">clearscreen</a>,
+                     <a href="help-s.html#setwindow">setwindow</a><br>
+</dl>
+
+<p>The expression <i>clearline</i> places blank characters on the line on which the cursor is positioned starting at the cursor position and ending at the right-hand end of the window.  It is operative only when a window is active. If <i>Clearline</i> is attempted when a window is not active, the result is the fault <i>?Windows not set</i>.  <i>Clearline</i> returns the fault <i>?noexpr</i>.</p>
+
+<pre>
+     setcursor 10 5; Clearline;
+</pre>
+
+<p>In the above example, line 10 (the eleventh line in the window) is cleared from column 5 to the right-hand edge of the window.  The cursor remains at position 10 5.  <i>Clearline</i> is intended to be used within an operation. Scrolling may interfere with its usage at top level.</p>
+
+<a name="clearscreen">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#clearline"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cleartoend"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Clearscreen<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      screen output expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Clearscreen<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#clearwindow">clearwindow</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-s.html#screensize">screensize</a><br>
+</dl>
+
+<p>The expression <i>clearscreen</i> is used to clear the screen; that is, to fill it with blank characters.  It is often used prior to displaying text or figures using the other operations.  The cursor is left in position <i>(0 0)</i>.  At the top level loop, the Q'Nial prompt is displayed and the cursor is positioned to the right of the prompt.</p>
+
+<p><i>Clearscreen</i> returns the fault <i>?noexpr</i>.</p>
+
+<p>In window mode, <i>Clearscreen</i> exits window mode and clears the screen.</p>
+
+<a name="cleartoend">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#clearscreen"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#clearwindow"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cleartoend<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Cleartoend<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#clearline">clearline</a>,
+                     <a href="help-c.html#clearwindow">clearwindow</a>,
+                     <a href="help-c.html#clearscreen">clearscreen</a>,
+                     <a href="help-s.html#setwindow">setwindow</a><br>
+</dl>
+
+<p>The expression <i>cleartoend</i> places blank spaces from the current position of the cursor to the lower right corner of the window.  It is operative only when a window is active.  If <i>Cleartoend</i> is attempted when a window is not active, the result is the fault <i>?Windows not set</i>.</p>
+
+<p><i>Cleartoend</i> returns the fault <i>?noexpr</i>.</p>
+
+<pre>
+     setcursor 10 5; Cleartoend;
+</pre>
+
+<p>In the above example, the screen is cleared from row 10 column 5 to the bottom right corner of the window; and the cursor is left at position 10 5.</p>
+
+<p><i>Cleartoend</i> is intended to be used within a definition.  Scrolling may interfere with its usage at top level.</p>
+
+<a name="clearwindow">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cleartoend"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#clearws"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Clearwindow<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Clearwindow<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-c.html#clearscreen">clearscreen</a>,
+                     <a href="help-c.html#clearline">clearline</a>,
+                     <a href="help-c.html#cleartoend">cleartoend</a><br>
+</dl>
+
+<p>The expression <i>Clearwindow</i> places blank characters on the part of the screen within the currently active window.  The character positions within this area are initialized to blanks, which on a color monitor have the background color attribute of the window.</p>
+
+<p><i>Clearwindow</i> returns the fault <i>?noexpr</i>.</p>
+
+<p>The cursor is left in position (0 0).  At the top level loop, the Q'Nial prompt is displayed and the cursor is positioned to the right of the prompt. In non-window mode, <i>Clearwindow</i> returns fault <i>?Windows not set</i>.</p>
+
+<a name="clearws">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#clearwindow"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#close"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Clearws<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Clearws<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#restart">restart</a>,
+                     <a href="help-l.html#load">load</a>,
+                     <a href="help-s.html#save">save</a><br>
+</dl>
+
+<p>The <i>Clearws</i> expression clears the current workspace, erasing all variables and user definitions.  It can cause loss of valuable information.  The operation <a href="help-s.html#save"><i>save</i></a> should be used prior to using <i>Clearws</i>  if the information in the workspace will be needed again.</p>
+
+<p>The expression <a href="help-r.html#restart"><i>Restart</i></a> is similar to <i>Clearws</i> except <a href="help-r.html#restart"><i>Restart</i></a> re-initializes the system according to the initial command line options.</p>
+
+<a name="close">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#clearws"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cols"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Close<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      close Fd<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-o.html#open">open</a>,
+                     <a href="help-f.html#filestatus">filestatus</a><br>
+</dl>
+
+<p>The operation <i>close</i> is used to close a file previously opened with the  <a href="help-o.html#open"><i>open</i></a> operation.  The argument is the file designator, an integer returned previously by the <a href="help-o.html#open><I>open</I></A> operation for that file.</P>
+
+<P>The result of <I>close</I> is the fault <I>?noexpr</I> or a fault message indicating an error.</P>
+
+<PRE>
+     Fd := open &quot;foo &quot;w
+3
+     close Fd
+     close Fd
+?file is not open
+</PRE>
+
+<P>In the examples above, the first <I>close</I> was successful.  The second attempt to close the file resulted in the fault message.</P>
+
+<A NAME=cols>
+<HR SIZE=5>
+<IMG BORDER=0 SRC=" images help leftend.gif">
+<a href="help-c.html#close"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#content"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cols<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      axis rearrangement operation, defined in defs.ndf<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      cols A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#rows">rows</a>,
+                     <a href="help-s.html#split">split</a>,
+                     <a href="help-r.html#raise">raise</a>,
+                     <a href="help-p.html#partition">partition</a><br>
+</dl>
+
+<p>The operation <i>cols</i> is primarily used to rearrange the axes of a table of shape M by N to form a list of length N of the columns of length M of the table. The operation is generalized to arrays of all valences as follows:</p>
+
+<blockquote>
+     <p>if A is a list or a single, the result is single A;</p>
+
+     <p>if A has valence three or higher, the result is an array of valence one
+     less than the valence of A with the second last axis &quotpushed; down&quot;     .</p>
+</blockquote>
+
+<pre>
+     A := 3 4 reshape count 12
+1  2  3  4
+5  6  7  8
+9 10 11 12
+
+     cols A
++-----+------+------+------+
+|1 5 9|2 6 10|3 7 11|4 8 12|
++-----+------+------+------+
+</pre>
+
+<p>If only column I of a table is needed, it can be selected by I  <a href="help-p.html#pick"><i>pick</i></a> <i>cols</i> A or by A|[,I] using the at <i>slice</i> indexing notation.  The second way is more efficient for large arrays because it avoids restructuring the array.  If a table A has no columns, cols A results in the empty list  <a href="help-n.html#null"><i>Null</i></a>.</p>
+
+<b>Definition</b>
+
+<pre>
+cols IS OPERATION A {
+   IF valence A = 0 THEN single A
+   ELSE
+      valence A - 2 max 0 split A
+   ENDIF }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+valence A = 2 and not empty A ==&gt; cols A = pack rows A
+
+valence A = 2 and not empty A ==&gt; cols A = rows transpose A
+
+valence A = 2 and not empty A ==&gt; mix cols A = transpose A
+</pre></center>
+
+<a name="content">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cols"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#continue"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Content<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      content A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#link">link</a>,
+                     <a href="help-l.html#list">list</a>,
+                     <a href="help-i.html#in">in</a><br>
+</dl>
+
+<p>The operation <i>content</i> returns the list of atoms of A.  The effect of <i>content</i> is to remove all structure from an array, returning a list of the atoms in a depth first, row-major order.</p>
+
+<pre>
+     A := (2 3) (4 5 (6 7))
++---+---------+
+|2 3|+-+-+---+|
+|   ||4|5|6 7||
+|   |+-+-+---+|
++---+---------+
+
+     content A
+2 3 4 5 6 7
+</pre>
+
+<br>
+<b>Definition</b>
+
+<pre>
+content IS OPERATION A {
+   IF atomic A THEN
+      list A
+   ELSE
+      link EACH content A
+   ENDIF }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+content A = list content A
+
+content A = content list A
+
+content A = link EACH content A
+</pre></center>
+
+<a name="continue">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#content"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#control"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Continue<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Continue<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#bye">bye</a>,
+                     <a href="help-l.html#load">load</a>,
+                     <a href="help-s.html#save">save</a><br>
+</dl>
+
+<p>The expression <i>continue</i> terminates a session of Q'Nial and returns control to the host environment.  The workspace is saved in file <i>continue.nws</i> and is reloaded when Q'Nial is invoked at a later session using the same current directory.</p>
+
+<p>If a <a href="help-r.html#restart"><i>Restart</i></a> is executed in a session that began with a continue workspace, the current workspace will be reset to the continue  workspace. If a session that began with a continue is terminated with <i>Continue</i>, the file <i>continue.nws</i> is updated with the current workspace.  If it is terminated with <a href="help-b.html#bye"><i>Bye</i></a>, the file <i>continue.nws</i> is deleted.</p>
+
+<a name="control">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#continue"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#converse"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Control Tuples<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      display parameter<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      [foreground, background, blink status]<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#putstrings">putstrings</a>,
+                     <a href="help-p.html#puttext">puttext</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-w.html#window">window</a><br>
+</dl>
+
+<p>Many of the screen related operations require a display attribute, termed a control tuple, as one of the arguments.  The display attribute specifies the color or style of the characters displayed by the operation.  It is display screen dependent.</p>
+
+<p>Various displays are available for IBMPC systems and they can run in different modes.  For a monochrome display, Q'Nial can specify normal, bold, underlined, reverse video and blinking characters.  If the terminal has a color display, Q'Nial can specify foreground and background colors.  Each color combination can have blinking characters.</p>
+
+<p>For a Unix system, the display screen is driven by the terminfo capability table which provides the following styles:  normal, standout, underlined, bold and blinking, where either standout or bold is mapped to reverse video.  Not all terminals support all these capabilities.  No specific allowance for color is made in the Unix version of Q'Nial.</p>
+
+<p>To accommodate all these varieties, the display attribute is encoded as a triple of integers with the following interpretations:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Display</b></th><b><th>first</th><th>second</th><th>third</th></b>
+</tr>
+<tr><td>IBMPC Mono</td><td>style</td><td>reversed or not</td><td>blinking</td></tr>
+<tr><td>IBMPC Color</td><td>foregrd</td><td>backgrd color</td><td>blinking</td></tr>
+<tr><td>Unix terminal</td><td>style</td><td>unused</td><td>unused</td></tr>
+</table>
+</h6>
+
+<br>
+<p>The following tables fill in the detailed codes for the three forms of display attributes.</p>
+
+<h5 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Code</b></th><b><th>First Item Foregrd</th>
+   <th>Second Item Backgrd</th><th>Third Item Blink</th></b>
+</tr>
+<tr><td>0</td><td>Normal</td><td>No</td><td>No</td></tr>
+<tr><td>1</td><td>Underlined</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>2</td><td>Bold</td><td></td><td></td></tr>
+<tr><td>3</td><td>Underlined bold</td><td></td><td></td></tr>
+</table>
+<b>IBMPC Monochrome Display Attributes</b>
+</h5>
+
+<br>
+<h5 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Code</b></th><b><th>First Item Foregrd</th>
+   <th>Second Item Backgrd</th><th>Third Item Blink</th></b>
+</tr>
+<tr><td>0</td><td>black</td><td>black</td><td>No</td></tr>
+<tr><td>1</td><td>blue</td><td>blue</td><td>Yes</td></tr>
+<tr><td>2</td><td>red</td><td>red</td><td></td></tr>
+<tr><td>3</td><td>yellow</td><td>yellow</td><td></td></tr>
+<tr><td>4</td><td>white</td><td>white</td><td></td></tr>
+<tr><td>5</td><td>light blue</td><td>light blue</td><td></td></tr>
+<tr><td>6</td><td>purple</td><td>purple</td><td></td></tr>
+<tr><td>7</td><td>green</td><td>green</td><td></td></tr>
+</table>
+<b>IBMPC CGA Color Display Attributes</b>
+</h5>
+
+<p>Color codes 8 through 15 result in high intensity display of the color.</p>
+
+<br>
+<h5 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Code</b></th><b><th>First Item Foregrd</th>
+   <th>Second Item Backgrd</th><th>Third Item Blink</th></b>
+</tr>
+<tr><td>0</td><td>Normal</td><td></td><td></td></tr>
+<tr><td>1</td><td>Standout</td><td></td><td></td></tr>
+<tr><td>2</td><td>Bold</td><td></td><td></td></tr>
+<tr><td>3</td><td>Underlined</td><td></td><td></td></tr>
+<tr><td>4</td><td>Blinking</td><td></td><td></td></tr>
+</table>
+<b>Unix Terminal Display Attributes</b>
+</h5>
+
+<p>With this variety of attributes, it is impossible to make programs work identically when they are ported from one system to another.  To retain portability attributes should be set up in terms of variables such as Normalattribute, Highattribute, Borderattribute etc.  and given values according to the system in use.</p>
+
+<a name="converse">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#control"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#copyright"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Converse<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A CONVERSE f B,  CONVERSE f A B<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-f.html#fold">fold</a><br>
+</dl>
+
+<p>The transformer <i>converse</i> is used with an operation that has a pair of items as an argument.  It has the effect of reversing the items of the argument.</p>
+
+<pre>
+     at IS CONVERSE pick
+     'abcde' at 2
+c
+
+     holds IS CONVERSE in
+     count 20 holds 5
+l
+</pre>
+
+<p>In the above examples, <i>at</i> and <i>holds</i> are defined in terms of <a href="help-p.html#pick"><i>pick</i></a> and <a href="help-i.html#in"><i>in</i></a>, respectively.  The first example shows that <i>'abcde' at 2</i> gives the result expected for <i>2 pick 'abcde'</i>.  The second example shows that <i>count 20 holds 5</i> gives the same result as <i>5 in (count 20)</i>.  Thus, <i>at</i> does the same work as <a href="help-p.html#pick"><i>pick</i></a>.  They simply use their arguments in the reverse order.</p>
+
+<b>Definition</b>
+
+<pre>
+CONVERSE IS TRANSFORMER f OPERATION A B {
+   B f A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+A CONVERSE CONVERSE f B = A f B
+
+A EACHLEFT f B = B EACHRIGHT CONVERSE f A
+</pre></center>
+
+<a name="copyright">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#converse"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cos"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Copyright<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression, a constant<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Copyright<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#system">system</a>,
+                     <a href="help-v.html#version">version</a><br>
+</dl>
+
+<p>The expression <i>copyright</i> returns a message specifying ownership of the rights to Q'Nial by <address>Queen's University at Kingston, Canada (K7L 3N6)</address>.</p>
+
+<pre>
+     Copyright
+Copyright (c) Queen's University 1983-93
+</pre>
+
+<a name="cos">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#copyright"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cosh"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cos<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      cos A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-c.html#cosh">cosh</a>,
+                     <a href="help-s.html#sin">sin</a>,
+                     <a href="help-p.html#pi">pi</a><br>
+</dl>
+
+<p>The operation <i>cos</i> implements the cosine function of mathematics.  It produces the following results when applied to atoms of the six types:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>cosine of the corresponding real</td></tr>
+<tr><td>integer</td><td>cosine of the corresponding real</td></tr>
+<tr><td>real</td><td>cosine of angle A given in radians</td></tr>
+<tr><td>character</td><td>fault <i>?cos</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?cos</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</h6>
+
+<pre>
+     cos  l  -1  0.5  `a  &quotabc;  ??error
+0.54030 0.54030 0.87758 ?cos ?cos ?error
+</pre>
+
+<b>Equation</b>
+
+<center><pre>
+cos opposite A = cos A
+</pre></center>
+
+<a name="cosh">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cos"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#count"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cosh<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      cosh A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cos">cos</a>,
+                     <a href="help-s.html#sinh">sinh</a>,
+                     <a href="help-p.html#pi">pi</a><br>
+</dl>
+
+<p>The operation <i>cosh</i> implements the hyperbolic cosine function of mathematics. It produces the following results when applied to atoms of the six types:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>hyperbolic cosine of the corresponding real</td></tr>
+<tr><td>integer</td><td>hyperboliccosine of the corresponding real</td></tr>
+<tr><td>real</td><td>hyperbolic cosine of angle A given in radians</td></tr>
+<tr><td>character</td><td>fault <i>?cosh</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?cosh</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</h6>
+
+<pre>
+     cosh  l  -1  0.5
+1.54308 1.54308 1.12763
+
+     cosh `a  &quotabc;  ??error
+?cosh ?cosh ?error
+</pre>
+
+<b>Equation</b>
+
+<center><pre>
+cosh opposite A = cosh A
+</pre></center>
+
+<a name="count">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cosh"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cull"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Count<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      array generation operation, defined in defs.ndf<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      count N<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#tell">tell</a><br>
+</dl>
+
+<p>The operation <i>count</i> generates a list of integers starting at 1 and going up to and including N.  It differs from <a href="help-t.html#tell"><i>tell</i></a>  by counting from 1 instead of from 0.</p>
+
+<pre>
+     count 5
+1 2 3 4 5
+
+     .1 times count 5
+0.1 0.2 0.3 0.4 0.5
+</pre>
+
+<p>The first example shows count generating the sequence of integers from 1 to 5. The second example shows how <i>count</i> can be used to generate a sequence of five real numbers with an interval of .1 between each number.</p>
+
+<pre>
+     count 2 3
++---+---+---+
+|1 1|1 2|1 3|
++---+---+---+
+|2 1|2 2|2 3|
++---+---+---+
+</pre>
+
+<p>The third example shows how <i>count</i> generalizes to other arguments in the same manner as the operation <a href="help-t.html#tell"><i>tell</i></a>.</p>
+
+<b>Definition</b>
+
+<pre>
+count IS OPERATION A { 1 + tell A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+isshape A ==&gt; shape count A = A
+
+isshape A ==&gt; count A = cart EACH count A
+</pre></center>
+
+<a name="cull">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#count"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cut"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cull<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      selection operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      cull A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#except">except</a>,
+                     <a href="help-d.html#diverse">diverse</a><br>
+</dl>
+
+<p>The operation <i>cull</i> returns a list whose items are those of A with duplicates removed.  The order of the items is maintained.</p>
+
+<pre>
+     cull 3 5 4 3 5 2 4
+3 5 4 2
+
+     cull 'a few words with duplicates'
+a fewordsithuplc
+</pre>
+
+<b>Definition</b>
+
+<pre>
+cull IS OPERATION A {
+   grid A EACHLEFT in (A EACHLEFT find A) sublist A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+cull A = list cull A
+
+diverse A &lt;==&gt; cull A = list A
+</pre></center>
+
+<a name="cut">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cull"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cut<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      B cut A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cutall">cutall</a><br>
+</dl>
+
+<p>The operation <i>cut</i> converts an array A into a list of items formed from the items of A according to the bitstring B.  The list of items is divided where true values occur in the corresponding positions in the bitstring B.  The items where the divisions occur are removed.</p>
+
+<pre>
+     A := 'The boy stood   on the burning deck' ;
+     `  match A cut A
++---+---+-----+--+---+-------+----+
+|The|boy|stood|on|the|burning|deck|
++---+---+-----+--+---+-------+----+
+
+     B := 'Formula 1: 3,5,7,,,9';
+
+     `, match B cut B
++------------+-+-+-+
+|Formula 1: 3|5|7|9|
++------------+-+-+-+
+
+     EACH equal tell 4 4 cut tell 4 4
++-----------------+-----------------+-----------------+
+|+---+---+---+---+|+---+---+---+---+|+---+---+---+---+|
+||0 1|0 2|0 3|1 0|||1 2|1 3|2 0|2 1|||2 3|3 0|3 1|3 2||
+|+---+---+---+---+|+---+---+---+---+|+---+---+---+---+|
++-----------------+-----------------+-----------------+
+</pre>
+
+<p><i>Cut</i> can be used to cut a string into a list of substrings.  In the first example, the string is cut at blank characters.  Several adjacent blanks are treated as one blank character.  In the second example, the cut is done where commas occur.  The third example shows that the items of A do not have to be atoms.</p>
+
+<b>Definition</b>
+
+<pre>
+cut IS OPERATION B A {
+   C := EACH rest (B cutall A);
+   not EACH empty C sublist C }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+B cut A = (shape A reshape B) cut A
+
+list (B cut A) = B cut A
+
+B cut list A = B cut A
+</pre></center>
+
+<a name="cutall">
+<hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-c.html#cut"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-d.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-c.html#TOP"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-c.html#cutall"><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162103im_/http://www.nial.com/images/pink_bullet.gif">Cutall<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation, a primitive<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      B cutall A<br>
+<dd><img border="0" src="/web/19980204162103im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cut">cut</a><br>
+</dl>
+
+<p>The operation <i>cutall</i> converts an array A into a list of items formed from the items of A according to the bitstring B.  The list of items is divided where true values occur in the corresponding positions in the bitstring B.  The items where the divisions occur are kept as the first item of each group.</p>
+
+<pre>
+     A := 'The boy stood on the deck' ;
+     `  match A cutall A
++---+----+------+---+----+-----+
+|The| boy| stood| on| the| deck|
++---+----+------+---+----+-----+
+
+     B := 'Formula 1: 3,5,7,,,9';
+     `, match B cutall B
++------------+--+--+-+-+--+
+|Formula 1: 3|,5|,7|,|,|,9|
++------------+--+--+-+-+--+
+
+     EACH equal tell 4 4 cutall tell 4 4
++---------------------+---------------------+---------------------+-----+
+|+---+---+---+---+---+|+---+---+---+---+---+|+---+---+---+---+---+|+---+|
+||0 0|0 1|0 2|0 3|1 0|||1 1|1 2|1 3|2 0|2 1|||2 2|2 3|3 0|3 1|3 2|||3 3||
+|+---+---+---+---+---+|+---+---+---+---+---+|+---+---+---+---+---+|+---+|
++---------------------+---------------------+---------------------+-----+
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+tally (B cutall A) = sum B
+
+B cutall A = (shape A reshape B) cutall A
+
+list (B cutall A) = B cutall A
+
+B cutall list A = B cutall A
+</pre></center>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19980204162103/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19980204162103/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19980204162103/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19980204162103/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19980204162103/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19980204162103/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19980204162103/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19980204162103/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19980204162103/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19980204162103/http://www.nial.com/">
+</map>
+
+<a href="/web/19980204162103/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19980204162103im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 16:21:03 Feb 04, 1998 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:42 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.882
+  exclusion.robots: 0.08
+  exclusion.robots.policy: 0.066
+  esindex: 0.015
+  cdx.remote: 17.204
+  LoadShardBlock: 355.405 (3)
+  PetaboxLoader3.datanode: 97.434 (4)
+  PetaboxLoader3.resolve: 380.983 (3)
+  load_resource: 154.748
+-->

@@ -1,0 +1,166 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-q.html","19991004012411","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "939000251");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-Q</title>
+</head>
+
+<body background="/web/19991004012411im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-p.html#TOP"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="quiet_fault">
+<hr size="5">
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-q.html#TOP"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-q.html#quotient"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-q.html#TOP"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-q.html#quotient"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/pink_bullet.gif">Quiet_fault<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      conversion operation
+<dd><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      quiet_fault A
+<dd><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-f.html#fault">fault</a>
+</dl>
+
+<p>The operation <i>quiet_fault</i> is a version of operation <a href="help-f.html#fault"><i>fault</i></a> that turns off fault triggering before producing the fault and restores the triggering switch to its prior value after producing the fault.</p>
+
+<b>Definition</b>
+
+<pre>
+quiet_fault IS OPERATION Str {
+   Oldsetting := settrigger o;
+   Res := fault Str;
+   settrigger Oldsetting;
+Res }
+</pre>
+
+<a name="quotient">
+<hr size="5">
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-q.html#quiet_fault"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-q.html#TOP"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-q.html#quotient"><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991004012411im_/http://www.nial.com/images/pink_bullet.gif">Quotient<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive arithmetic operation
+<dd><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A quotient B      quotient A B
+<dd><img border="0" src="/web/19991004012411im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-m.html#mod">mod</a>,
+                     <a href="help-f.html#floor">floor</a>,
+                     <a href="help-d.html#divide">divide</a>
+</dl>
+
+<p>The <i>quotient</i> operation returns the quotient of dividing integer A by integer B.  If the divisor B is zero, the result is zero.  If it is negative, the result is the fault <i>?negative divisor</i>.  The operation quotient converts boolean arguments to integer but otherwise produces a fault if either argument is not an integer.</p>
+
+<pre>
+     R gets l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER quotient R
+     1       0  ?A      ?A  ?A  ?error
+     2       1  ?A      ?A  ?A  ?error
+?A      ?A      ?A      ?A  ?A  ?error
+?A      ?A      ?A      ?A  ?A  ?A
+?A      ?A      ?A      ?A  ?A  ?A
+?error  ?error  ?error  ?A  ?A  ?error
+
+     (5 quotient 2) (-5 quotient 2)
+2 -3
+
+     (5 quotient -2) (5 quotient 0)
+?negative divisor 0
+</pre>
+
+<p>The first example illustrates all combinations of atom types for the two arguments to <i>quotient</i>.</p>
+
+<p>The <i>quotient</i> on division by a positive integer B is always an integer on the same side of the origin as A.  The result of A <i>quotient</i> 0 is 0 rather than a fault since this rule is compatible with the choice that A <a href="help-m.html#mod"><i>mod</i></a> 0 is A.</p>
+
+<p>The operation <i>quotient</i> is used in place of <a href="help-d.html#divide"><i>divide</i></a> in situations where the result must be an integer.</p>
+
+<b>Equation</b>
+
+<center><pre>
+isinteger A ==&gt; A quotient 0 = 0
+
+floor (A - (B*(A quotient B))) =f A mod B
+
+A quotient B =f  floor (A / B)
+</pre></center>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991004012411/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991004012411/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991004012411/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991004012411/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991004012411/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991004012411/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991004012411/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991004012411/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991004012411/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991004012411/http://www.nial.com/">
+</map>
+
+<a href="/web/19991004012411/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991004012411im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 01:24:11 Oct 04, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:46:19 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.878
+  exclusion.robots: 0.209
+  exclusion.robots.policy: 0.195
+  esindex: 0.016
+  cdx.remote: 18.015
+  LoadShardBlock: 522.032 (3)
+  PetaboxLoader3.resolve: 394.842 (4)
+  PetaboxLoader3.datanode: 303.283 (4)
+  load_resource: 230.759
+-->

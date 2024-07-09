@@ -1,0 +1,1114 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-e.html","19991003083912","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938939952");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-E</title>
+</head>
+
+<body background="/web/19991003083912im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-d.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-f.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="each">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#eachall"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Each<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      distributive transformer, a primitive<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      EACH f A<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#eachall">eachall</a>,
+                     <a href="help-e.html#eachboth">eachboth</a>,
+                     <a href="help-e.html#eachleft">eachleft</a>,
+                     <a href="help-e.html#eachright">eachright</a>,
+                     <a href="help-i.html#iterate">iterate</a>,
+                     <a href="help-other.html#unaryper">unary pervasive</a><br>
+</dl>
+
+<p>The transformer <i>each</i> forms an operation, called the <i>each</i> transform of f, that applies f to every item of the argument A.  The shape of the result of the application of <i>each</i> f to A is the same shape as A.</p>
+
+<pre>
+     EACH reverse ('abc' 'def' 'ghi')
++---+---+---+
+|cba|fed|ihg|
++---+---+---+
+
+     EACH first tell 3 4
+0 0 0 0
+1 1 1 1
+2 2 2 2
+</pre>
+
+<b>Equations</b>
+<center><pre>
+
+shape EACH f A = shape A
+
+I in grid A ==&gt; I pick (EACH f A) = f (I pick A)
+
+(EACH f) (EACH g) A = EACH (f g) A
+
+EACH f A =f shape A reshape (f first A hitch EACH f rest A)
+
+EACH f single A = single f A
+
+EACH f solitary A = solitary f A
+
+EACH f list A = list EACH f A
+
+isshape A ==&gt; EACH f (A reshape B) = A reshape EACH f B
+
+EACH f link A = link EACH EACH f A
+
+EACH EACH f cart A = cart EACH EACH f A
+</pre></center>
+
+<a name="eachall">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#each"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#eachboth"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Eachall<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      distributive transformer<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      EACHALL f A<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#each">each</a>,
+                     <a href="help-e.html#eachboth">eachboth</a>,
+                     <a href="help-e.html#eachleft">eachleft</a>,
+                     <a href="help-e.html#eachright">eachright</a>,
+                     <a href="help-p.html#pack">pack</a>,
+                     <a href="help-other.html#multi">multi pervasive</a><br>
+</dl>
+
+<p>The transformer <i>eachall</i> forms an operation which applies f to arrays formed by selecting the items of the items of A in corresponding positions, assuming that the items of A are all of the same shape.</p>
+
+<p>When the items of A are not all the same shape, A is examined to see if all the items with <a href="help-t.html#tally"><i>tally</i></a> greater than one have the same shape.  If so, all the items of <a href="help-t.html#tally"><i>tally 1</i></a> are replicated to that shape.  If not, the fault <i>?conform</i> is returned.  <i>Eachall</i> is implicitly applied in multi pervasive operations.</p>
+
+<pre>
+     A := 9 [2] (4 4 reshape (5+tell 16))
++-+-+-----------+
+|9|2| 5  6  7  8|
+| | | 9 10 11 12|
+| | |13 14 15 16|
+| | |17 18 19 20|
++-+-+-----------+
+     pack A
++------+------+------+------+
+|9 2 5 |9 2 6 |9 2 7 |9 2 8 |
++------+------+------+------+
+|9 2 9 |9 2 10|9 2 11|9 2 12|
++------+------+------+------+
+|9 2 13|9 2 14|9 2 15|9 2 16|
++------+------+------+------+
+|9 2 17|9 2 18|9 2 19|9 2 20|
++------+------+------+------+
+
+     (EACH sum) pack A
+16 17 18 19
+20 21 22 23
+24 25 26 27
+28 29 30 31
+
+     EACHALL sum A
+16 17 18 19
+20 21 22 23
+24 25 26 27
+28 29 30 31
+
+     sum A
+16 17 18 19
+20 21 22 23
+24 25 26 27
+28 29 30 31
+</pre>
+
+<p>The example shows that <i>eachall</i> is defined in terms of <a href="help-p.html#pack"><i>pack</i></a> and is implicitly used in the multi pervasive operation <a href="help-s.html#sum"><i>sum</i></a>.</p>
+
+<b>Definition</b>
+
+<pre>
+EACHALL IS TRANSFORMER f OPERATION A {
+   EACH f pack A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape EACHALL f A = shape pack A
+
+I in grid pack A ==&gt; I pick (EACHALL f A) = f (I pick pack A)
+</pre></center>
+
+<a name="eachboth">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#eachall"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#eachleft"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Eachboth<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+     Class   :      distributive transformer<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+     Usage   :<br>
+<pre>
+                     A EACHBOTH f B
+                     EACHBOTH f A B
+</pre>
+
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#each">each</a>,
+                     <a href="help-e.html#eachall">eachall</a>,
+                     <a href="help-e.html#eachleft">eachleft</a>,
+                     <a href="help-e.html#eachright">eachright</a>,
+                     <a href="help-p.html#pack">pack</a>,
+                     <a href="help-other.html#binary">binary</a><br>
+</dl>
+
+<p>The transformer <i>eachboth</i> forms an operation which applies f to pairs formed by selecting the items of A and B in corresponding positions, assuming that A and B have the same shape.</p>
+
+<p>When A and B do not have the same shape, if either A or B has only one item, that item is replicated to the shape of the other argument; otherwise, the fault <i>?conform</i> is returned.</p>
+
+<p><i>Eachboth</i> is used implicitly in all binary pervasive operations.</p>
+
+<pre>
+     7 2 1 EACHBOTH post 4 5 3
++-+-+-+
+|7|2|1|
+|4|5|3|
++-+-+-+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+EACHBOTH IS TRANSFORMER f OPERATION A B {
+   EACHALL f A B }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape (A EACHBOTH f B) = shape (A pack B)
+
+I in grid pack A B ==&gt; I pick (A EACHBOTH f B) = f (I pick (A pack B))
+</pre></center>
+
+<a name="eachleft">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#eachboth"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#eachright"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Eachleft<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      distributive transformer<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     A EACHLEFT f B
+                     EACHLEFT f A B
+</pre>
+
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#each">each</a>,
+                     <a href="help-e.html#eachall">eachall</a>,
+                     <a href="help-e.html#eachboth">eachboth</a>,
+                     <a href="help-e.html#eachright">eachright</a>,
+                     <a href="help-i.html#iterate">iterate</a><br>
+</dl>
+
+<p>The transformer <i>eachleft</i> forms an operation which applies f to pairs formed by pairing the items of A with B.  The shape of the result is the shape of A.</p>
+
+<pre>
+     2 3 4 EACHLEFT reshape 5
++---+-----+-------+
+|5 5|5 5 5|5 5 5 5|
++---+-----+-------+
+
+     (2 3 reshape 'abcdef') EACHLEFT hitch '123'
++----+----+----+
+|a123|b123|c123|
++----+----+----+
+|d123|e123|f123|
++----+----+----+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+EACHLEFT IS TRANSFORMER f OPERATION A B {
+   EACH (B CONVERSE f) A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape ( A EACHLEFT f B ) = shape A
+
+I in grid A ==&gt; I pick (A EACHLEFT f B) = f (I pick A) B
+
+A EACHLEFT f B = A EACHBOTH f single B
+
+single A EACHLEFT f B = single (A f B)
+
+solitary A EACHLEFT f B = solitary (A f B)
+
+list A EACHLEFT B = list (A EACHLEFT f B)
+
+isshape S ==&gt; (S reshape A) EACHLEFT f B = S reshape (A EACHLEFT f B)
+</pre></center>
+
+<a name="eachright">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#eachleft"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#edit"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Eachright<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      distributive transformer<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     A EACHRIGHT f B
+                     EACHRIGHT f A B
+</pre>
+
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#each">each</a>,
+                     <a href="help-e.html#eachleft">eachleft</a>,
+                     <a href="help-e.html#eachall">eachall</a>,
+                     <a href="help-e.html#eachboth">eachboth</a>,
+                     <a href="help-i.html#iterate">iterate</a><br>
+</dl>
+
+<p>The transformer <i>eachright</i> forms an operation which applies f to pairs formed by pairing A with the items of B.  The shape of the result is the shape of B.</p>
+
+<pre>
+     2 EACHRIGHT reshape 3 4 5
++---+---+---+
+|3 3|4 4|5 5|
++---+---+---+
+
+     `X EACHRIGHT hitch (2 3 reshape 'ab' 'cd')
++---+---+---+
+|Xab|Xcd|Xab|
++---+---+---+
+|Xcd|Xab|Xcd|
++---+---+---+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+EACHRIGHT IS TRANSFORMER f OPERATION A B
+   { EACH ( A f ) B }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+I in grid B ==&gt; I pick (A EACHRIGHT f B) = f A (I pick B)
+
+shape ( A EACHRIGHT f B ) = shape B
+
+A EACHRIGHT f B = single A EACHBOTH f B
+
+A EACHRIGHT f single B = single (A f B)
+
+A EACHRIGHT f solitary B=solitary (A f B)
+
+A EACHRIGHT f list B=list(A EACHRIGHT fB)
+
+isshape S ==&gt; A EACHRIGHT f (S reshape B) = S reshape (A EACHRIGHT f B)
+</pre></center>
+
+<a name="edit">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#eachright"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#editwindow"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Edit<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      edit Filename<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-d.html#defedit">defedit</a>,
+                     <a href="help-h.html#host">host</a><br>
+</dl>
+
+<p>The operation <i>edit</i> passes control to the standard editor, requesting it to edit the file named by the string or phrase <i>Filename</i>.  The editor used is determined by the environment variable EDITOR or by a default chosen for each version.  When the editing task is completed, the editor returns control to Q'Nial.  The result is the fault <i>?noexpr</i>.</p>
+
+<pre>
+     edit &quottest.ndf;
+     edit 'data_records'
+</pre>
+
+<p>If the <i>edit</i> operation is used to edit a file of Nial definitions, the <a href="help-l.html#loaddefs"><i>loaddefs</i></a> operation must be executed on return from the editor to load the definitions.</p>
+
+<p>If there is insufficient main memory to load the editor on the host system (e.g.  on the PCDOS version), <i>edit</i> may fail and display a message from the host system.</p>
+
+<a name="editwindow">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#edit"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#empty"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Editwindow<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      alphanumeric window operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      editwindow Strings Offset
+                     Cursorposition Command Historyno<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Result  :      Strings Offset Cursorposition Command Historyno Key<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#readchar">readchar</a>,
+                     <a href="help-w.html#window">window</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>,
+                     <a href="help-p.html#putstrings">putstrings</a>,
+                     <a href="help-s.html#seteditkey">seteditkey</a><br>
+</dl>
+
+<p>The operation <i>editwindow</i> provides a basic text editing capability for use in Nial applications.  It is used in the operation <a href="help-d.html#defedit"><i>defedit</i></a> for editing definitions in the current workspace.</p>
+
+<p>Q'Nial must be in window mode when <i>editwindow</i> is used.  The current window is used as the edit window.  The operation is designed to be used in an application in which certain keystrokes will be handled by the editor and others by the application.  The arguments and results are such that it is easy to exit the editor to do Nial processing and then return to the editor, finding it in the same state in which it was exited.</p>
+
+<p>The <b>Strings</b> argument which holds the list of strings to be edited must be present.  The others are optional.</p>
+
+<p>There may be more items in <i>Strings</i> than lines in the window.  The editor can scroll down and to the right to handle text of arbitrary size.</p>
+
+<p>The <b>Offset</b> indicates the path in the strings to the character that is to appear in the upper left corner of the window.  If omitted, the offset defaults to 0 0, placing the first character of the first string in the upper left corner of the window.</p>
+
+<p>The <b>Cursorposition</b> indicates where in the window the cursor is to be placed initially, with the default being 0 0, the upper left corner of the window.</p>
+
+<p>The <b>Commands</b> are a list of editor Commands that are used to put the editor into its initial state.</p>
+
+<p>The <b>Historyno</b> gives the number of times the undo command <i>&ltAlt; U&gt;</i> can be done to restore the editor to a previous state.  In essence, the work can be reversed for <i>Historyno</i> steps.</p>
+
+<p>In the result, <b>Strings</b> are the state of the strings after all the editing actions have been completed if the editing is ended by the quit command <i>&ltAlt; Q&gt;</i>.  If the editing is ended with the abort command <i>&ltAlt; A&gt;</i>, a prompt is issued to confirm the intention to abort the editing and the original strings are returned.</p>
+
+<p>The <i>Offset</i>, <i>Cursorposition</i> and Command provide information so that the state of editing on exit can be reset in a subsequent call.</p>
+
+<p>The <b>Key</b> field of the result gives the keystroke which was pressed to exit the <i>editwindow</i> operation.</p>
+
+<p><i>Editwindow</i> provides a window-oriented text editor.  When it is called,  the editor is in insert mode.  If the mode is switched to replace mode, the  letter R appears in the bottom left corner of the window border.  The  position of the cursor relative to the beginning of text is displayed in the  bottom left corner of the window border after the mode indication.  These two  features are provided if the window is bordered and wide enough to accommodate them.</p>
+
+<p>As well as its normal editing mode, the editor can be placed in modes intended just for viewing or for editing with scrolling inhibited.  If <i>editwindow</i> is executed with Command set to view_mode or protected_view_mode, the information displayed in the window cannot be changed during the execution of the <i>editwindow</i> operation.</p>
+
+<p>In view_mode, the editor acts on keystrokes that correspond to cursor or text motion and exits on all other keystrokes.  This mode is used for applications in which all character keystrokes cause an exit and are handled by the Nial code outside <i>editwindow</i> but text is displayed in the window and  can be paged up or down to be read.</p>
+
+<p>In protected_view_mode, the editor acts on keystrokes that correspond to cursor or text motion but other keystrokes except those associated with commands <a href="help-e.html#exit"><i>exit</i></a> and  <i>abort</i> are ignored.  This is useful for applications using menus where scrolling is wanted but only a limited number of keys are used for selection.</p>
+
+<p>In the modes no_scroll_ver_mode, no_scroll_hor_mode and no_scroll_mode, editing is performed but scrolling is inhibited vertically, horizontally and both ways, respectively.</p>
+
+<p>The association between keystrokes and editor commands is not fixed.  There is a default association that is in place when Q'Nial is initiated which can be modified by use of the <a href="help-s.html#seteditkey"><i>seteditkey</i></a> operation.  Portability of window applications is supported by the keyboard handling, which maps all keyboards to one based on the IBMPC keyboard.</p>
+
+<p>The editor uses highlighting to mark areas of the screen that are to be affected by editor commands.  The highlighting is controlled by the highlight key <i>&ltAlt; H&gt;</i> and the unhighlight key <i>&ltAlt; X&gt;</i>.  Pressing  <i>&ltAlt; H&gt;</i> twice at the same cursor position highlights the line the  cursor is on.  Pressing it at two different cursor position highlights the text from one position up to and including the other.  The order in which the two cursor positions are indicated does not matter.  The highlighted text is treated as a unit that remembers where lines start and stop.</p>
+
+<p>The commands that use the highlighting feature are the following:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Command</b></th><b><th>Default Key</th><th>Effect</th></b>
+</tr>
+<tr><td>highlight</td>
+    <td>&ltAlt; H&gt;</td><td>Highlight text as described above.</td></tr>
+<tr><td>delete_block</td>
+    <td>&ltAlt; D&gt;</td><td>Delete highlighted text.</td></tr>
+<tr><td>write_file</td>
+    <td>&ltAlt; W&gt;</td><td>Write highlighted text to a file.</td></tr>
+<tr><td>copy_block</td>
+    <td>&ltAlt; C&gt;</td><td>Copy highlighted text to the cursor position.</td></tr>
+<tr><td>move_block</td>
+    <td>&ltAlt; M&gt;</td><td>Move highlighted text to the cursor position.</td></tr>
+<tr><td>unhighlight</td>
+    <td>&ltAlt; X&gt;</td><td>Undo the current highlighting.</td></tr>
+</table>
+</h6>
+
+<p>The commands copy_block and write_file leave the block highlighted; move_block undoes the highlighting.</p>
+
+<p>The editor supports an undo facility that permits previous edit actions to be reversed.  The number of previous commands that can be reversed can be chosen by the application and set by the parameter <i>Historyno</i>.  The default is two; <a href="help-d.html#defedit"><i>defedit</i></a> sets it to five.  The undo command <i>&ltAlt; U&gt;</i> undoes an edit action, restoring the strings to a previous state.  When an editing process modifies one or more lines, the text is saved so that the action can be reversed if requested.  A cyclic list of editor states is maintained so that if more undo's are issued than there are saved states, the cycle is repeated.</p>
+
+<p>The editor has search and replace features.  The search command (F2) prompts for a search pattern in the bottom border of the window.  When the search pattern is entered and <i>&ltEnter;&gt;</i> is pressed, the text is searched for the first occurrence of a string that matches the pattern.  The cursor is moved to the first character in the matching string if found.</p>
+
+<p>The command <i>search_again (F3)</i> causes a search to continue using the pattern from a previous search command.</p>
+
+<p>The command <i>replace (F4)</i> prompts for a replacement string.  When the string is entered and <i>&ltEnter;&gt;</i> is pressed, the editor replaces the string matched in the previous search with the entered string, provided the cursor has not been moved since the search was done.  Once a <i>replace</i> has been done, <i>search_again</i> can be used to get the next occurrence and then <i>replace</i> used to replace it.</p>
+
+<p>The command <i>replace_all (F5)</i> prompts for a search pattern and then prompts for a replacement string.  All occurrences of strings matching the pattern are replaced.</p>
+
+<p>The search mechanism supports regular expression pattern searching where certain characters are interpreted to have special meanings.  The codes are:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Code</b></th><th><b>Meaning</b></th>
+</tr>
+<tr><td>^</td><td>first of line</td></tr>
+<tr><td>$</td><td>end of line</td></tr>
+<tr><td>.</td><td>any character</td></tr>
+<tr><td>[]</td><td>grouping</td></tr>
+<tr><td>*</td><td>sequence of characters</td></tr>
+<tr><td>\</td><td>escape character</td></tr>
+</table>
+</h6>
+
+<p>The editor can read input from a text file using the <a href="help-r.html#read"><i>read</i></a> command <i>&ltAlt; R&gt;</i>.  It prompts for the file name, and inserts the text following the line the cursor is on.</p>
+
+<p>Text can be written with <i>&ltAlt; W&gt;</i>, the <a href="help-w.html#write"><i>write</i></a> command.  It prompts for the name of the file and writes the highlighted text to the file.  If no text is highlighted, it writes the entire list of strings to the file.  If the file already exists, the editor prompts to ask whether to overwrite, append or not write the text.</p>
+
+<p>The following table describes each of the editor commands giving its default key.</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Command</b></th><b><th>Default Key</th><th>Effect</th></b>
+</tr>
+<tr><td>abort</td>
+    <td>&ltAlt; A&gt;</td>
+    <td>abort the session and return the original strings unchanged</td></tr>
+<tr><td>backspace</td>
+    <td>Backspace</td>
+     <td>move cursor left erasing previous character</td></tr>
+<tr><td>copy_block</td>
+    <td>&ltAlt; C&gt;</td> <td>copy highlighted block to cursor position</td></tr>
+<tr><td>cursor_down</td>
+    <td>Down_Arrow</td><td>move cursor down</td></tr>
+<tr><td>cursor_left</td>
+    <td>Left_Arrow</td><td>move cursor left</td></tr>
+<tr><td>cursor_right</td>
+    <td>Right_Arrow</td><td>move cursor right</td></tr>
+<tr><td>cursor_up</td>
+    <td>Up_Arrow</td><td>move cursor up</td></tr>
+<tr><td>delete</td>
+    <td>Delete</td><td>delete the character at the cursor position</td></tr>
+<tr><td>delete_block</td>
+    <td>&ltAlt; D&gt;</td><td>delete highlighted block</td></tr>
+<tr><td>erase_line</td>
+    <td>&ltAlt; E&gt;</td><td>erase cursor line</td></tr>
+<tr><td>highlight</td>
+    <td>&ltAlt; H&gt;</td><td>highlight marker</td></tr>
+<tr><td>line_begin</td>
+    <td>&ltHome;&gt;</td><td>move cursor to the beginning of the line</td></tr>
+<tr><td>line_end</td>
+    <td>&ltEnd;&gt;</td><td>move cursor to the end of the line</td></tr>
+<tr><td>line_number</td>
+    <td>&ltAlt; N&gt;</td><td>move to line number</td></tr>
+<tr><td>move_block</td>
+    <td>&ltAlt; M&gt;</td><td>move highlighted block to cursor position</td></tr>
+<tr><td>move_left</td>
+    <td>&ltCtrl; Left_Arrow&gt;</td><td>move view a half page to the left</td></tr>
+<tr><td>move_right</td>
+    <td>&ltCtrl; Right_Arrow&gt;</td><td>move view a half page to the right</td></tr>
+<tr><td>none</td>
+    <td>&ltothers;&gt;</td><td>no edit action</td></tr>
+<tr><td>page_back</td>
+    <td>PgUp</td><td>move view back one page</td></tr>
+<tr><td>page_forward</td>
+    <td>PgDn</td><td>move view one page forward</td></tr>
+<tr><td>quit</td>
+    <td>&ltAlt; Q&gt;</td><td>exit returning the modified text</td></tr>
+<tr><td>read_file</td>
+    <td>&ltAlt; R&gt;</td><td>read named file at the cursor</td></tr>
+<tr><td>replace</td>
+    <td>F4</td><td>replace string found in search</td></tr>
+<tr><td>replace_all</td>
+    <td>F5</td><td>replace all occurrences of searched target</td></tr>
+<tr><td>return</td>
+    <td>Enter</td><td>begin new line at cursor position</td></tr>
+<tr><td>search</td>
+    <td>F2</td><td>search for string using a regular expression</td></tr>
+<tr><td>search_again</td>
+    <td>F3</td><td>continue search</td></tr>
+<tr><td>text_begin</td>
+    <td>&ltCtrl; Home&gt;</td><td>move cursor to the beginning of the text</td></tr>
+<tr><td>text_end</td>
+    <td>&ltCtrl; End&gt;</td><td>move cursor to the end of the text</td></tr>
+<tr><td>toggle_mode</td>
+    <td>Ins</td><td>toggle between insert and replace mode</td></tr>
+<tr><td>undo</td>
+    <td>&ltAlt; U&gt;</td><td>undo latest edit action</td></tr>
+<tr><td>unhighlight</td>
+    <td>&ltAlt; X&gt;</td><td>undo highlighting</td></tr>
+<tr><td>write_file</td>
+    <td>&ltAlt; W&gt;</td><td>write text to named file</td></tr>
+</table>
+</h6>
+
+<p>There are five additional commands that can be passed to <i>editwindow</i> to set a mode of operation that controls the behaviour of <i>editwindow</i>.  These modes affect the way the <i>return</i> key is interpreted.  In the view modes, it behaves as an <a href="help-e.html#exit"><i>exit</i></a> command.  In the no_scroll modes, <i>return</i> does not cause scrolling when used at the bottom of the window.</p>
+
+<p>In normal editor usage, the <i>Return</i> key inserts a new line, splitting a line if the cursor is not at the end of the line.</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Mode</b></th><th><b>Effect</b></th>
+</tr>
+<tr><td>view_mode</td>
+    <td>inhibit modifications, return on all non-movement keys</td></tr>
+<tr><td>protected_view_mode</td>
+    <td>inhibit modifications, return on quit and abort</td></tr>
+<tr><td>no_scroll_ver_mode</td>
+    <td>inhibit vertical scrolling</td></tr>
+<tr><td>no_scroll_hor_mode</td>
+    <td>inhibit horizontal scrolling</td></tr>
+<tr><td>no_scroll_mode</td>
+    <td>inhibit all scrolling</td></tr>
+</table>
+</h6>
+
+<a name="empty">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#editwindow"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#equal"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Empty<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      empty A<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-n.html#null">null</a>,
+                     <a href="help-i.html#in">in</a>,
+                     <a href="help-s.html#simple">simple</a>,
+                     <a href="help-s.html#single">single</a><br>
+</dl>
+
+<p>The operation <i>empty</i> tests whether or not an array A has any items.  If A has no items, it returns <a href="help-t.html#true"><i>true</i></a>; otherwise, <a href="help-f.html#false"><i>false</i></a>.  The predefined expression  <a href="help-n.html#null"><i>Null</i></a> is empty as is any array with a zero in its shape.</p>
+
+<p>Since there are empty arrays with more than one dimension, it is better to test for an empty array by using the predicate rather than by direct comparison with Null.</p>
+
+<pre>
+     empty Null
+l
+
+     empty (0 3 2 reshape 5)
+l
+
+     empty solitary 5
+o
+
+     empty solitary Null
+o
+</pre>
+
+<p>The last two examples show that a solitary is not empty even if the item it contains is empty.</p>
+
+<b>Definition</b>
+
+<pre>
+empty IS OPERATION A { tally A = 0 }
+</pre>
+
+<br>
+<b>Equation</b>
+
+<center><pre>
+empty A = 0 in shape A
+</pre></center>
+
+<a name="equal">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#empty"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#erase"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Equal<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      predicate operation, a primitive<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A equal B      A = B      equal A<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-u.html#unequal">unequal</a>,
+                     <a href="help-m.html#match">match</a>,
+                     <a href="help-m.html#mate">mate</a>,
+                     <a href="help-g.html#gt">gt</a>,
+                     <a href="help-g.html#gte">gte</a>,
+                     <a href="help-l.html#lt">lt</a>,
+                     <a href="help-l.html#lte">lte</a><br>
+</dl>
+
+<p>The operation <i>equal</i> is normally used to compare two arrays A and B to see whether or not they are identical.  It returns <a href="help-t.html#true"><i>true</i></a> if they are equal; <a href="help-f.html#false"><i>false</i></a> otherwise.</p>
+
+<p>Two nonempty arrays are identical if they have identical shapes and hold identical items at each location.  Two empty arrays are identical if they have identical shapes.</p>
+
+<p>The operation is extended to arbitrary arrays by returning <a href="help-t.html#true"><i>true</i></a> if all items of an array are identical.</p>
+
+<p>The symbol = is a synonym for <i>equal</i> and can be used in both infix and prefix application.</p>
+
+<p>In the section &quotEquations; in Nial&quot; on page 2 of this manual, the symbol = is used to separate two sides of an equation.  To test such an equation, it may be necessary to replace the expression following = with the same expression in parentheses in order to force correct parsing of the equation as a Nial expression.</p>
+
+<pre>
+     2 3 4 = [2,3,4]
+l
+     Null = ''
+l
+     2 (3 4) = (2 3) 4
+o
+     equal EACH shape tell 2 3 4
+l
+</pre>
+
+<p>The first example shows that a triple formed using strand notation is identical to that formed using brackets notation.  The second shows that <a href="help-n.html#null"><i>Null</i></a> is equal to the empty string.  The third shows that grouping items of a list in different ways creates different arrays.  The last shows the convenience of the more general form of equality.</p>
+
+<b>Equations</b>
+
+<center><pre>
+A equal B &lt;==&gt; shape A = shape B
+
+I in grid A ==&gt; I pick A = I pick B
+</pre></center>
+
+<a name="erase">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#equal"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#eraserecord"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Erase<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      erase Nm<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-s.html#symbols">symbols</a><br>
+</dl>
+
+<p>The operation <i>erase</i> is used to remove unwanted global definitions and variables from the workspace.  The argument <i>Nm</i> must be a phrase or string giving the object to be removed.  Predefined names and names in local scopes cannot be removed.</p>
+
+<p>When a name has been erased, it remains in the symbol table with its original role.  It can be redefined in the same role or, if a variable, reassigned a value by a subsequent action.  A name cannot change its role once established.</p>
+
+<pre>
+     average IS divide[sum,tally];
+     calc IS EACH average;
+     Var3 := calc (2 3 4) (5 6 7)
+3. 6.
+
+     EACH erase &quotaverage; 'Var3' &quotsum;
+?noexpr ?noexpr ?system name
+</pre>
+
+<p>In the example above, the operation <a href="help-s.html#sum"><i>sum</i></a> cannot be erased as it is a predefined operation.  In the next three examples below, faults are returned because of missing variables or operations that were erased.  The effect of erasing an object is not propagated to other definitions referring to the erased name.</p>
+
+<pre>
+     Var3
+?no_value
+
+     average count 10
+?missing_op
+
+     calc (2 3 4) (5 6 7)
+?missing_op ?missing_op
+
+     average := 5 6 7
+?invalid assignment: AVERAGE :=  &lt;***&gt; 5 6
+</pre>
+
+<p>In the last example, an attempt is made to redefine the role of <a href="help-a.html#average"><i>average</i></a> and Q'Nial indicated that  <a href="help-a.html#average"><i>average</i></a> is not a suitable name for such an assignment.</p>
+
+<a name="eraserecord">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#erase"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#eval"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Eraserecord<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      eraserecord Filenum N<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#readrecord">readrecord</a>,
+                     <a href="help-w.html#writerecord">writerecord</a>,
+                     <a href="help-r.html#readarray">readarray</a>,
+                     <a href="help-w.html#writearray">writearray</a>,
+                     <a href="help-o.html#open">open</a>,
+                     <a href="help-c.html#close">close</a>,
+                     <a href="help-f.html#filetally">filetally</a><br>
+</dl>
+
+<p>The operation <i>eraserecord</i> is used to erase component N of direct access file designated by the number <i>Filenum</i>.  In a file with record components, <i>eraserecord</i> replaces the erased component with an empty string.  In a file with array components, it replaces the erased component with the fault <i>?missing</i>.</p>
+
+<p>N may be a single record number or a list of record numbers.</p>
+
+<p>If the last component in a file is erased, any immediately preceding components that are empty in a record component file or contain the fault <i>?missing</i> in an array component file are also removed.  The file tally, which records the number of records in the file, is adjusted accordingly.</p>
+
+<p>The operation returns the fault <i>?noexpr</i> or a fault indicating improper use of the operation.</p>
+
+<pre>
+     File_num := open &quotNames; &quotd; ;
+     eraserecord File_num 23 ;
+</pre>
+
+<a name="eval">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#eraserecord"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#except"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Eval<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      evaluation operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      eval Pt<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#execute">execute</a>,
+                     <a href="help-s.html#scan">scan</a>,
+                     <a href="help-p.html#parse">parse</a>,
+                     <a href="help-v.html#value">value</a><br>
+</dl>
+
+<p>The operation <i>eval</i> provides access to the underlying expression evaluator of Q'Nial.  The argument to <i>eval</i> must be a parse tree returned by <a href="help-p.html#parse"><i>parse</i></a> or <a href="help-g.html#getdef"><i>getdef</i></a>, a named expression or a cast which represents a Nial expression.  The effect is to evaluate the expression and return the resulting value.  As seen below, the parse tree can be one formed by using the cast mechanism or one built explicitly using <a href="help-p.html#parse"><i>parse</i></a>.</p>
+
+<pre>
+     eval parse scan '23 + 45'
+68
+
+     eval !(23 + 45)
+68
+</pre>
+
+<p>The next example shows that <i>eval</i> can be used to evaluate a named expression using either the cast or the phrase of its name.</p>
+
+<pre>
+     A := 100 ;
+     Addone IS (A := A + 1);
+     (eval !Addone)(eval &quotAddone;)
+101 102
+
+     (eval !A)(eval &quotA;)(value &quotA;)
+102 ?not an expression 102
+</pre>
+
+<p>The last example shows that <i>eval</i> can be used to evaluate the cast of a variable but not a phrase naming the variable.  The operation <a href="help-v.html#value"><i>value</i></a> should be used instead.</p>
+
+<b>Equations</b>
+
+<center><pre>
+S a string holding a Nial expression ==&gt; eval parse scan S = execute S
+
+Pt a parse tree ==&gt; eval parse deparse Pt = eval P
+</pre></center>
+
+<a name="except">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#eval"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#execute"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Except<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary selection operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A except B         except A B<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cull">cull</a>,
+                     <a href="help-s.html#sublist">sublist</a>,
+                     <a href="help-n.html#notin">notin</a><br>
+</dl>
+
+<p>The operation <i>except</i> returns the list of items of A not in B.  It corresponds to set difference if A and B are viewed as set representations.  The result is a list with items in the same order as in A.</p>
+
+<pre>
+     count 10 except 3 5 7
+1 2 4 6 8 9 10
+
+     'a list of words' except 'aeiou'
+ lst f wrds
+
+     tell 2 3 except [0 0]
++---+---+---+---+---+
+|0 1|0 2|1 0|1 1|1 2|
++---+---+---+---+---+
+
+     tell 2 3 except (0 0)
++---+---+---+---+---+---+
+|0 0|0 1|0 2|1 0|1 1|1 2|
++---+---+---+---+---+---+
+</pre>
+
+<p>The last two examples show that if the left argument has nonatomic items, to remove a single non-atomic array, the right argument must be made into a solitary list.  Otherwise the items of the right argument are used.</p>
+
+<b>Definition</b>
+
+<pre>
+except IS OPERATION A B {
+   A EACHLEFT notin B sublist A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+list (A except B) = A except B
+
+list A except list B = A except B
+
+(A except B) except C=A except (B link C)
+
+A except cull B = A except B
+</pre></center>
+
+<a name="execute">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#except"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Execute<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      evaluation operation<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      execute S<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#eval">eval</a>,
+                     <a href="help-p.html#parse">parse</a>,
+                     <a href="help-s.html#scan">scan</a>,
+                     <a href="help-t.html#tonumber">tonumber</a>,
+                     <a href="help-a.html#apply">apply</a>,
+                     <a href="help-v.html#value">value</a><br>
+</dl>
+
+<p>The operation <i>execute</i> evaluates a Nial expression given as a string S.  The result of the evaluation is returned.  The execution of the string takes place in the environment where <i>execute</i> is applied.</p>
+
+<p>If the string contains a name, the local meaning of that name will be used if a local meaning exists.  If execution of the string results in the creation of a new variable or defined name, the new object is placed in the global environment.</p>
+
+<p>If a string being executed contains an integer representation that would be converted to an integer outside the range for the computer, the result is converted to the corresponding real number.</p>
+
+<pre>
+     execute '23 + 40045'
+40068.
+
+     A := count 5; opname := 'product';
+     execute link opname ' A'
+120
+</pre>
+
+<p>The last example shows that Nial program text can be constructed under program control and then executed.  This feature is useful in applications where responses are generated by combining text elements based on the user input and the current state of the computation.  The technique is useful for applications involving computer assisted instruction and knowledge based systems.</p>
+
+<p>It is more efficient to use <a href="help-e.html#eval"><i>eval</i></a> to evaluate the cast of an expression than to use <i>execute</i> to evaluate the corresponding string.  In the former approach the <a href="help-s#scan"><i>scan</i></a> and <a href="help-p.html#parse"><i>parse</i></a> is done once, whereas in the latter it is repeated on each execution.</p>
+
+<b>Definition</b>
+
+<pre>
+execute IS OPERATION A {
+   eval parse scan A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+execute readscreen Prompt = read Prompt
+
+Txt, a Nial expression ==&gt; eval !(Txt) = execute 'Txt'
+
+S a string holding a Nial expression ==&gt; execute canonical S = execute S
+
+where
+
+canonical IS link descan deparse parse scan
+</pre></center>
+
+<a name="exp">
+<hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-e.html#execute"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-f.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-e.html#TOP"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-e.html#exp"><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003083912im_/http://www.nial.com/images/pink_bullet.gif">Exp<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      exp A<br>
+<dd><img border="0" src="/web/19991003083912im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-l.html#ln">ln</a>,
+                     <a href="help-p.html#power">power</a>,
+                     <a href="help-l.html#log">log</a><br>
+</dl>
+
+<p>The operation <i>exp</i> implements the exponential function of mathematics.  It produces the following results when applied to atoms of the six types:</p>
+
+<h6 align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>exponential of the corresponding real</td></tr>
+<tr><td>integer</td><td>exponential of the corresponding real</td></tr>
+<tr><td>real</td><td>exponential of A</td></tr>
+<tr><td>character</td><td>fault ?exp</td></tr>
+<tr><td>Phrase</td><td>fault ?exp</td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</h6>
+
+<pre>
+     exp  o  1  0.5  `a  &quotabc;  ??error
+1. 2.71828 1.64872 ?exp ?exp ?error
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+exp ln A = A (within roundoff error)
+
+exp A = exp 1.0 power A (within roundoff error)
+</pre></center>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991003083912/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991003083912/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991003083912/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991003083912/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991003083912/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991003083912/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991003083912/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991003083912/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991003083912/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991003083912/http://www.nial.com/">
+</map>
+
+<a href="/web/19991003083912/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991003083912im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 08:39:12 Oct 03, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:39 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.94
+  exclusion.robots: 0.1
+  exclusion.robots.policy: 0.084
+  esindex: 0.018
+  cdx.remote: 17.942
+  LoadShardBlock: 627.185 (3)
+  PetaboxLoader3.datanode: 140.174 (4)
+  PetaboxLoader3.resolve: 619.122 (2)
+  load_resource: 173.562
+-->

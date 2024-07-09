@@ -1,0 +1,296 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-o.html","19991003230757","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938992077");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-O</title>
+</head>
+
+<body background="/web/19991003230757im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-n.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="open">
+<hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-o.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-o.html#opposite"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-o.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-o.html#outer"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/pink_bullet.gif">Open<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      open Filename Mode
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#close">close</a>,
+                     <a href="help-r.html#readfile">readfile</a>,
+                     <a href="help-w.html#writefile">writefile</a>,
+                     <a href="help-r.html#readarray">readarray</a>,
+                     <a href="help-w.html#writearray">writearray</a>,
+                     <a href="help-r.html#readrecord">readrecord</a>,
+                     <a href="help-w.html#writerecord">writerecord</a>
+</dl>
+
+<p>The operation <i>open</i> prepares the host file named by the phrase or string <i>Filename</i> for use in one of five possible modes.  The <i>Mode</i> is a character, string or phrase encoding the mode as follows:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>M</b></th><b><th>Mode</th><th>Description</th></b>
+</tr>
+<tr><td>r</td><td>read</td>
+    <td>existing sequential text file, read only</td></tr>
+<tr><td>w</td><td>write</td>
+    <td>create sequential text file, write only</td></tr>
+<tr><td>a</td><td>append</td>
+    <td>existing sequential text file, write only starting at the end</td></tr>
+<tr><td>d</td><td>direct</td>
+    <td>existing or new binary file, direct access for both read and 
+        write</td></tr>
+<tr><td>c</td><td>communication</td>
+    <td>existing or new sequential text file, for both read and write</td></tr>
+<tr><td></td><td></td>
+    <td></td></tr>
+</table>
+</p>
+
+<p>In read, write, append or communication modes, <i>Filename</i> must include the file extension, if any.  In direct mode, two host files are opened, one with extension <i>.ndx</i> and the other with extension <i>.rec</i>, standing for "index" and "record", respectively.  In this mode, <i>Filename</i> is the root of the file name, without any extension.</p>
+
+<p>The communication mode can be used with special forms of <a href="help-r.html#readfile"><i>readfile</i></a> and <a href="help-w.html#writefile"><i>writefile</i></a> usage to access a special device or a communications port.  This mode is available only on the PCDOS Version of Nial.</p>
+
+<p>The result of the <i>open</i> operation is a file designator, an integer specifying an input/output port.  This value is used in later references to the file.</p>
+
+<p>The effect of <i>open</i> may be system dependent.  If the file exists and can be opened by the user in the requested mode, the result will be the file designator.  If it cannot be opened or does not exist, the result will be a fault message generated from the error message provided by the host system. For portable programs, the specific fault message should not be used in an equality test.  The result of an <i>open</i> should be tested for a fault value using <a href="help-i.html#isfault"><i>isfault</i></a> to catch unexpected failures.</p>
+
+<a name="opposite">
+<hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-o.html#open"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-o.html#or"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-o.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-o.html#outer"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/pink_bullet.gif">Opposite<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive arithmetic operation
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      opposite A         opp A
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-m.html#minus">minus</a>,
+                     <a href="help-n.html#not">not</a>,
+                     <a href="help-r.html#reciprocal">reciprocal</a>,
+                     <a href="help-q.html#quotient">quotient</a>
+</dl>
+
+<p>The operation <i>opposite</i> returns the opposite value of an integer or a real number.  The opposite value of a number N can be thought of as being on the number line on the opposite side of the origin at the same distance from the origin as N is.  The operation <i>opposite</i> produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>opposite of the corresponding integer</td></tr>
+<tr><td>integer</td><td>opposite integer</td></tr>
+<tr><td>real</td><td>opposite real number</td></tr>
+<tr><td>character</td><td>fault ?A</td></tr>
+<tr><td>Phrase</td><td>fault ?A</td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<p>The name <i>opp</i> is a synonym for <i>opposite</i> used as an abbreviation. </p>
+
+<pre>
+     opposite  l  -2  3.5  `a  &quotabc;  ??err
+-1 2 -3.5 ?A ?A ?err
+</pre>
+
+<b>Definition</b>
+
+<pre>
+opposite IS OPERATION A (0 minus A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+opposite opposite opposite A = opposite A
+
+A - B = A + opposite B
+</pre></center>
+
+<a name="or">
+<hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-o.html#opposite"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-o.html#outer"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-o.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-o.html#outer"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/pink_bullet.gif">Or<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      multi pervasive logical operation, a primitive
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      or A         A or B
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.htmlmulti#">multi pervasive</a>,
+                     <a href="help-a.html#and">and</a>,
+                     <a href="help-n.html#not">not</a>
+</dl>
+
+<p>The operation <i>or</i> applies to a boolean array A and does the boolean sum of its items.  If any item of A is <a href="help-t.html#true"><i>true</i></a>, the result is <a href="help-t.html#true"><i>true</i></a>; otherwise it is <a href="help-f.html#false"><i>false</i></a>. Used in binary form, it implements the usual or-connective of logic.  If A is a simple array but has a non-boolean item, the result is the logical fault <i>?L</i>. The operation extends to non-simple arrays by the multi pervasive mechanism.</p>
+
+<pre>
+     l or o
+l
+
+     or oooolooo
+l
+
+     lloo or lolo
+lllo
+</pre>
+
+<p><i>Or</i> is a reductive operation in that it reduces an array of booleans to a single boolean.  Applied to a pair of bitstrings, it produces a bitstring resulting from applying <i>or</i> to the bits of its arguments in corresponding positions.</p>
+
+<b>Equations</b>
+
+<center><pre>
+A or B = B or A
+
+not or A =f and EACH not A
+</pre></center>
+
+<a name="outer">
+<hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-o.html#or"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-p.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-o.html#TOP"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-o.html#outer"><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003230757im_/http://www.nial.com/images/pink_bullet.gif">Outer<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>                A OUTER f B
+                     OUTER f A
+</pre>
+<dd><img border="0" src="/web/19991003230757im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cart">cart</a>,
+                     <a href="help-i.html#inner">inner</a>
+</dl>
+
+<p>The transformer <i>outer</i> transforms an operation f to an operation that applies f to each item of the cartesian product of its argument.  In the case where the arguments are a pair of lists A and B, the result is a table of the applications of f with every pair chosen with the first item from A and the second from B.</p>
+
+<pre>
+     1 2 3 4 5 OUTER * 1 2 3 4 5
+1  2  3  4  5
+2  4  6  8 10
+3  6  9 12 15
+4  8 12 16 20
+5 10 15 20 25
+
+     2 3 OUTER reshape 'abcd'
++---+---+---+---+
+|aa |bb |cc |dd |
++---+---+---+---+
+|aaa|bbb|ccc|ddd|
++---+---+---+---+
+</pre>
+
+<p>The first example shows <i>outer</i> being used to generate a multiplication table. The second shows that it can be applied to an operation that has a non-atomic result.</p>
+
+<b>Definition</b>
+
+<pre>
+OUTER IS TRANSFORMER f OPERATION A (EACH f cart A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape OUTER f A = link EACH shape A
+
+and EACH (not empty) A B ==&gt; A OUTER f B=mix (A EACHLEFT EACHRIGHT f B)
+</pre></center>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991003230757/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991003230757/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991003230757/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991003230757/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991003230757/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991003230757/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991003230757/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991003230757/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991003230757/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991003230757/http://www.nial.com/">
+</map>
+
+<a href="/web/19991003230757/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991003230757im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 23:07:57 Oct 03, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:17 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.912
+  exclusion.robots: 0.099
+  exclusion.robots.policy: 0.082
+  esindex: 0.016
+  cdx.remote: 15.369
+  LoadShardBlock: 317.898 (3)
+  PetaboxLoader3.datanode: 203.388 (4)
+  PetaboxLoader3.resolve: 390.551 (3)
+  load_resource: 353.441
+-->

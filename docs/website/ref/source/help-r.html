@@ -1,0 +1,1284 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-r.html","19980204162359","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "886609439");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-R</title>
+</head>
+
+<body background="/web/19980204162359im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-q.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="raise">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#random"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Raise<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary restructuring operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      N raise A            raise N A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#partition">partition</a>,
+                     <a href="help-s.html#split">split</a>,
+                     <a href="help-m.html#mix">mix</a>
+</dl>
+
+<p>The operation <i>raise</i> is used to partition an array A along its axes by indicating that the first N axes are to be retained in the result.  The remaining axes become axes of the items of the result.  N must be an integer in the range from 0 to <a href="help-v.html#valence"><i>valence</i></a> A.  The result is an array of shape given by taking the first N items of shape A.  The items of the result have the shape given by dropping the first N items of shape A.  Thus, the 2 <i>raise</i> of an array of shape 3 4 2 is a 3 by 4 table of pairs.  The 1 <i>raise</i> of the same array is a triple of 4 by 2 tables.</p>
+
+<pre>
+     A := 3 4 2 reshape 'ABCDEFGHIJKLMNOPQRSTUVWX'
+AB  IJ  QR
+CD  KL  ST
+EF  MN  UV
+GH  OP  WX
+     2 raise A
++--+--+--+--+
+|AB|CD|EF|GH|
++--+--+--+--+
+|IJ|KL|MN|OP|
++--+--+--+--+
+|QR|ST|UV|WX|
++--+--+--+--+
+     1 raise A
++--+--+--+
+|AB|IJ|QR|
+|CD|KL|ST|
+|EF|MN|UV|
+|GH|OP|WX|
++--+--+--+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+raise IS OPERATION A {
+   N drop axes A split A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+N a nonnegative integer &lt;= valence A and not empty A ==&gt;
+shape (N raise A) = N take shape A
+
+shape first (N raise A) = N drop shape A ==&gt; mix (N raise A) = A
+</pre></center>
+
+<a name="random">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#raise"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reach"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Random<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      array generating operation, a primitive
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      random N
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-s.html#seed">seed</a>
+</dl>
+
+<p><i>Random</i> N generates N pseudo-random real numbers in the range from 0. to 1. In mathematical terms, the algorithm is a congruential method with period 2147483647.  The random generator generates a sequence of integers using the formula:</p>
+
+<center><pre>
+R := 16807 * R mod 214783647
+</pre></center>
+
+<p>starting with R = 314159262.  The result is the real R/2147483647.  The sequence may be initialized using the operation <i><a href="help-s.html#seed">seed</a> R1</i>, where 0. &lt; R1 &lt; 1.0.</p>
+
+<p><a href="help-s.html#seed"><i>Seed</i></a> resets the random number generator to use</p> 
+
+<pre>
+R = floor (R1 * 214783647.).
+
+     seed 0.314159; random 5
+0.070 0.743 0.240 0.627 0.309
+
+     floor ( 100. * random 10 )
+98 19 94 47 36 88 44 47 82 38
+</pre>
+
+<p>The first example shows the five random numbers generated after a seed of 0.314159 is used.  The second example illustrates how to use the operation <i>random</i> to generate 10 random integers between 0 and 99.</p>
+
+<p>This definition of <i>random</i> is a change from the random number generator in earlier versions of Q'Nial which used a library function that was not always implemented well in &quotC;&quot; libraries.  The new form of the calling sequence is simpler to use when many real random numbers are needed.</p>
+
+<a name="reach">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#random"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#read"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reach<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary selection operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      P reach A            reach P A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#pick">pick</a>,
+                     <a href="help-c.html#choose">choose</a>,
+                     <a href="help-d.html#deepplace">deepplace</a>,
+                     <a href="help-f.html#first">first</a>
+</dl>
+
+<p>The operation <i>reach</i> is used to select an array at an arbitrary path P within the nested structure of A.  P is a list of addresses where the first item of P selects an item of A, the second selects an item of that item, etc.  If P is empty, the result is A.  The operation is implemented as an iterated <a href="help-p.html#pick"><i>pick</i></a> and hence the addresses in the path are converted using list if they are integers. If one of the picks attempts a selection out of bounds, the result is fault <i>?path</i>.</p>
+
+<pre>
+     A := 3 4 reshape (pack 'ABCDEFGHIJKL' '1234567890ab')
++--+--+--+--+
+|A1|B2|C3|D4|
++--+--+--+--+
+|E5|F6|G7|H8|
++--+--+--+--+
+|I9|J0|Ka|Lb|
++--+--+--+--+
+
+     (2 0) 1 reach A
+9
+</pre>
+
+<p>In the example, path (2 0) 1 picks the item with address 1 of the location with address 2 0.</p>
+
+<p>Q'Nial supports a direct notation for doing a reach into an array associated with a variable:  <i>Var@@I</i> (pronounced Var at path I).  The notation can be used on both the left and right of an assignment expression.</p>
+
+<b>Definition</b>
+
+<pre>
+reach IS P A {
+   IF empty P THEN
+      A
+   ELSE
+      rest P reach (first P pick A)
+   ENDIF }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+P reach A = (EACH list P) reach A
+
+items of P are valid addresses where used ==&gt; (P reach A) P deepplace A = A
+</pre></center>
+
+<a name="read">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reach"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#readarray"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Read<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      interactive input/output operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      read P
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#readscreen">readscreen</a>,
+                     <a href="help-w.html#write">write</a>,
+                     <a href="help-w.html#writescreen">writescreen</a>
+</dl>
+
+<p>The operation <i>read</i> is used in an interaction with the user running a program to obtain an array value from the keyboard after issuing a prompt given by the string or character P.  After receiving the prompt, the user types a sequence of characters and then presses the <i>Return</i> or <i>Enter</i> key.  The sequence of characters, excluding the <i>Return</i>, becomes the string entered.  The string is &quotexecuted;&quot; to give the result of <i>read</i>.  If the string being executed contains an integer representation that would convert to a number outside the range of integers, the corresponding real number is returned.</p>
+
+<pre>
+     A := read 'Type an expression : ';
+Type an expression : 3 + count 10
+
+     A
+4 5 6 7 8 9 10 11 12 13
+</pre>
+
+<p>The operation <i>read</i> is similar to operation <a href="help-r.html#readscreen"><i>readscreen</i></a>.  The difference is that in <i>read</i> the string received from the keyboard is evaluated, whereas in <a href="help-r.html#readscreen"><i>readscreen</i></a>, the string is returned.</p>
+
+<b>Definition</b>
+
+<pre>
+read IS OPERATION P { execute readscreen P }
+</pre>
+
+<a name="readarray">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#read"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#readchar"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Readarray<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      readarray Fnum N
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#readrecord">readrecord</a>,
+                     <a href="help-w.html#writearray">writearray</a>,
+                     <a href="help-f.html#filetally">filetally</a>,
+                     <a href="help-e.html#eraserecord">eraserecord</a>,
+                     <a href="help-o.html#open">open</a>,
+                     <a href="help-c.html#close">close</a>
+</dl>
+
+<p>The operation <i>readarray</i> is used to read the component or components indicated by N from the direct access file with file port <i>Fnum</i>.  The file must have been created using <a href="help-w.html#writearray"><i>writearray</i></a> and must have been opened as a direct file.</p>
+
+<p>If N is an integer, the result is the array stored at record position N of the file.</p>
+
+<p>If N is a list of integers, the result is a list of the corresponding records. If there is no record at position N, the result is the fault <i>?missing</i>.  If N is greater than <a href="help-f.html#filetally"><i>filetally</i></a> A, the result is the fault <i>?eof</i>.</p>
+
+<center><pre>
+readarray Fnum [23,24,25];
+</pre></center>
+
+<p>If N is a solitary integer, the result is a solitary holding the selected item.  If N is obtained using <a href="help-g.html#grid"><i>grid</i></a> or <a href="help-f.html#find"><i>find</i></a>, it will be a solitary and the selected array will be structured as a solitary.</p>
+
+<a name="readchar">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#readarray"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#readcursor"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Readchar<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      interactive input/output expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Readchar
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#read">read</a>,
+                     <a href="help-r.html#readscreen">readscreen</a>,
+                     <a href="help-w.html#writechars">writechars</a>,
+                     <a href="help-w.html#write">write</a>,
+                     <a href="help-e.html#editwindow">editwindow</a>
+</dl>
+
+<p>The expression <i>readchar</i> is used to obtain the result of a single keystroke on the keyboard.  The character is not displayed on the screen automatically.  If the keystroke corresponds to a single displayable ASCII character, the result is that character.  Otherwise, the result is a phrase indicating the function key pressed.</p>
+
+<p>Q'Nial supports all the standard keys of the IBMPC keyboard.  On a non-IBMPC version of Q'Nial, these keys are available through use of escape sequences.</p>
+
+<p>The input from <i>readchar</i> can be displayed by the use of <a href="help-w.html#writechars"><i>writechars</i></a>.</p>
+
+<pre>
+     writechars readchar
+Backspace
+</pre>
+
+<p>In the example, the user responded by pressing the <i>backspace</i> key.</p>
+
+<p><i>Readchar</i> is used when developing an interactive program in which the user uses keystrokes to indicate requested actions.  The decision whether or not to display a character on the screen can be made by the program rather than done automatically.</p>
+
+<p>The following table lists the non-character keystrokes recognized on the IBMPC keypad and gives the default sequences accepted by an ASCII terminal when the corresponding keystroke is not present.  The two keyboard layouts on SUN workstations behave like an IBMPC keyboard.</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <b><th>IBMPC Keystroke</th><th>Sun Console</th>
+   <th>Ascii Terminal</th></b>
+</tr>
+<tr><td>Return</td><td>Return</td><td>Return</td></tr>
+<tr><td>Backspace</td><td>Backspace</td><td>Backspace</td></tr>
+<tr><td>Del</td><td>Del</td><td>Del</td></tr>
+<tr><td>Ins</td><td>Esc Esc i</td><td>Esc Esc i</td></tr>
+<tr><td>Up_Arrow</td><td>Up_Arrow</td><td>Up_Arrow</td></tr>
+<tr><td>Down_Arrow</td><td>Down_Arrow</td><td>Down_Arrow</td></tr>
+<tr><td>Right_Arrow</td><td>Right_Arrow</td><td>Right_Arrow</td></tr>
+<tr><td>Left_Arrow</td><td>Left_Arrow</td><td>Left_Arrow</td></tr>
+<tr><td>Home</td><td>Home</td><td>Esc Esc h</td></tr>
+<tr><td>End</td><td>End</td><td>Esc Esc e</td></tr>
+<tr><td>PgUp</td><td>PgUp</td><td>Esc Esc u</td></tr>
+<tr><td>PgDn</td><td>PgDn</td><td>Esc Esc d</td></tr>
+<tr><td>Ctrl Left_Arrow</td><td>Esc Left_Arrow</td><td>Esc Esc c l</td></tr>
+<tr><td>Ctrl Right_Arrow</td><td>Esc Right_Arrow</td><td>Esc Esc c r</td></tr>
+<tr><td>Ctrl PgUp</td><td>Esc PgUp</td><td>Esc Esc c u</td></tr>
+<tr><td>Ctrl PgDn</td><td>Esc PgDn</td><td>Esc Esc c d</td></tr>
+<tr><td>Ctrl Home</td><td>Esc Home</td><td>Esc Esc c h</td></tr>
+<tr><td>Ctrl End</td><td>Esc End</td><td>Esc Esc c</td></tr>
+<tr><td>Tab</td><td>Tab</td><td>Tab</td></tr>
+<tr><td>Shift Tab</td><td>Esc Tab</td><td>Esc Tab</td></tr>
+<tr><td>Esc</td><td>Esc Esc Esc</td><td>Esc Esc Esc</td></tr>
+<tr><td>F1 to F10</td><td>F1 to F10</td><td>Esc 1 to Esc 0</td></tr>
+<tr><td>&ltAlt; F1&gt; to &ltAlt; F10&gt;</td>
+    <td>Esc F1 to Esc F12</td>
+    <td>Esc Esc 1 to Esc Esc 0</td></tr>
+<tr><td>&ltAlt; A&gt; to &ltAlt; Z&gt;</td>
+    <td>&ltEsc; a&gt; to &ltEsc; z&gt;</td>
+    <td>&ltEsc; a&gt; to &ltEsc; z&gt;</td></tr>
+</table>
+</p>
+
+<p>The IBMPC keyboard support also recognizes the function keys modified by <i>Shift</i> and <i>Ctrl</i> and <i>&ltAlt; 0&gt;</i> to <i>&ltAlt; 9&gt;</i> but these are not mapped onto corresponding escape sequences on the Unix versions.</p>
+
+<p>The keyboard mappings are controlled by description files stored in the initial workspace.  The defaults are stored in the code in case the description files are not available.</p>
+
+<a name="readcursor">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#readchar"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#readfile"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Readcursor<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Readcursor
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#setcursor">setcursor</a>,
+                     <a href="help-s.html#screensize">screensize</a>,
+                     <a href="help-s.html#setwindow">setwindow</a>
+</dl>
+
+<p>The expression <i>readcursor</i> returns a pair of integers indicating the row and column position of the cursor in the active window.</p>
+
+<p>It is used in developing an interactive application in which the cursor must be returned to an expected position after some task such as displaying a pop up window.</p>
+
+<a name="readfile">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#readcursor"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#readrecord"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Readfile<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      readfile Fnum,   readfile Fnum N
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-w.html#writefile">writefile</a>,
+                     <a href="help-g.html#getfile">getfile</a>,
+                     <a href="help-o.html#open">open</a>,
+                     <a href="help-c.html#close">close</a>,
+                     <a href="help-r.html#readscreen">readscreen</a>
+</dl>
+
+<p>The operation <i>readfile</i> is used to read the next record from the sequential text file designated by file port <i>Fnum</i>.  The file port <i>Fnum</i> is the integer returned by <a href="help-o.html#open"><i>open</i></a>, which must have been called before executing the <i>readfile</i>.</p>
+
+<p>A record of text in a text file is a sequence of characters up to but excluding an <i>end-of-line</i> indication.  The <i>end-of-line</i> indication is system dependent and may be one or more characters.  The interface between Q'Nial and the host system recognizes <i>end-of-line</i> and, on successive <i>readfile</i> requests, returns the records of the text file with the <i>end-of-line</i> indications removed.</p>
+
+<p>If the operation is used with a second argument N, it reads the next N bytes of the text file and returns them as a string.  In this usage, <i>end-of-line</i> characters are processed as any other character and are not removed.  This second form is intended for reading information from device drivers or a communications port, where <i>end-of-line</i> indications may not be given.</p>
+
+<p>The <i>readfile</i> operation transmits the tab control character as itself.  On the IBM PC, the tab character appears as a visible symbol on the screen.  For other systems, it is omitted when displayed.</p>
+
+<p>The following example shows a text file, <i>Myfile</i> being opened and its records being gathered as a list of strings.  The example has the same effect as the operation <a href="help-g.html#getfile"><i>getfile</i></a> &quot;<i>Myfile</i>.</p>
+
+<pre>
+   File_number := open &quotMyfile; &quotr; ;
+   Records := '' ;
+   Record := readfile File_number ;
+   WHILE Record ~= ??eof DO
+        Records gets Records append Record ;
+        Record := readfile File_number ;
+   ENDWHILE ;
+   close File_number ;
+</pre>
+
+<a name="readrecord">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#readfile"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#readscreen"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Readrecord<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      file operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      readrecord Fnum N
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#readarray">readarray</a>,
+                     <a href="help-w.html#writerecord">writerecord</a>,
+                     <a href="help-f.html#filetally">filetally</a>,
+                     <a href="help-e.html#eraserecord">eraserecord</a>,
+                     <a href="help-o.html#open">open</a>,
+                     <a href="help-c.html#close">close</a>
+</dl>
+
+<p>The operation <i>readrecord</i> is used to read the component or components indicated by N from the direct access file with file port <i>Fnum</i>.  If N is an integer, the result is the string stored at component position N of the file.  The file must have been opened as a direct file and must have been created using <a href="help-w.html#writerecord"><i>writerecord</i></a> operations.</p>
+
+<p>If N is a list of integers, the result is a list of the corresponding records. If there is no component at N, the result is the fault <i>?missing</i>.  If N is greater than <a href="help-f.html#filetally"><i>filetally</i></a> A, the result is the fault <i>?eof</i>.</p>
+
+<p>A direct access file is stored as two host system files:  a <i>.ndx</i> file holding index information and a <i>.rec</i> file holding the records.</p>
+
+<pre>
+     readrecord Fnum [23,24,25];
+
+convert_records IS OP Filein Fileout {
+   Fin := open Filein &quotd; ;
+   Fout := open Fileout &quotd; ;
+   Num := filetally Fin ;
+   writerecord Fout (tell Num) (EACH convert_op (readrecord Fin (tell Num)));
+   EACH close Fin Fout ; }
+</pre>
+
+<p>The first example shows a call of <i>readrecord</i> that returns three records.  The second example shows an operation <i>convert_records</i> that reads all the records in direct file <i>Filein</i>, modifies them by <a href="help-c.html#convertop"><i>convert_op</i></a> and writes them to direct file <i>Fileout</i>.  For a very large file, it may be necessary to replace the use of <a href="help-e.html#each"><i>EACH</i></a> with a loop.</p>
+
+<p>The <i>readrecord</i> operation can access fields of a fixed format file created external to Q'Nial.  If the component number used in a <i>readrecord</i> is beyond the end of file as indicated by the <a href="help-f.html#filetally"><i>filetally</i></a> <i>Fnum</i>, stored in the <i>.ndx</i> file, the <i>.rec</i> file is checked to see if the host file information indicates that the <i>.rec</i> file extends beyond the length expected for a file created by the Q'Nial operations.  If so, the <i>.rec</i> file is assumed to consist of a sequence of blocks of records, with each block having fields of the sizes indicated by the <i>.ndx</i> file.  The index information for the record at (N <a href="help-m.html#mod"><i>mod</i></a> <a href="help-f.html#filetally"><i>filetally</i></a> <i>Fnum</i>) is used to find the requested component within the block of records found from(N <a href="help-q.html#quotient"><i>quotient</i></a> <a href="help-f.html#filetally"><i>filetally</i></a> <i>Fnum</i>).</p>
+
+<p>To use this feature, a separate process must be followed to create the <i>.ndx</i> file corresponding to one block of records in the external file.  This is done by writing a sequence of strings of the lengths of the records to a dummy direct access file and then renaming the resulting index file and the external file to be names expected by the Q'Nial direct access facility.</p>
+
+<a name="readscreen">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#readrecord"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reciprocal"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Readscreen<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      interactive input/output operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      readscreen P
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#read">read</a>,
+                     <a href="help-r.html#readchar">readchar</a>,
+                     <a href="help-r.html#readfile">readfile</a>,
+                     <a href="help-w.html#writescreen">writescreen</a>
+</dl>
+
+<p>The operation <i>readscreen</i> is used to obtain a string from the keyboard after issuing the prompt P.  The prompt P must be a character or a string.  After receiving the prompt, the user types a sequence of characters and then presses the <i>Return</i> or <i>Enter</i> key.  The sequence of characters, excluding the <i>Return</i>, is the string returned as the result of <i>readscreen</i>.</p>
+
+<pre>
+     Name := readscreen 'Your name? : ' ;
+Your name? : Mike
+
+     Name
+Mike
+
+     Answer := first 'Do you wish to continue? y/n: ' ;
+     IF Answer in 'yY' THEN ...
+</pre>
+
+<p>The operation <i>readscreen</i> is similar to the operation <a href="help-r.html#read"><i>read</i></a>, the difference being that in <a href="help-r.html#read"><i>read</i></a>, the string received from the keyboard is evaluated, whereas with <i>readscreen</i>, the string is returned.</p>
+
+<a name="reciprocal">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#readscreen"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#recover"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reciprocal<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive arithmetic operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      reciprocal A            recip A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#unaryper">unary pervasive</a>,
+                     <a href="help-d.html#divide">divide</a>,
+                     <a href="help-q.html#quotient">quotient</a>,
+                     <a href="help-ohtml#opposite">opposite</a>
+</dl>
+
+<p>The operation <i>reciprocal</i> or <i>recip</i> for short, returns a real number which is the reciprocal value of a numeric atom.</p>
+
+<p><i>Reciprocal</i> produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>reciprocal of the corresponding real</td></tr>
+<tr><td>integer</td><td>reciprocal of the corresponding real</td></tr>
+<tr><td>real</td><td>1.0 / A if A ~= 0.; ?<i>div</i> if A = 0.</td></tr>
+<tr><td>character</td><td>fault <i>?A</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?A</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<pre>
+     reciprocal l -2 3.5 `a &quotabc; ??error
+1. -0.5 0.285714 ?A ?A ?error
+
+     reciprocal -2 (3 -4.5)
++----+------------------+
+|-0.5|0.333333 -0.222222|
++----+------------------+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+reciprocal IS OPERATION A (1 divide A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+A divide B = A * reciprocal B
+
+reciprocal reciprocal reciprocal A = reciprocal A (within roundoff error)
+</pre></center>
+
+<a name="recover">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reciprocal"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reduce"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Recover<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      user defined expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Recover IS expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#toplevel">toplevel</a>,
+                     <a href="help-l.html#latent">latent</a>,
+                     <a href="help-c.html#checkpoint">checkpoint</a>,
+                     <a href="help-r.html#restart">restart</a>
+</dl>
+
+<p>The expression <i>recover</i> is prepared by the user of Q'Nial to handle the action to be taken on detection of &ltCtrl; c&gt; or any other situation that forces a return to top level.  If a <i>recover</i> expression does not exist in the workspace, Q'Nial returns to the top level loop on a &ltCtrl; c&gt.;  This expression is necessary to provide control over &quotclosed;&quot; applications which do not permit the user to access Q'Nial at the top level loop.</p>
+
+<pre>
+Recover IS Continue
+
+Recover IS {
+   IF first readscreen
+      'Do you wish to restart? y or n : '
+      in 'yY' THEN
+      Restart
+   ELSE
+      Continue
+   ENDIF }
+</pre>
+
+<p>In the first example, if &ltCtrl; c&gt; is pressed or some other action forces a jump to top level, the session ends saving the workspace in <i>continue.nws</i>.</p>
+
+<p>In the second example of a definition for <i>recover</i>, a jump to top level results in the display of the prompt:</p>
+
+<center><pre>
+Do you wish to restart? y or n :
+</pre></center>
+
+<p>If the response is text that begins with y or Y, the <a href="help-r.html#restart"><i>restart</i></a> expression is executed.  If the session had begun with a workspace named on the command line, the workspace would be reloaded and its <a href="help-l.html#latent"><i>Latent</i></a> expression, if any, evaluated.  If the response begins with something other than y or Y, the current session ends by executing <a href="help-c.html#continue"><i>Continue</i></a>.
+
+<a name="reduce">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#recover"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reducecols"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reduce<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      REDUCE f A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :       <a href="help-a.html#accumulate">accumulate</a>
+</dl>
+
+<p>The transformer <i>reduce</i> transforms an operation f into an operation which, when applied to an array A, has the same effect as evaluating an expression in which f is placed between the items of the array, with grouping done in a right-to-left manner.  If f is an operation that maps a pair of atoms to an atom, <i>REDUCE</i> f reduces a simple array to an atom.  For the built-in reductive operations:  <a href="help-s.html#sum"><i>sum</i></a>, <a href="help-p.html#product"><i>product</i></a>, <a href="help-a.html#and"><i>and</i></a>, <a href="help-o.html#or"><i>or</i></a>, <a href="help-m.html#max"><i>max</i></a>, <a href="help-m.html#min"><i>min</i></a>, and <a href="help-l.html#link"><i>link</i></a>, <i>REDUCE</i> f is the same as f.</p>
+
+<pre>
+     REDUCE divide 3 4 5 6
+.625
+     3 divide (4 divide ( 5 divide 6 ) )
+.625
+     REDUCE plus (count 10)
+55
+     REDUCE hitch 'abcde'
+abcde
+     REDUCE append 'abcde'
++-+----------+
+|a|+-+------+|
+| ||b|+-+--+||
+| || ||c|de|||
+| || |+-+--+||
+| |+-+------+|
++-+----------+
+     REDUCE pass 73 45 39 97
++--+----------+
+|73|+--+-----+|
+|  ||45|39 97||
+|  |+--+-----+|
++--+----------+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+REDUCE IS TRANSFORMER f OPERATION A {
+   % if f is reductive, apply f directly;
+   IF empty A THEN
+      Res := ??identity;
+   ELSE
+      Res := last A;
+      FOR B WITH reverse front A DO
+         Res := B f Res;
+      ENDFOR;
+   ENDIF;
+   Res }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+REDUCE f solitary A = A
+
+REDUCE f single A = A
+
+REDUCE f A B C = A f (B f C)
+</pre></center>
+
+<a name="reducecols">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reduce"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reducerows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reducecols<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      REDUCECOLS f A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#reduce">reduce</a>,
+                     <a href="help-r.html#reducerows">reducerows</a>,
+                     <a href="help-b.html#bycols">bycols</a>
+</dl>
+
+<p>The transformer <i>reducecols</i> does the reduction of the columns of A with the operation f.</p>
+
+<pre>
+     REDUCECOLS sum (5 6 reshape count 30)
+65 70 75 80 85 90
+</pre>
+
+<p>The example returns the sum of the columns of the generated table.</p>
+
+<b>Definition</b>
+
+<pre>
+REDUCECOLS IS TRANSFORMER f OPERATION A {
+      [valence A - 2 max 0,Null] PARTITION REDUCE f A }
+</pre>
+
+<a name="reducerows">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reducecols"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#refresh"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reducerows<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      applicative transformer
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      REDUCEROWS f A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#reduce">reduce</a>,
+                     <a href="help-r.html#reducecols">reducecols</a>,
+                     <a href="help-b.html#byrows">byrows</a>
+</dl>
+
+<p>The transformer <i>reducerows</i> does the reduction of the rows of A with the operation f.</p>
+
+<pre>
+     REDUCEROWS prod(3 4 reshape count 12)
+24 1680 11880
+</pre>
+
+<p>The example returns the product of the rows of the generated table.</p>
+
+<b>Definition</b>
+
+<pre>
+REDUCEROWS IS TRANSFORMER f OPERATION A {
+   [valence A - 1 max 0,Null] PARTITION REDUCE f A }
+</pre>
+
+<a name="refresh">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reducerows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#repeat"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Refresh<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      window expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Refresh
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#putscreendata">putscreendata</a>,
+                     <a href="help-c.html#clearwindow">clearwindow</a>,
+                     <a href="help-s.html#setwindow">setwindows</a>,
+                     <a href="help-h.html#host">host</a>
+</dl>
+
+<p>Q'Nial keeps a copy of the values and attributes of the characters displayed on the screen in its memory.  The expression <i>refresh</i> restores the screen to the display corresponding to the screen memory values and attributes.  It is used after a <a href="help-h.html#host"><i>host</i></a> operation has overwritten the screen display to restore the screen to its previous display.</p>
+
+<center><pre>
+host 'dir' ;
+Readchar ;
+Refresh ;
+</pre></center>
+
+<p>When Q'Nial is in window mode, the screen management output routines update an internal image of the screen as characters are written to the screen but the screen itself is updated only occasionally.  Sometimes it is necessary to insert a <i>refresh</i> expression to have the screen updated at the time desired.</p>
+
+<a name="repeat">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#refresh"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reshape"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Repeat<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      keyword
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>
+                     REPEAT expression_sequence
+                     UNTIL conditional_expression
+                     ENDREPEAT
+</pre>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-w.html#while">while</a>,
+                     <a href="help-f.html#for">for</a>,
+                     <a href="help-e.html#each">each</a>,
+                     <a href="help-i.html#iterate">iterate</a>,
+                     <a href="help-f.html#fold">fold</a>,
+                     <a href="help-e.html#exit">exit</a>
+</dl>
+
+<p>The <i>repeat</i> notation is used when executing an expression sequence repeatedly until a conditioal expression returns <a href="help-t.html#true"><i>true</i></a>.</p>
+
+<a name="reshape">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#repeat"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#rest"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reshape<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary construction operation, a primitive
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A reshape B      reshape A B
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#post">post</a>,
+                     <a href="help-s.html#shape">shape</a>,
+                     <a href="help-t.html#tally">tally</a>
+</dl>
+
+<p>The operation <i>reshape</i> is the major mechanism in Nial for creating multivalent arrays.  The operation requires A to be a shape, either <a href="help-n.html#null"><i>Null</i></a> or a list of integers.  If A is not a shape, the result is the fault <i>?shape</i>.  If A is an integer, it is converted to the solitary holding the integer.</p>
+
+<p>The result of <i>reshape</i> is an array of shape A with items chosen from the list of items of B.  If the number of items to be used to fill the result is less than the <a href="help-t.html#tally"><i>tally</i></a> of B, the remaining items of B are ignored.  If the number is more than the <a href="help-t.html#tally"><i>tally</i></a> of B, the items of B are used cyclicly.  If B has no items, fault <i>?fill</i> is used as the items of the result.</p>
+
+<pre>
+     2 3 reshape 4 6 (4 5) 3 &quotabc;
++-+---+---+
+|4|  6|4 5|
++-+---+---+
+|3|abc|  4|
++-+---+---+
+     2 3 reshape 'abcdefghij'
+abc
+def
+     5 reshape solitary 3 4
++---+---+---+---+---+
+|3 4|3 4|3 4|3 4|3 4|
++---+---+---+---+---+
+</pre>
+
+<p>The last example illustrates that to replicate an arbitrary array, in this case the pair 3 4, <i>reshape</i> is applied to the solitary holding the array.</p>
+
+<b>Equations</b>
+
+<center><pre>
+shape A reshape A = A
+
+shape A reshape list A = A
+
+shape A reshape(first A hitch rest A)=f A
+
+A a shape implies ==&gt; shape (A reshape B) = A
+
+A reshape list B = A reshape B
+
+A is a shape ==&gt; EACH f (A reshape B) = A reshape EACH f B
+
+tally A reshape A = list A
+
+(tally A) 1 reshape A = post A
+
+single A = Null reshape solitary A
+
+solitary A = [ 1 ] reshape single A
+
+Null = [ 0 ] reshape A
+</pre></center>
+
+<a name="rest">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reshape"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#restart"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Rest<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      sublisting operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      rest A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-f.html#first">first</a>,
+                     <a href="help-f.html#front">front</a>,
+                     <a href="help-d.html#drop">drop</a>,
+                     <a href="help-s.html#sublist">sublist</a>
+</dl>
+
+<p>The operation <i>rest</i> returns the list of A after dropping the first item of the list.  If the argument of <i>rest</i> is not a list, it is treated as a list.</p>
+
+<pre>
+     rest 3 4 5 6
+4 5 6
+     rest tell 2 3
++---+---+---+---+---+
+|0 1|0 2|1 0|1 1|1 2|
++---+---+---+---+---+
+     rest 7 = Null
+l
+</pre>
+
+<p>The last example shows that the <i>rest</i> of an atom is the empty list <a href="help-n.html#null"><i>Null</i></a>.</p>
+
+<b>Definition</b>
+
+<pre>
+rest IS OPERATION A (1 drop list A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+rest A = rest list A
+
+not empty A ==&gt; first A hitch rest A = list A
+
+tally rest A = 0 max (tally A - 1)
+
+first rest A = second A
+
+rest Null = Null
+</pre></center>
+
+<a name="restart">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#rest"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#resume"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Restart<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Restart
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#clearws">clearws</a>,
+                     <a href="help-l.html#load">load</a>,
+                     <a href="help-l.html#latent">latent</a>,
+                     <a href="help-r.html#recover">recover</a>,
+                     <a href="help-t.html#toplevel">toplevel</a>
+</dl>
+
+<p>The expression <i>Restart</i> is used to restart a Q'Nial session.  It causes the workspace to be cleared and Q'Nial to be reinitialized to be in the same state it was when the session began.  If the original invocation used a named workspace or a definition file, it is reloaded as before.</p>
+
+<p>The advantage of <i>restart</i> over <a href="help-c.html#clearws"><i>clearws</i></a> is that the user can start the application again using <i>restart</i> and possibly trigger a <a href="help-l.html#latent"><i>Latent</i></a> expression in the starting workspace.</p>
+
+<a name="resume">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#restart"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#reverse"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Resume<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system expression
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Resume
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-b.html#break">break</a>,
+                     <a href="help-s.html#step">step</a>,
+                     <a href="help-s.html#setdeftrace">setdeftrace</a>
+</dl>
+
+<p>When &quotbreak; debug mode&quot; is initiated by means of the <a href="help-b.html#break"><i>Break</i></a> expression or by using &ltCtrl; b&gt; while awaiting input in window mode,  the message:</p>
+
+<center><pre>
+break debug mode, type RESUME to exit
+</pre></center>
+
+<p>is issued along with an arrow prompt.  Thus, <i>Resume</i> is the expression that is used to end the current use of &quotbreak; debug mode&quot.; It returns control to the expression immediately following the <a href="help-b.html#break"><i>Break</i></a> expression or if actuated by &ltCtrl; b&gt;, refreshes the screen and awaits input.</p>
+
+<pre>
+     Break
+--&gtbreak; debug mode, type RESUME to exit
+--&gtResume;
+--&gtreturning; from break debug mode
+</pre>
+
+<a name="reverse">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#resume"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#rotate"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Reverse<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      reverse A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#transpose">transpose</a>,
+                     <a href="help-r.html#rotate">rotate</a>,
+                     <a href="help-l.html#list">list</a>,
+                     <a href="help-t.html#takeright">takeright</a>
+</dl>
+
+<p><i>Reverse</i> returns an array of the same shape as A having the items in reverse order.</p>
+
+<pre>
+     reverse 4 5 6 7
+7 6 5 4
+
+     reverse 'able was I ere I saw Melba'
+ableM was I ere I saw elba
+     EACH reverse 'This' 'seems' 'too' 'wonderful'
++----+-----+---+---------+
+|sihT|smees|oot|lufrednow|
++----+-----+---+---------+
+
+     reverse count 3 4
++---+---+---+---+
+|3 4|3 3|3 2|3 1|
++---+---+---+---+
+|2 4|2 3|2 2|2 1|
++---+---+---+---+
+|1 4|1 3|1 2|1 1|
++---+---+---+---+
+
+     reverse (10 take) reverse sketch 1.23
+      1.23
+</pre>
+
+<p>The fourth example illustrates that the <i>reverse</i> of a 3 by 4 table is a 3 by 4 table with the list of items reversed.  The last example shows the use of <a href="help-t.html#take"><i>take</i></a> and <a href="help-r.html#reverse"><i>reverse</i></a> to right-justify text in a field.</p>
+
+<b>Definition</b>
+
+<pre>
+reverse IS OPERATION A {
+   shape A reshape (tally A - count tally A choose A)}
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape reverse A = shape A
+
+reverse reverse A = A
+
+reverse A=shape A reshape reverse list A
+
+front A = reverse rest reverse A
+
+last A = first reverse A
+</pre></center>
+
+<a name="rotate">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#reverse"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Rotate<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      re-arranging operation, defined in defs.ndf
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A rotate B,  rotate A B
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#reverse">reverse</a>,
+                     <a href="help-t.html#transpose">transpose</a>,
+                     <a href="help-l.html#list">list</a>
+</dl>
+
+<p>The operation <i>rotate</i> shifts the items of array B to the left A places, inserting the items that drop off the front of the list on the back.  If A is a negative number, the shift is to the right.</p>
+
+<pre>
+     2 rotate 24 35 46 57 12 24 39
+46 57 12 24 39 24 35
+
+     -5 rotate tell 3 5
++---+---+---+---+---+
+|2 0|2 1|2 2|2 3|2 4|
++---+---+---+---+---+
+|0 0|0 1|0 2|0 3|0 4|
++---+---+---+---+---+
+|1 0|1 1|1 2|1 3|1 4|
++---+---+---+---+---+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+rotate IS OPERATION N A {
+   shape A reshape (tally A + N + grid A mod tally A choose list A) }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+N an integer ==&gt; shape (N rotate A) = shape A
+
+N rotate A = shape A reshape (N rotate list A)
+
+N rotate A = N mod tally A rotate A
+
+N rotate A = opposite(tally A-N) rotate A
+</pre></center>
+
+<a name="rows">
+<hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-r.html#rotate"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-s.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-r.html#TOP"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-r.html#rows"><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19980204162359im_/http://www.nial.com/images/pink_bullet.gif">Rows<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      restructuring operation, defined in defs.ndf
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      rows A
+<dd><img border="0" src="/web/19980204162359im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#cols">cols</a>,
+                     <a href="help-s.html#split">split</a>,
+                     <a href="help-p.html#partition">partition</a>,
+                     <a href="help-m.html#mix">mix</a>
+</dl>
+
+<p>The operation <i>rows</i> is normally used on a table A.  In this case, it returns a list of lists, with each item being a list of items from one row of the table. For a multidimensional array, the result is an array of lists of length equal to the length of the last axis of A.  The valence of the result is one less than the valence of A.</p>
+
+<pre>
+     A := 2 3 reshape &quotBill; &quotTom; &quotMary; &quotJack; &quotDawn; &quotAlice;
+Bill Tom  Mary
+Jack Dawn Alice
+
+     rows A
++-------------+---------------+
+|Bill Tom Mary|Jack Dawn Alice|
++-------------+---------------+
+
+     A :=  2 2 2 3 reshape count 32
+1 2 3       7  8  9
+4 5 6      10 11 12
+
+13 14 15   19 20 21
+16 17 18   22 23 24
+
+     rows A
++-----+--------+  +--------+--------+
+|1 2 3|4 5 6   |  |13 14 15|16 17 18|
++-----+--------+  +--------+--------+
+|7 8 9|10 11 12|  |19 20 21|22 23 24|
++-----+--------+ +--------+--------+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+rows IS OPERATION A (
+   valence A - 1 max 0 raise A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape rows A = front shape A not empty A ==&gt;
+
+shape first rows A = last shape A
+
+not empty A ==&gt; mix rows A = A
+
+T a variable associated with a table ==&gt; I pick rows T = T|[I,]
+</pre></center>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19980204162359/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19980204162359/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19980204162359/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19980204162359/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19980204162359/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19980204162359/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19980204162359/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19980204162359/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19980204162359/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19980204162359/http://www.nial.com/">
+</map>
+
+<a href="/web/19980204162359/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19980204162359im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 16:23:59 Feb 04, 1998 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:19 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.768
+  exclusion.robots: 0.078
+  exclusion.robots.policy: 0.064
+  esindex: 0.014
+  cdx.remote: 11.558
+  LoadShardBlock: 287.528 (3)
+  PetaboxLoader3.datanode: 176.774 (4)
+  PetaboxLoader3.resolve: 282.447 (2)
+  load_resource: 203.418
+-->

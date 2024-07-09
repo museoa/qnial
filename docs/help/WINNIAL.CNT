@@ -1,0 +1,41 @@
+:Base winnial.hlp
+:Title Help For Using Q'Nial for Windows
+1 Getting Help in Q'Nial for Windows=IDH_LANGUAGE_HELP
+1 Reference Manual =IDH_DICTIONARY_CLASSES
+1 Getting Started
+2 What is NIAL?=IDH_START_WHAT_IS_NIAL
+2 Running the Nial Tutorial=IDH_START_TUTORIAL
+2 Using the Main Interpreter Window=IDH_START_USING_INTERPRETER
+2 Editing Nial source files=IDH_START_EDIT_FILES
+2 Using Projects=IDH_START_USING_PROJECTS
+2 Ordering Information=IDH_START_ORDERING
+1 Session Manager
+2 Session Manager Overview=IDH_SM_OVERVIEW
+2 Main Menu Bar=IDH_SM_MAINMENU
+2 Workspace Menu=IDH_SM_WORKSPACEMENU
+2 Projects=IDH_SM_PROJECTS
+2 Interpreter Windows=IDH_SM_INTERPRETERWINDOWS
+2 Editor Windows=IDH_SM_EDITORWINDOWS
+2 ToolBar=IDH_SM_BUTTONBAR
+2 Status Bar=IDH_SM_STATUSBAR
+2 Startup Settings and Preferences=IDH_SM_PREFERENCES
+2 Editor Properties=IDH_EDIT_PROPERTIES
+2 Editor Preferences=IDH_EDIT_PREFERENCES
+2 Exit Dialog=IDH_SM_EXITDIALOG
+1 Interpreter Windows
+2 Interpreter Window Overview=IDH_INT_OVERVIEW
+2 Interpreter Main Menu=IDH_INT_MAINMENU
+2 Interpreter Button Bar=IDH_INT_BUTTONBAR
+2 Editing in an Interpreter Window=IDH_INT_EDITING
+2 Interpreter Popup Menu=IDH_INT_POPUPMENU
+2 Interpreter Properties=IDH_INT_PROPERTIES
+2 Interpreter Preferences=IDH_INT_PREFERENCES
+1 Projects
+2 Project Overview=IDH_PRJ_OVERVIEW
+2 Project Basics=IDH_PRJ_BASICS
+2 New Project=IDH_PRJ_NEW
+2 Project Saving/Loading=IDH_PRJ_SAVING
+2 Project Properties=IDH_PRJ_PROPERTIES
+2 Project Preferences=IDH_PRJ_PREFERENCES
+2 Project Main Menu=IDH_PRJ_MAINMENU
+2 Project Popup Menu=IDH_PRJ_POPUPMENU

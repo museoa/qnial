@@ -1,0 +1,780 @@
+
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=qM_6omlu" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nial.com:80/OnlineManuals/ReferenceHelpFiles/source/help-l.html","19991003183323","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "938975603");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Q&#39;Nial Nialhelp-L</title>
+</head>
+
+<body background="/web/19991003183323im_/http://www.nial.com/images/background1.gif">
+<font face="ariel"><font face="Helvetica"><font size="2">
+<a name="TOP">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-i.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/backward.gif" alt="PREV. PAGE"></a>
+<a href="help-m.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/forward.gif" alt="NEXT PAGE"></a>
+<a href="index.html"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/index.gif" alt="INDEX"></a>
+<a href="search-form.html"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/search.gif" alt="SEARCH"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+
+<a name="laminate">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#last"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Laminate<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      construction operation
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      laminate I A
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#link">link</a>,
+                     <a href="help-c.html#catenate">catenate</a>
+</dl>
+
+<p>The operation <i>laminate</i> merges the items of A adding a new axis before axis I of the items.  The items of A must be of the same shape.</p>
+
+<p>The following example creates a three dimensional array from two tables, placing the new axes at the front:</p>
+
+<pre>
+     0 laminate (tell 2 3) (count 2 3)
++---+---+---+  +---+---+---+
+|0 0|0 1|0 2|  |1 1|1 2|1 3|
++---+---+---+  +---+---+---+
+|1 0|1 1|1 2|  |2 1|2 2|2 3|
++---+---+---+  +---+---+---+
+</pre>
+
+<b>Definition</b>
+
+<pre>
+laminate IS OPERATION I A {
+   IF equal EACH shape A THEN
+      Axesofitems := axes first A;
+      link (I take Axesofitems) (I drop Axesofitems + 1) blend A
+   ELSE
+      fault '?conform error in laminate'
+   ENDIF }
+</pre>
+
+<a name="last">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#laminate"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#latent"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Last<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      selection operation, defined in defs.ndf
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      last A
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-f.html#first">first</a>,
+                     <a href="help-p.html#pick">pick</a>,
+                     <a href="help-t.html#take">take</a>,
+                     <a href="help-t.html#takeright">takeright</a>,
+                     <a href="help-d.html#drop">drop</a>,
+                     <a href="help-d.html#dropright">dropright</a>,
+                     <a href="help-f.html#find">find</a>,
+                     <a href="help-r.html#reach">reach</a>
+</dl>
+
+<p>The operation <i>last</i> returns the last of the items of A.  If A is empty,  it returns the fault <i>?address</i>.  The operation <i>last</i> is a special case  of <a href="help-p.html#pick"><i>pick</i></a> (because <a href="help-f.html#first"><i>first</i></a> is defined in terms of <a href="help-p.html#pick"><i>pick</i></a>) and its behaviour is determined by that of <a href="help-p.html#pick"><i>pick</i></a>.  Every nonempty array has a last item.</p>
+
+<pre>
+     last 4 5 6
+6
+
+     last tell 3 4
+2 3
+</pre>
+
+<b>Definition</b>
+
+<pre>
+last IS OPERATION A { first reverse A }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+last single A = A
+
+last solitary A = A
+
+last list A = last A
+</pre></center>
+
+<a name="latent">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#last"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#leaf"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Latent<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      user defined expression
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      Latent
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#recover">recover</a>,
+                     <a href="help-c.html#checkpoint">checkpoint</a>,
+                     <a href="help-l.html#load">load</a>,
+                     <a href="help-s.html#save">save</a>
+</dl>
+
+<p>The expression <i>Latent</i> is used to name an expression to be executed without user intervention when the workspace is loaded.  <i>Latent</i> is used in closed applications so that an application can be started when the workspace is loaded.  <i>Latent</i> can establish any default or any initial conditions desired.</p>
+
+<a name="leaf">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#latent"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#library"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Leaf<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      distributive transformer
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      LEAF f A
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-t.html#twig">twig</a>,
+                     <a href="help-e.html#each">each</a>,
+                     <a href="help-i.html#iterate">iterate</a>,
+                     <a href="help-c.html#content">content</a>
+</dl>
+
+<p>The transformer <i>leaf</i> modifies an operation f into an operation that applies f to every atom of the argument A.  The result of applying <i>leaf</i> f to A has the same shape as A.  If f maps atoms to atoms, the result has the same structure as A.</p>
+
+<pre>
+       A := tell 2 3
++---+---+---+
+|0 0|0 1|0 2|
++---+---+---+
+|1 0|1 1|1 2|
++---+---+---+
+
+       LEAF tally A
++---+---+---+
+|1 1|1 1|1 1|
++---+---+---+
+|1 1|1 1|1 1|
++---+---+---+
+
+       B := (2 3) (1 2)
++---+---+
+|2 3|1 2|
++---+---+
+
+       LEAF tell B
++-----------+-------+
+|+---+-----+|+-+---+|
+||0 1|0 1 2|||0|0 1||
+|+---+-----+|+-+---+|
++-----------+-------+
+</pre>
+
+<p>The first example shows that the result of applying a <i>leaf</i> transform to a table is a table of the same shape.  The atoms have been mapped to 1 since the <a href="help-t.html#tally"><i>tally</i></a> of an atom is 1.  The second example shows that applying a <i>leaf</i> transform to a list gives a list of the same length.  However, the structure of the result is not preserved in this example because <a href="help-t.html#tell"><i>tell</i></a> maps an integer to a list of integers.</p>
+
+<b>Definition</b>
+
+<pre>
+LEAF IS TRANSFORMER f OPERATION A {
+   IF atomic A THEN
+      f A
+   ELSE
+      EACH (LEAF f) A
+   ENDIF }
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape LEAF f A = shape A
+
+f unary pervasive ==&gt; LEAF f A = f A
+
+(LEAF f) (LEAF g) A = LEAF (f g) A
+
+LEAF f list A = list LEAF f A
+</pre></center>
+
+<a name="library">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#leaf"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#like"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Library<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation, defined in defs.ndf
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      library Nm      library Nm Sw
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#loaddefs">loaddefs</a>,
+                     <a href="help-n.html#nialroot">nialroot</a>,
+                     <a href="help-h.html#host">host</a>
+</dl>
+
+<p>The operation <i>library</i> loads a definition from the Q'Nial library of definition files.  The argument is the name of a library file as a phrase or string.  The name is augmented with the path information for the library and loaded into the workspace using <a href="help-l.html#loaddefs"><i>loaddefs</i></a>.</p>
+
+<p>&quot;<i>Sw</i>&quot;, an optional argument, is either 0 (the default) or 1.  If  <i>Sw</i> is 0, there is no display of the file as it is loaded.  If <i>Sw</i> is 1, the file is displayed as the file is read.</p>
+
+<p>Some of the programs in the library are grouped in definition files by function.  When such a file is specified, all the definitions in the file are loaded.  If it is desired to load only one operation from a definition file which contains several operations, it is necessary to edit the library file in order to isolate the desired operation in one file.</p>
+
+<center><pre>
+library &quotlabeltable;
+</pre></center>
+
+<p>It is easy to select files from subdirectories of <a href="help-n.html#nialroot"><i>nialroot</i></a> but the encoding of file paths is system specific.  To load file <i>nn2.ndf</i> from <i>statlib</i> in <i>userlib</i>, a subdirectory of <i>nialroot</i>, for the PCDOS version, use:</p>
+
+<center><pre>
+library &quotnn2;
+</pre></center>
+
+<p>The list of valid paths for the library operation can be seen by looking at the library operation in <a href="help/initial/defs.ndf"><i>defs.ndf</i></a>.</p>
+
+<a name="like">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#library"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#link"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Like<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary predicate operation, defined in defs.ndf
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A like B         like A B
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-a.html#allin">allin</a>,
+                     <a href="help-d.html#diverse">diverse</a>,
+                     <a href="help-i.html#in">in</a>,
+                     <a href="help-n.html#notin">notin</a>
+</dl>
+
+<p>The operation <i>like</i> compares two arrays A and B and returns <a href="help-t.html#true"><i>true</i></a> if all the items of A are items of B and vice versa.  Otherwise it returns <a href="help-f.html#false"><i>false</i></a>.  The operation <i>like</i> corresponds to set equality at the first level of nesting.</p>
+
+<pre>
+     2 3 like 3 2 2 3 2
+l
+     2 3 like 3 2 4
+o
+     'hello world' like 'whole door'
+l
+</pre>
+
+<b>Definition</b>
+
+<pre>
+like IS OPERATION A B (
+   (A allin B) and (B allin A))
+</pre>
+
+<a name="link">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#like"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#list"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Link<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      reconstructing operation, a primitive
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      link A            A link B
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-c.html#catenate">catenate</a>,
+                     <a href="help-l.html#laminate">laminate</a>,
+                     <a href="help-h.html#hitch">hitch</a>,
+                     <a href="help-l.html#list">list</a>,
+                     <a href="help-a.html#append">append</a>,
+                     <a href="help-c.html#content">content</a>
+</dl>
+
+<p>The operation <i>link</i> returns the list of the items of the items of its argument. If it is applied to a pair of arrays A and B, the result is the items of A followed by the items of B.</p>
+
+<p>If <i>link</i> is applied to an arbitrary array A, the items of the first item of A are followed by the items of the second item of A, etc.</p>
+
+<p>If A is empty, the result is <a href="help-n.html#null"><i>Null</i></a>.  If A is not empty but there are no items in all the items of A, the result is also <a href="help-n.html#null"><i>Null</i></a>.</p>
+
+<pre>
+     2 3 5 4 7 2 link 2 4 6 8
+2 3 5 4 7 2 2 4 6 8
+
+     link 'hen' 'hello' 'eh'
+henhelloeh
+</pre>
+
+<p>The first example shows that the <i>link</i> of two lists of length 6 and 4 is a list of length 10.  The second example illustrates the linking of three strings.</p>
+
+<p><i>Link</i> is similar to a set-union operation, although it does not remove duplicates in the representation.  The composition of <a href="help-c.html#cull"><i>cull</i></a> with <i>link</i> may be more appropriate as a union operation.</p>
+
+<b>Equations</b>
+
+<center><pre>
+link A = link list A
+
+link A = list link A
+
+link A = EACH list link A
+
+tally link A = sum EACH tally A
+
+link solitary A = list A
+
+link Null = Null
+
+link EACH link A = link link A
+
+cart link A = EACH link cart EACH cart A
+
+EACH f link A = link EACH EACH f A
+
+simple A ==&gt; link A = list A
+
+and EACH simple A ==&gt; content A = link A
+</pre></center>
+
+<a name="list">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#link"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#ln"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">List<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      reshaping operation
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      list A
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-r.html#reshape">reshape</a>,
+                     <a href="help-l.html#link">link</a>
+</dl>
+
+<p>The operation <i>list</i> returns the list of the items of A in row major order.</p>
+
+<pre>
+      A := 2 3 4 reshape count 24
+1  2  3  4   13 14 15 16
+5  6  7  8   17 18 19 20
+9 10 11 12   21 22 23 24
+
+      list A
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+24
+
+      set &quotdiagram; list &quotabc;
++---+
+|abc|
++---+
+</pre>
+
+<p>The first example shows row major order for a table.  The second example shows that the <i>list</i> of an atom is the solitary holding the atom.</p>
+
+<b>Definition</b>
+
+<pre>
+list IS OPERATION A (
+   tell tally A reshape A)
+</pre>
+
+<br>
+<b>Equations</b>
+
+<center><pre>
+shape list A = tally A
+
+list list A = list A
+
+list single A = solitary A
+
+EACH f list A = list EACH f A
+
+empty A ==&gt; list A = Null
+</pre></center>
+
+<a name="ln">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#list"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#load"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Ln<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      ln A
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-e.html#exp">exp</a>,
+                     <a href="help-l.html#log">log</a>
+</dl>
+
+<p>The operation <i>ln</i> implements the natural logarithm function of mathematics.  It produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>natural logarithm of the corresponding real</td></tr>
+<tr><td>integer</td><td>natural logarithm of the corresponding real</td></tr>
+<tr><td>real</td><td>real natural logarithm if A &gt; 0.0;<br>
+                     <i>?ln</i> if A &lt;= 0.0</td></tr>
+<tr><td>character</td><td>fault <i>?ln</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?ln</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<pre>
+     ln  l  2  3.5   `a  &quotabc;  ??error
+0. 0.693147 1.25276 ?ln ?ln ?error
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+A &gt; 0 ==&gt; exp ln A = A (within roundoff error)
+</pre></center>
+
+<a name="load">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#ln"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#loaddefs"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Load<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      load Wsname
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-s.html#save">save</a>,
+                     <a href="help-l.html#loaddefs">loaddefs</a>,
+                     <a href="help-l.html#library">library</a>,
+                     <a href="help-r.html#restart">restart</a>,
+                     <a href="help-l.html#latent">latent</a>,
+                     <a href="help-c.html#continue">continue</a>
+</dl>
+
+<p>The operation <i>load</i> is used to retrieve the saved workspace named by the phrase or string <i>Wsname</i>.  The convention in Q'Nial is to save workspaces with a file name extension of the form <i>.nws</i> to make it easy to identify workspace files in the file system.  When saving or loading a workspace, the extension may be omitted.</p>
+
+<p>The effect of loading a workspace is to replace the current workspace with the saved one.  To keep the contents of the current workspace, <a href="help-s.html#save"><i>save</i></a> should be used prior to doing a <i>load</i>.</p>
+
+<p>The operation <i>load</i> may be used within a defined expression or operation. However, in such a use, it interrupts the execution of the operation or expression and does the load as though the operation were entered at top level.</p>
+
+<p>If a workspace contains an expression with the name <a href="help-l.html#latent"><i>Latent</i></a>, the <i>load</i> operation executes <a href="help-l.html#latent"><i>Latent</i></a> when the load is complete.  This can be used to have the load of a workspace automatically begin an application or to chain execution of workspaces.</p>
+
+<p>There is no mechanism to obtain individual objects saved in a workspace.</p>
+
+<center><pre>
+load &quotmywork;
+</pre></center>
+
+<a name="loaddefs">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#load"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#log"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Loaddefs<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      system operation
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      loaddefs Deffilename   loaddefs Deffilename Mode
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-l.html#library">library</a>,
+                     <a href="help-d.html#defedit">defedit</a>,
+                     <a href="help-e.html#edit">edit</a>
+</dl>
+
+<p>The operation <i>loaddefs</i> is used to load Nial actions (definitions or expressions) from the file named by the phrase or string <i>Deffilename</i>.  The convention in Q'Nial is to name Nial definition files with a file name extension of the form <i>.ndf</i> to make it easy to identify such files in the file system.</p>
+
+<p>When loading a file with <i>loaddefs</i>, the file extension may be omitted.  The operation may have an optional second argument to specify the mode of loading. If mode is 0 or if it is omitted, the actions are not displayed as they are processed.  If it is 1, the actions are displayed.</p>
+
+<p>The file of actions consists of groups of lines that are treated as a unit. These lines are separated by a blank line.  If the first character in the first line of the group is <i>#</i>, the group is a <i>&quotremark;&quot;</i> and is not processed.</p>
+
+<p>Several lines, up to a blank line, are treated as one long line.  No blank spaces are inserted between the end of one line and the beginning of another. Thus, care should be taken to ensure that identifiers are not joined together.</p>
+
+<p>If a syntax error is detected when a definition is being loaded, the definition is not installed.  The absence of the erroneous definition may cause subsequent definitions in the file to fail also.  If any errors are detected, the number of errors is displayed when <a href="help-l.html#loaddefs"><i>loaddefs</i></a> ends.  Only the first syntax error found in each action is reported.</p>
+
+<p>The backslash character, \, which is used to continue a line of a definition in immediate mode, must not be inserted at the end of lines in a definition file.</p>
+
+<p>The tab characters, if they exist in a definition file, are treated as though they are space characters.  Since some editor programs insert tabs automatically, the display of the file on input may be different from the display using the editor.</p>
+
+<p>A definition file may contain uses of <a href="help-l.html#loaddefs"><i>loaddefs</i></a>.  For a large application with many definition files, it is a good idea to have one file which can construct the application by using <a href="help-l.html#loaddefs"><i>loaddefs</i></a> to bring in the other files in an appropriate order.  <a href="help-l.html#loaddefs"><i>Loaddefs</i></a> can also be used to execute a script of Nial expressions.  This feature is convenient when simulating a Q'Nial session and capturing its output in a log file.</p>
+
+<a name="log">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#loaddefs"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#lt"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Log<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      unary pervasive scientific operation, a primitive
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      log A
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-p.html#power">power</a>,
+                     <a href="help-l.html#ln">ln</a>
+</dl>
+
+<p>The operation <i>log</i> implements the base 10 logarithm function of mathematics. It produces the following results when applied to atoms of the six types:</p>
+
+<p align="center">
+<table border="1" cellpadding="10">
+<tr>
+   <th><b>Atomic Type</b></th><th><b>Result</b></th>
+</tr>
+<tr><td>boolean</td><td>base 10 logarithm of the corresponding real</td></tr>
+<tr><td>integer</td><td>base 10 logarithm of the corresponding real</td></tr>
+<tr><td>real</td><td>real base 10 logarithm if A &gt; 0.0;<br>
+                     <i>?log</i> if A &lt;= 0.0</td></tr>
+<tr><td>character</td><td>fault <i>?log</i></td></tr>
+<tr><td>Phrase</td><td>fault <i>?log</i></td></tr>
+<tr><td>fault</td><td>argument A</td></tr>
+</table>
+</p>
+
+<pre>
+     log  l  2  3.5  `a  "abc  ??error
+0. 0.30103 0.544068 ?log ?log ?error
+</pre>
+
+<b>Equations</b>
+
+<center><pre>
+A &gt; 0 ==&gt; 10. power log A = A (within roundoff error)
+</pre></center>
+
+<a name="lt">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#log"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Lt<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive comparative operation
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :      A lt B      A &lt; B      lt A B
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary pervasive</a>,
+                     <a href="help-l.html#lte">lte</a>,
+                     <a href="help-g.html#gt">gt</a>,
+                     <a href="help-g.html#gte">gte</a>,
+                     <a href="help-m.html#match">match</a>,
+                     <a href="help-m.html#mate">mate</a>,
+                     <a href="help-m.html#max">max</a>,
+                     <a href="help-s.html#sort">sort</a>
+</dl>
+
+<p>The <i>lt</i> operation compares two atoms A and B with the &quotless; than &quot; relation, returning <a href="help-t.html#true"><i>true</i></a> if A is less than B and <a href="help-f.html#false"><i>false</i></a> otherwise.  Symbol &lt; is a synonym for lt.</p>
+
+<p>The atoms in Nial are organized as a lattice using &lt;= for the ordering.  The numeric atoms are comparable across types but literal atoms are not comparable with numeric atoms.  The literal types are not comparable across types.  A comparison between incomparable objects results in <a href="help-f.html#false"><i>false</i></a>.</p>
+
+<pre>
+     R := l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+     R OUTER &lt; R
+ollooo
+oolooo
+oooooo
+oooooo
+oooooo
+oooooo
+
+     'apple' &lt; 'above'
+ooolo
+
+     "apple &lt; "above
+o
+</pre>
+
+<p>The use of <a href="help-o.html#outer"><i>OUTER</i></a> &lt; shows the comparisons between various atom types.  The last two examples show the difference between comparing two strings, where the operation is distributed by its pervasive property; and comparing the corresponding phrases.</p>
+
+<b>Definition</b>
+
+<pre>
+lt IS OPERATION A B (
+   ( A lte B ) and not ( A mate B ) )
+</pre>
+
+<a name="lte">
+<hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/leftend.gif">
+<a href="help-l.html#lt"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/previous.gif" alt="PREVIOUS"></a>
+<a href="help-m.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/next.gif" alt="NEXT"></a>
+<a href="help-l.html#TOP"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/top.gif" alt="UP"></a>
+<a href="help-l.html#lte"><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/bottom.gif" alt="DOWN"></a>
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/help/rightend.gif">
+<h3><hr size="5">
+<img border="0" src="/web/19991003183323im_/http://www.nial.com/images/pink_bullet.gif">Lte<br>
+<hr size="5"></a></h3>
+<dl>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Class   :      binary pervasive comparative operation, a primitive
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      Usage   :<br>
+<pre>                A lte B
+                     A &lt;= B
+                     lte A B
+</pre>
+<dd><img border="0" src="/web/19991003183323im_/http://www.nial.com/images/yellow_bullet.gif" alt="*">
+      See     :      <a href="help-other.html#binary">binary</a>,
+                     <a href="help-l.html#lt">lt</a>,
+                     <a href="help-g.html#gt">gt</a>,
+                     <a href="help-g.html#gte">gte</a>,
+                     <a href="help-m.html#match">match</a>,
+                     <a href="help-m.html#mate">mate</a>,
+                     <a href="help-m.html#max">max</a>,
+                     <a href="help-s.html#sort">sort</a>
+</dl>
+
+<p>The <i>lte</i> operation compares two atoms A and B with the &quotless; than or equal&quot; relation, returning <a href="help-t.html#true"><i>true</i></a> if A is less than B and <a href="help-f.html#false"><i>false</i></a> otherwise.  The symbol &lt;= is a synonym for <i>lte</i>.</p>
+
+<p>The atoms in Nial are organized as a lattice using &lt;= for the ordering.  The numeric atoms are comparable across types but numeric and literal atoms are incomparable.  The literal types are not comparable across types.  A comparison between incomparable objects results in <a href="help-f.html#false"><i>false</i></a>.</p>
+
+<pre>
+     R := l 2 2.5 `a &quotabc; ??error
+l 2 2.5 a abc ?error
+
+     R OUTER &lt;= R
+lllooo
+ollooo
+oolooo
+oooloo
+oooolo
+oooool
+
+     'apple' &lt;= 'above'
+loolo
+
+     "apple &lt; "above
+o
+</pre>
+
+<p>The use of <a href="help-o.html#outer"><i>OUTER</i></a> &lt;= shows the comparisons between various atom types.  The last two examples show the difference between comparing two strings, where the operation is distributed by its pervasive property; and comparing the corresponding phrases.</p>
+
+<br>
+<hr size="4">
+<center>
+<map name="footer">
+<area shape="rect" coords="0,0,6,6" href="/web/19991003183323/http://www.nial.com/LogInfo/NSLWeeklyReport.html">
+<area shape="circle" coords="17,15,17,0" href="https://web.archive.org/web/19991003183323/http://www.nial.com/">
+<area shape="rect" coords="19,0,57,30" href="https://web.archive.org/web/19991003183323/http://www.nial.com/">
+<area shape="rect" coords="57,0,166,30" href="/web/19991003183323/http://www.nial.com/Products/Products.html">
+<area shape="rect" coords="166,0,225,30" href="/web/19991003183323/http://www.nial.com/FTP/FTP.html">
+<area shape="rect" coords="225,0,336,30" href="/web/19991003183323/http://www.nial.com/Feedback/Feedback.html">
+<area shape="rect" coords="336,0,411,30" href="/web/19991003183323/http://www.nial.com/TryQnial/TryQnial.html">
+<area shape="rect" coords="411,0,465,30" href="/web/19991003183323/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="circle" coords="452,15,452,0" href="/web/19991003183323/http://www.nial.com/AboutNSL/AboutNSL.html">
+<area shape="default" href="https://web.archive.org/web/19991003183323/http://www.nial.com/">
+</map>
+
+<a href="/web/19991003183323/http://www.nial.com/include/footer.map">
+<img width="469" height="31" border="0" align="TOP" src="/web/19991003183323im_/http://www.nial.com/images/footer.gif" usemap="#footer" ismap> 
+</a>
+</center>
+<p>
+<i>Last Modified: Sep 30, 1996</i>
+</font></font></font>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 18:33:23 Oct 03, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:24 Jul 09, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.053
+  exclusion.robots: 0.091
+  exclusion.robots.policy: 0.076
+  esindex: 0.017
+  cdx.remote: 38.86
+  LoadShardBlock: 478.169 (3)
+  PetaboxLoader3.resolve: 321.015 (4)
+  PetaboxLoader3.datanode: 314.042 (4)
+  load_resource: 211.304
+-->
